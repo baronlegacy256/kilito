@@ -1,0 +1,3 @@
+//# sourceMappingURL=cookies.js.map
+var process=process||{env:{NODE_ENV:"development"}};function setCookie(a,d,c){var b=new Date;b.setTime(b.getTime()+864E5*c);c="; expires="+b.toGMTString();document.cookie=a+"="+d+c+";path=/"}function getParam(a){return(a=RegExp("[?&]"+a+"=([^&]*)").exec(window.location.search))&&decodeURIComponent(a[1].replace(/\+/g," "))}function getExpiryRecord(a){var d=(new Date).getTime()+7776E6;return{value:a,expiryDate:d}}
+function readCookie(a){a+="=";for(var d=document.cookie.split(";"),c=0;c<d.length;c++){for(var b=d[c];" "==b.charAt(0);)b=b.substring(1,b.length);if(0==b.indexOf(a))return b.substring(a.length,b.length)}return null}function deleteCookie(a){document.cookie=a+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"};

@@ -1,0 +1,2035 @@
+{
+  "packages": [
+    {
+      "id": 1,
+      "package_category_id": 1,
+      "title": "Day trip to Ngorongoro",
+      "slug": "day-trip-to-ngorongoro",
+      "description": "Discover the Ngorongoro Crater, one of the most spectacular natural wonders in Tanzania.",
+      "image": "/assets/images/safari/ngorongo.jpeg",
+      "location": "TANZANIA",
+      "price": 850,
+      "price_unit": "/ 2 persons",
+      "duration": "1 Day",
+      "type": "Day trip",
+      "rating": 5,
+      "reviews_count": 36,
+      "pricing_tiers": [
+        {
+          "label": "3 to 5 people",
+          "price": "400"
+        },
+        {
+          "label": "5 to 8 people",
+          "price": "300"
+        }
+      ],
+      "technical_level": "Suitable for all",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 1,
+      "created_at": "2026-03-20 09:03:31",
+      "updated_at": "2026-03-20 10:00:25",
+      "long_description": "Discover the Ngorongoro Crater, one of the most spectacular natural wonders in Tanzania. This day trip plunges you into a UNESCO World Heritage site where wildlife is concentrated in an immense volcanic caldera.",
+      "highlights": [
+        "A complete immersion in the Ngorongoro Crater ecosystem",
+        "Ideal conditions to observe the Big Five in a single day",
+        "Panoramic views over one of Africa’s most iconic landscapes"
+      ],
+      "included_items": [
+        "Professional English-speaking safari guide",
+        "Park entrance fees for Ngorongoro Crater",
+        "Picnic lunch inside the crater",
+        "Bottled drinking water in the vehicle"
+      ],
+      "excluded_items": [
+        "International flights",
+        "Personal travel insurance",
+        "Tips for the guide and driver",
+        "Drinks and personal expenses"
+      ],
+      "program": null,
+      "season": "All year round",
+      "meeting_point": "Arusha, Tanzania",
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "package_category_id": 1,
+      "title": "Day trip to Manyara",
+      "slug": "day-trip-to-manyara",
+      "description": "Explore Lake Manyara National Park with its diverse wildlife and stunning landscapes.",
+      "image": "/assets/images/safari/manyara.jpg",
+      "location": "TANZANIA",
+      "price": 850,
+      "price_unit": "/ person",
+      "duration": "1 Day",
+      "type": "Day Trip",
+      "rating": 5,
+      "reviews_count": 36,
+      "pricing_tiers": [
+        {
+          "label": "2 people sharing",
+          "price": 250
+        },
+        {
+          "label": "3 to 5 people",
+          "price": 250
+        },
+        {
+          "label": "5 to 8 people",
+          "price": 200
+        }
+      ],
+      "technical_level": "Suitable for all",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 2,
+      "created_at": "2026-03-20 09:03:31",
+      "updated_at": "2026-03-20 09:03:31",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "package_category_id": 1,
+      "title": "Day trip to Tarangire",
+      "slug": "day-trip-to-tarangire",
+      "description": "Experience the elephant paradise of Tarangire National Park.",
+      "image": "/assets/images/safari/Tarangire.jpg",
+      "location": "TANZANIA",
+      "price": 200,
+      "price_unit": "/ person",
+      "duration": "1 Day",
+      "type": "Day trip",
+      "rating": 5,
+      "reviews_count": 36,
+      "pricing_tiers": [
+        {
+          "label": "2 people sharing",
+          "price": 250
+        },
+        {
+          "label": "3 to 5 people",
+          "price": 400
+        },
+        {
+          "label": "5 to 8 people",
+          "price": 200
+        }
+      ],
+      "technical_level": "Suitable for all",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 3,
+      "created_at": "2026-03-20 09:03:31",
+      "updated_at": "2026-03-20 09:03:31",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "package_category_id": 1,
+      "title": "Three Days Trip (Tarangire, Manyara & Ngorongoro Crater)",
+      "slug": "three-days-trip-tarangire-manyara-ngorongoro",
+      "description": "A comprehensive 3-day safari covering three of Tanzania's most beautiful parks.",
+      "image": "/assets/images/safari/three.jpg",
+      "location": "Tanzania",
+      "price": 500,
+      "price_unit": "/ person",
+      "duration": "3 Days",
+      "type": "Day trip",
+      "rating": 5,
+      "reviews_count": 36,
+      "pricing_tiers": [
+        {
+          "label": "2 people sharing",
+          "price": "900"
+        },
+        {
+          "label": "3 to 5 people",
+          "price": "1000"
+        },
+        {
+          "label": "5 to 8 people",
+          "price": "900"
+        }
+      ],
+      "technical_level": "Suitable for all",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 4,
+      "created_at": "2026-03-20 09:03:31",
+      "updated_at": "2026-03-24 18:27:10",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "package_category_id": 1,
+      "title": "Tented Camps 7 Days Safari",
+      "slug": "tented-camps-7-days-safari",
+      "description": "An immersive 7-day safari experience staying in comfortable tented camps.",
+      "image": "/assets/images/safari/seven.png",
+      "location": "TANZANIA",
+      "price": 1250,
+      "price_unit": "/ person",
+      "duration": "7 Days",
+      "type": "Day trip",
+      "rating": 5,
+      "reviews_count": 36,
+      "pricing_tiers": [
+        {
+          "label": "2 people",
+          "price": 1850
+        },
+        {
+          "label": "3 people",
+          "price": 1750
+        },
+        {
+          "label": "4 people",
+          "price": 1550
+        },
+        {
+          "label": "5 people",
+          "price": 1450
+        },
+        {
+          "label": "6 people",
+          "price": 1350
+        },
+        {
+          "label": "8 people or more",
+          "price": 1250
+        }
+      ],
+      "technical_level": "Suitable for all",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 5,
+      "created_at": "2026-03-20 09:03:31",
+      "updated_at": "2026-03-20 09:03:31",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "package_category_id": 2,
+      "title": "MACHAME ROUTE (7 DAYS TREKKING)",
+      "slug": "machame-route-7-days-trekking",
+      "description": "Conquer Mount Kilimanjaro via the scenic Machame route.",
+      "image": "/assets/images/climbing/machame.jpeg",
+      "location": "TANZANIA",
+      "price": 300,
+      "price_unit": "/ person",
+      "duration": "7 Days",
+      "type": "Day trip",
+      "rating": 5,
+      "reviews_count": 36,
+      "pricing_tiers": [
+        {
+          "label": "2 people sharing",
+          "price": "425"
+        },
+        {
+          "label": "3 to 5 people",
+          "price": "400"
+        },
+        {
+          "label": "5 to 8 people",
+          "price": "300"
+        }
+      ],
+      "technical_level": "Suitable for all",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 1,
+      "created_at": "2026-03-20 09:03:31",
+      "updated_at": "2026-03-24 19:00:32",
+      "long_description": "Kilimanjaro Climbing\n\nEnjoy a 7-day trek to the top of Kilimanjaro via the Machame path with a group of\n\nknowledgeable guides and neighborhood porters from Kili to savannah safari club.\n\n\n\nOne of the best routes to climb Mount Kilimanjaro is the Machame route, also known as the\n\n“Whisky Route,” as it is the best for acclimatization and enables climbers to “walk high and\n\nsleep low” while also having one of the greatest summit success rates of all the routes.\n\nIn order to have your tent ready when you arrive, along with a warm beverage made by our team\n\nchef, we make sure that our porter team gets to the designated campsites early.\n\nContact us so that we can talk about your goals for your Kilimanjaro climbing journey. \n\n\n\nWe would be delighted to assist you in climbing the highest peak in Africa.\n\nWe also have additional Kilimanjaro ascent paths, including the Marangu, Lemosho,\n\nand Rongai routes.\n\n\n\nThe six days Machame variation is a difficult route. In particular, day four combined with day\n\nfive makes for a very hard schedule. Day four is a full day of hiking from Barranco to Barafu.\n\nThen after dinner and a partial night’s sleep, the very long and strenuous summit day begins\n\naround midnight. The 6 days Machame route requires 19-24 hours of demanding walking, at\n\nextremely high elevation, with only 4-6 hours of sleep at Machame",
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "package_category_id": 2,
+      "title": "Mt Meru trekking",
+      "slug": "mt-meru-trekking",
+      "description": "Trek to the summit of Mount Meru, Tanzania's second highest peak.",
+      "image": "/assets/images/climbing/meru.jpeg",
+      "location": "TANZANIA",
+      "price": 850,
+      "price_unit": "/ person",
+      "duration": "1 Day",
+      "type": "Day Trip",
+      "rating": 5,
+      "reviews_count": 36,
+      "pricing_tiers": [
+        {
+          "label": "2 people sharing",
+          "price": 250
+        },
+        {
+          "label": "3 to 5 people",
+          "price": 250
+        },
+        {
+          "label": "5 to 8 people",
+          "price": 200
+        }
+      ],
+      "technical_level": "Suitable for all",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 2,
+      "created_at": "2026-03-20 09:03:31",
+      "updated_at": "2026-03-20 09:03:31",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "package_category_id": 2,
+      "title": "Kilimanjaro Trekking-Marangu route",
+      "slug": "kilimanjaro-trekking-marangu-route",
+      "description": "The classic Marangu route, also known as the \"Coca-Cola\" route.",
+      "image": "/assets/images/climbing/kilimanjaro.jpeg",
+      "location": "TANZANIA",
+      "price": 200,
+      "price_unit": "/ person",
+      "duration": "1 Day",
+      "type": "Day trip",
+      "rating": 5,
+      "reviews_count": 36,
+      "pricing_tiers": [
+        {
+          "label": "2 people sharing",
+          "price": 250
+        },
+        {
+          "label": "3 to 5 people",
+          "price": 400
+        },
+        {
+          "label": "5 to 8 people",
+          "price": 200
+        }
+      ],
+      "technical_level": "Suitable for all",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 3,
+      "created_at": "2026-03-20 09:03:31",
+      "updated_at": "2026-03-20 09:03:31",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "package_category_id": 2,
+      "title": "KILIMANJARO-LEMOSHO ROUTE (8 DAYS TREKKING)",
+      "slug": "kilimanjaro-lemosho-route-8-days",
+      "description": "The longest and most scenic route to the summit of Kilimanjaro.",
+      "image": "/assets/images/climbing/kilimanjaro2.jpeg",
+      "location": "Tanzania",
+      "price": 1700,
+      "price_unit": "/ person",
+      "duration": "8 Days",
+      "type": "Day trip",
+      "rating": 5,
+      "reviews_count": 36,
+      "pricing_tiers": [
+        {
+          "label": "2 people",
+          "price": 2200
+        },
+        {
+          "label": "3 people",
+          "price": 2100
+        },
+        {
+          "label": "4 people",
+          "price": 2000
+        },
+        {
+          "label": "5 people",
+          "price": 1900
+        },
+        {
+          "label": "6 people",
+          "price": 1800
+        },
+        {
+          "label": "8 people or more",
+          "price": 1700
+        }
+      ],
+      "technical_level": "Suitable for all",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 4,
+      "created_at": "2026-03-20 09:03:31",
+      "updated_at": "2026-03-20 09:03:31",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "package_category_id": 3,
+      "title": "From Earth To Art Sing'isi Village Pottery Workshop Tour",
+      "slug": "singisi-village-pottery-workshop",
+      "description": "Learn traditional pottery making techniques in a local village.",
+      "image": "/assets/images/cutural/1.jpg",
+      "location": "TANZANIA",
+      "price": 40,
+      "price_unit": "/ person",
+      "duration": "3 Hours",
+      "type": null,
+      "rating": 5,
+      "reviews_count": 36,
+      "pricing_tiers": [
+        {
+          "label": "1 person",
+          "price": 40
+        },
+        {
+          "label": "2 people sharing",
+          "price": 35
+        },
+        {
+          "label": "3 to 5 people",
+          "price": 30
+        },
+        {
+          "label": "5 to 8 people",
+          "price": 25
+        }
+      ],
+      "technical_level": "Suitable for all",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 1,
+      "created_at": "2026-03-20 09:03:31",
+      "updated_at": "2026-03-20 09:03:31",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "package_category_id": 3,
+      "title": "Bike Ride Tour",
+      "slug": "bike-ride-tour",
+      "description": "Explore the countryside on a guided bike tour.",
+      "image": "/assets/images/cutural/2.jpg",
+      "location": "TANZANIA",
+      "price": 300,
+      "price_unit": "/ person",
+      "duration": "7 Days",
+      "type": null,
+      "rating": 5,
+      "reviews_count": 36,
+      "pricing_tiers": [
+        {
+          "label": "2 people sharing",
+          "price": 425
+        },
+        {
+          "label": "3 to 5 people",
+          "price": 400
+        },
+        {
+          "label": "5 to 8 people",
+          "price": 300
+        }
+      ],
+      "technical_level": "Suitable for all",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 2,
+      "created_at": "2026-03-20 09:03:31",
+      "updated_at": "2026-03-20 09:03:31",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "package_category_id": 3,
+      "title": "Arusha Town Tour",
+      "slug": "arusha-town-tour",
+      "description": "Discover the vibrant culture and history of Arusha town.",
+      "image": "/assets/images/cutural/3.jpg",
+      "location": "Arusha Region, Tanzania",
+      "price": 300,
+      "price_unit": "/ person",
+      "duration": "1 Day",
+      "type": null,
+      "rating": 5,
+      "reviews_count": 36,
+      "pricing_tiers": [
+        {
+          "label": "2 people sharing",
+          "price": "425"
+        },
+        {
+          "label": "3 to 5 people",
+          "price": "400"
+        },
+        {
+          "label": "5 to 8 people",
+          "price": "300"
+        }
+      ],
+      "technical_level": "Suitable for all",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 3,
+      "created_at": "2026-03-20 09:03:31",
+      "updated_at": "2026-03-24 19:46:51",
+      "long_description": "Arusha National Park covers Mount Meru, a prominent volcano with an elevation of 4566 m, in\n\nthe Arusha Region of north eastern Tanzania. The park is small but varied with spectacular\n\nlandscapes in three distinct areas. In the west, the Meru Crater funnels the Jekukumia River; the\n\npeak of Mount Meru lies on its rim. Ngurdoto Crater in the south-east is grassland. The shallow\n\nalkaline Momella Lakes in the north-east have varying algal colors and are known for their\n\nwading birds.\n\n\n\nMount Meru is the second highest peak in Tanzania after Mount Kilimanjaro, which is just 60\n\nkm away and forms a backdrop to views from the park to the east. Arusha National Park lies on a\n\n300-kilometre axis of Africa's most famous national parks, running from Serengeti and\n\nNgorongoro Crater in the west to Kilimanjaro National Park in the east.\n\nThe park is just a few kilometers north east of Arusha, though the main gate is 25 km east of the\n\ncity. It is also 58 km from Moshi and 35 km from Kilimanjaro International Airport (KIA).\n\nArusha National Park has a rich variety of wildlife, but visitors shouldn't expect the same gameviewing experience they find in other national parks of Tanzania's northern circuit. Despite the\n\nsmall size of the park, common animals include giraffe, Cape buffalo, zebra, warthog, the blackand-white colobus monkey, the blue monkey, flamingo, elephant, bushbuck and many other\n\nAfrican animals. Leopard populations are present, but rarely seen. Birdlife in the forest is\n\nprolific, with many forest species more easily seen here than elsewhere on the tourist route -\n\nNarina trogon and bar-tailed trogon are both possible highlights for visiting birders,",
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "package_category_id": 3,
+      "title": "Adventure Mobile Camping Safari(5 days Safari)",
+      "slug": "adventure-mobile-camping-5-days-safari",
+      "description": "This programme include safari to national park and cultural tourism as you will have time to visit\n\nlocal society of Masai in their houses called (BOMA) which visitors may have new experience.",
+      "image": "/storage/packages/cHBB3OAiPQ1l57W0OIHf6wJYcAHnCZUnBc2jnIaQ.jpg",
+      "location": "Tanzania",
+      "price": 1600,
+      "price_unit": "2 People Sharing",
+      "duration": "5",
+      "type": "Cultural Tour",
+      "rating": 5,
+      "reviews_count": 23,
+      "pricing_tiers": [
+        {
+          "label": "Group of 3 people",
+          "price": "1500",
+          "min_pax": "1",
+          "max_pax": null
+        },
+        {
+          "label": "Group of 4 people",
+          "price": "1300",
+          "min_pax": "1",
+          "max_pax": null
+        },
+        {
+          "label": "Group of 5 people",
+          "price": "1200",
+          "min_pax": "1",
+          "max_pax": null
+        }
+      ],
+      "technical_level": "All Levels",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 2,
+      "created_at": "2026-03-20 10:24:27",
+      "updated_at": "2026-03-24 18:32:13",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "package_category_id": 1,
+      "title": "Tanzania Adventure Big Five Safari (6  days Safari)",
+      "slug": "adventure-big-five-safari",
+      "description": null,
+      "image": "/storage/packages/IkxKeiuzzcLVSjtDULMJcKQJINi0YWMHEZtq57KW.jpg",
+      "location": "Tanzania",
+      "price": 1550,
+      "price_unit": "per person",
+      "duration": "6 Days",
+      "type": "Cultural Tour",
+      "rating": 5,
+      "reviews_count": 45,
+      "pricing_tiers": [
+        {
+          "label": "Cost for a  group of 2 people",
+          "price": "1850",
+          "min_pax": "1",
+          "max_pax": null
+        },
+        {
+          "label": "Cost for a  group of 3 people",
+          "price": "1750",
+          "min_pax": "1",
+          "max_pax": null
+        },
+        {
+          "label": "Cost for a  group of 4 people",
+          "price": "1550",
+          "min_pax": "1",
+          "max_pax": null
+        }
+      ],
+      "technical_level": "All Levels",
+      "is_all_inclusive": 0,
+      "is_active": 1,
+      "sort_order": 0,
+      "created_at": "2026-03-20 10:30:53",
+      "updated_at": "2026-03-24 18:36:50",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "package_category_id": 3,
+      "title": "TANZANIA ADVENTURE BIG FIVE SAFARI (7 days Luxury Safari)",
+      "slug": "tanzania-adventure-big-five-luxury-safari",
+      "description": null,
+      "image": "/storage/packages/4rgwL6fWo0xbpO2WYv3G5eq5PFSQsisP9sAlr4xR.jpg",
+      "location": "tanzania",
+      "price": 3700,
+      "price_unit": "per person",
+      "duration": "7 Days",
+      "type": null,
+      "rating": 5,
+      "reviews_count": 50,
+      "pricing_tiers": [
+        {
+          "label": "Cost for a group of 2 people",
+          "price": "4200",
+          "min_pax": "1",
+          "max_pax": null
+        },
+        {
+          "label": "Cost for a group of 3 people",
+          "price": "4100",
+          "min_pax": "1",
+          "max_pax": null
+        },
+        {
+          "label": "Cost for a group of 4 people",
+          "price": "4000",
+          "min_pax": "1",
+          "max_pax": null
+        },
+        {
+          "label": "Cost for a group of 5 people",
+          "price": "3900",
+          "min_pax": "1",
+          "max_pax": null
+        },
+        {
+          "label": "Cost for a group of 6 people",
+          "price": "3800",
+          "min_pax": "1",
+          "max_pax": null
+        },
+        {
+          "label": "Cost for a group of 8 people",
+          "price": "3700",
+          "min_pax": "1",
+          "max_pax": null
+        }
+      ],
+      "technical_level": "all levels",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 0,
+      "created_at": "2026-03-20 11:06:29",
+      "updated_at": "2026-03-20 11:06:29",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "package_category_id": 3,
+      "title": "Poland Graves Tour",
+      "slug": "poland-graves-tour",
+      "description": null,
+      "image": "/storage/packages/BPswusrcz9efC3lHIFMKmtpDyJ1i7Py6KsLHnOXF.jpg",
+      "location": "Tanzania",
+      "price": 40,
+      "price_unit": "per person",
+      "duration": "1 Day",
+      "type": "Cultural Tour",
+      "rating": 5,
+      "reviews_count": 15,
+      "pricing_tiers": [
+        {
+          "label": "2 People Sharing",
+          "price": "35",
+          "min_pax": "1",
+          "max_pax": null
+        },
+        {
+          "label": "3-5 People Sharing",
+          "price": "30",
+          "min_pax": "1",
+          "max_pax": null
+        },
+        {
+          "label": "5-8 People Sharing",
+          "price": "25",
+          "min_pax": "1",
+          "max_pax": null
+        }
+      ],
+      "technical_level": "All Levels",
+      "is_all_inclusive": 0,
+      "is_active": 1,
+      "sort_order": 0,
+      "created_at": "2026-03-20 12:22:41",
+      "updated_at": "2026-03-20 12:22:41",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "package_category_id": 3,
+      "title": "Masai Village Tour",
+      "slug": "masai-village-tour",
+      "description": null,
+      "image": "/storage/packages/T5cXuFlkzRbVemEq4U1KSt7jNnmYMaG7XH0jVxYc.jpg",
+      "location": "Tanzania",
+      "price": 850,
+      "price_unit": "2 People Sharing",
+      "duration": "1 Day",
+      "type": "Cultural Tour",
+      "rating": 5,
+      "reviews_count": 25,
+      "pricing_tiers": [
+        {
+          "label": "3 to 5 people",
+          "price": "400",
+          "min_pax": "1",
+          "max_pax": null
+        },
+        {
+          "label": "5 to 8 people",
+          "price": "300",
+          "min_pax": "1",
+          "max_pax": null
+        }
+      ],
+      "technical_level": "All Levels",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 0,
+      "created_at": "2026-03-20 12:33:04",
+      "updated_at": "2026-03-20 12:33:04",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "package_category_id": 3,
+      "title": "Mount Meru Full Day Hike",
+      "slug": "mount-meru-full-day-hike",
+      "description": null,
+      "image": "/storage/packages/vlqDMRTQEQFDxfAoCmCycKOWY2Rr8SwLcQkTomA2.jpg",
+      "location": "Tanzania",
+      "price": 850,
+      "price_unit": "2 people Sharing",
+      "duration": "1 day",
+      "type": "Cultural Tour",
+      "rating": 5,
+      "reviews_count": 10,
+      "pricing_tiers": [
+        {
+          "label": "3 to 5 people sharing",
+          "price": "400",
+          "min_pax": "1",
+          "max_pax": null
+        },
+        {
+          "label": "5 to 8 people sharing",
+          "price": "300",
+          "min_pax": "1",
+          "max_pax": null
+        }
+      ],
+      "technical_level": "All Levels",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 0,
+      "created_at": "2026-03-20 12:37:15",
+      "updated_at": "2026-03-20 12:37:15",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "package_category_id": 3,
+      "title": "Rain Forest Hike",
+      "slug": "rain-forest-hike",
+      "description": null,
+      "image": "/storage/packages/9n2R8bochmY06fty5t0DBu76H9SYQs3j2PemGV18.jpg",
+      "location": "Tanzania",
+      "price": 850,
+      "price_unit": "per person",
+      "duration": "1 day",
+      "type": "Cultural Tour",
+      "rating": 5,
+      "reviews_count": 12,
+      "pricing_tiers": [
+        {
+          "label": "From 3 to 5 people is",
+          "price": "400",
+          "min_pax": "1",
+          "max_pax": null
+        },
+        {
+          "label": "From 5 t0 8 people is",
+          "price": "300",
+          "min_pax": "1",
+          "max_pax": null
+        }
+      ],
+      "technical_level": "Alll Levels",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 0,
+      "created_at": "2026-03-21 21:35:14",
+      "updated_at": "2026-03-21 21:35:14",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "package_category_id": 3,
+      "title": "Lake Daluti Forest Hike and Canoeing",
+      "slug": "lake-daluti-forest-hike-and-canoeing",
+      "description": null,
+      "image": "/storage/packages/zR58cTGi3ZX40wgyoj2g4oDBngwpYeFqSDMxUWwb.jpg",
+      "location": "Tanzania",
+      "price": 850,
+      "price_unit": "/ 2 People Sharing",
+      "duration": "1 day",
+      "type": "Cultural Tour",
+      "rating": 5,
+      "reviews_count": 54,
+      "pricing_tiers": [
+        {
+          "label": "From 3 to 5 people is",
+          "price": "400",
+          "min_pax": "1",
+          "max_pax": null
+        },
+        {
+          "label": "From 5 to 8 people is",
+          "price": "300",
+          "min_pax": "1",
+          "max_pax": null
+        }
+      ],
+      "technical_level": "All Levels",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 0,
+      "created_at": "2026-03-21 21:40:57",
+      "updated_at": "2026-03-21 21:40:57",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "package_category_id": 3,
+      "title": "Coffee Tourism and Banana Farms Experience",
+      "slug": "coffee-tourism-and-banana-farms-experience",
+      "description": "Immerse yourself in the local coffee culture and explore the lush banana farms of Tanzania. Learn how coffee is grown, harvested, and processed.",
+      "image": "/storage/packages/n1dU3Og2Whzk1AIFCsTPraQCE62j4mKOKiirmnpk.jpg",
+      "location": "Tanzania",
+      "price": 300,
+      "price_unit": "/ person",
+      "duration": "7 Days",
+      "type": "Day trip",
+      "rating": 5,
+      "reviews_count": 36,
+      "pricing_tiers": [
+        {
+          "label": "2 people sharing",
+          "price": "850"
+        },
+        {
+          "label": "From 3 to 5 people",
+          "price": "400"
+        },
+        {
+          "label": "From 5 to 8 people",
+          "price": "300"
+        }
+      ],
+      "technical_level": "SUITABLE FOR ALL",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 0,
+      "created_at": "2026-03-21 21:44:31",
+      "updated_at": "2026-03-21 21:46:43",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "package_category_id": 2,
+      "title": "Materuni Waterfalls Hike",
+      "slug": "materuni-waterfalls-hike",
+      "description": "A refreshing hike to the majestic Materuni Waterfalls followed by a traditional coffee experience. Perfect for nature lovers and families.",
+      "image": "/storage/packages/JRS53niIZXBy40lwT39jWuOGTKO5PwLeihhXPxJ2.jpg",
+      "location": "Tanzania",
+      "price": 300,
+      "price_unit": "/ person",
+      "duration": "7 Days",
+      "type": "Day trip",
+      "rating": 5,
+      "reviews_count": 36,
+      "pricing_tiers": [
+        {
+          "label": "2 people sharing",
+          "price": "850"
+        },
+        {
+          "label": "From 3 to 5 people",
+          "price": "400"
+        },
+        {
+          "label": "From 5 to 8 people",
+          "price": "300"
+        }
+      ],
+      "technical_level": "SUITABLE FOR ALL",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 0,
+      "created_at": "2026-03-21 21:44:32",
+      "updated_at": "2026-03-24 19:01:27",
+      "long_description": "Hike Distance: The total distance of the hike is 8km out and back (return trip) including the walk\n\nup to the coffee farm.\n\nHike Duration: The hike to and from the waterfall should take about 1.5 -2 hours but including\n\nthe coffee farm tour, you can expect the entire activity to last for 3-4 hours.\n\nHike Difficulty: This trail is quite manageable. Even in the rain, it was okay when we walked\n\nslowly. It’s a muddy road, which converts into a single-track trail towards the end of the hike. As\n\nlong as you are comfortable with uneven surfaces and some slight incline, this will be a walk in\n\nthe park.\n\nHike Incline: 321 meters (return trip) including the coffee farms\n\nMateruni Falls Tour – This tour includes a visit to Chemka Hot Springs in the afternoon after\n\nenjoying the Materuni Waterfall in the morning. It’s a great combo and the best way to get the\n\nmost out of your day-trip tour is with this option from Kili to savannah safari club. It’s always\n\nfairly prices considering there are two activities combined into one day-trip waterfall with a\n\nbunch of green plants in front of it;\n\nMateruni Falls Tour\n\nRelax at Hot Springs\n\nEnjoy Materuni Waterfall\n\nGreat Value Daytrip\n\nThe local coffee growers take you through the entire process (you get to help too) of turning a\n\ncoffee bean into a mug of coffee… The Tanzanian way. It was actually a very insightful process\n\nwith lots of singing and talented work from the growers.\n\nEach step was an intricate part of the process from bean to mug and it finished with a freshly\n\nbrewed Materuni coffee. Here’s a visual look at some of the different steps involved in the\n\nprocess.\n\nAfter enjoying a freshly brewed mug of coffee, we were treated to a locally produced lunch\n\nspread. On the menu were banana and yam soup, vegetables, rice, and chicken. A delicious and\n\ndifferent fruits.",
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "package_category_id": 3,
+      "title": "Swim at Maji Moto(Chemka Hot Spring) Moshi",
+      "slug": "swim-at-maji-motochemka-hot-spring-moshi",
+      "description": "Enjoy a day of relaxation at the Chemka Hot Springs, a hidden oasis with crystal-clear turquoise waters in the heart of the savanna.",
+      "image": "/storage/packages/0Dr9JQX5TZ9jBuxYYOhEZBj11WIbK6MbqgZGDik9.jpg",
+      "location": "Tanzania",
+      "price": 300,
+      "price_unit": "/ person",
+      "duration": "7 Days",
+      "type": "Day trip",
+      "rating": 5,
+      "reviews_count": 36,
+      "pricing_tiers": [
+        {
+          "label": "2 people sharing",
+          "price": "850"
+        },
+        {
+          "label": "From 3 to 5 people",
+          "price": "400"
+        },
+        {
+          "label": "From 5 to 8 people",
+          "price": "300"
+        }
+      ],
+      "technical_level": "SUITABLE FOR ALL",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 0,
+      "created_at": "2026-03-21 21:44:32",
+      "updated_at": "2026-03-21 21:46:14",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "package_category_id": 2,
+      "title": "Mount Kilimanjaro Full Day Hike",
+      "slug": "mount-kilimanjaro-full-day-hike",
+      "description": "Experience a taste of Africa's highest peak with a full day hike on Mount Kilimanjaro. This tour offers stunning views and a chance to explore the lower slopes of the iconic mountain.",
+      "image": "/storage/packages/iqIKSDnzojHtjBRSg1YjsA2iudYfASQ4civMG7ZV.jpg",
+      "location": "Tanzania",
+      "price": 300,
+      "price_unit": "/ person",
+      "duration": "7 Days",
+      "type": "Day trip",
+      "rating": 5,
+      "reviews_count": 36,
+      "pricing_tiers": [
+        {
+          "label": "2 people sharing",
+          "price": "850"
+        },
+        {
+          "label": "From 3 to 5 people",
+          "price": "400"
+        },
+        {
+          "label": "From 5 to 8 people",
+          "price": "300"
+        }
+      ],
+      "technical_level": "SUITABLE FOR ALL",
+      "is_all_inclusive": 1,
+      "is_active": 1,
+      "sort_order": 0,
+      "created_at": "2026-03-21 21:47:43",
+      "updated_at": "2026-03-21 21:48:57",
+      "long_description": null,
+      "highlights": null,
+      "included_items": null,
+      "excluded_items": null,
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": [
+        {
+          "id": 0,
+          "label": "Information about the participants",
+          "content": "<ul><li>Difficulty: high-altitude trek</li><li>6 to 9 hours of walking per day</li><li>Excellent physical condition required and experience in challenging high-altitude treks necessary.</li><li>Some tricky sections (off-trail, descent on scree slopes...)</li><li>Limit the weight of personal belongings to 15 kg per person for the trek</li></ul>"
+        },
+        {
+          "id": 1,
+          "label": "Price details",
+          "content": "<ul><li>Prices decrease depending on the number of people registered.</li><li>The price for 1 person does not include the single room supplement.</li><li>Single room supplement: €278 / night / person</li></ul>"
+        },
+        {
+          "id": 2,
+          "label": "Equipment needed",
+          "content": "<ul><li>Contact us for a full packing list.</li><li>Mountaineering equipment provided.</li></ul>"
+        },
+        {
+          "id": 3,
+          "label": "Meals to bring",
+          "content": "<ul><li>Full board provided during the trek.</li><li>Please inform us of any dietary requirements at the time of booking.</li></ul>"
+        },
+        {
+          "id": 4,
+          "label": "Booking conditions",
+          "content": "<ul><li>Matthieu will be with you throughout your stay, starting with airport pickup.</li><li>Local guides assist during specialized activities.</li><li>UIAGM certified guides for mountain ascent.</li></ul>"
+        },
+        {
+          "id": 5,
+          "label": "Payment terms",
+          "content": "A deposit of 30% of the total cost of your stay will be required upon registration to confirm your booking. The deposit will be paid via a Kazaden payment link.<br />The remaining balance must be paid no later than 31 days before the start date of your stay."
+        },
+        {
+          "id": 6,
+          "label": "Documents to be provided",
+          "content": "<ul><li>Passport must be valid for 6 months after return.</li><li>Visa requirements depend on nationality.</li><li>Vaccinations not mandatory but recommended.</li></ul>"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "package_category_id": 1,
+      "title": "Safari in Southern Tanzania: Selous & Zanzibar",
+      "slug": "sarari-in-sothern-tanzania-selous-and-zanzibar",
+      "description": "Discover the wild parks and beaches of Southern Tanzania Safari in Southern Tanzania: Selous\n\n& Zanzibar",
+      "image": "/storage/packages/OdGDLEtaAVyBw2MCqqwZ7aRnFpNeJTQoF23veWdq.jpg",
+      "location": "Southern tanzania",
+      "price": 2051,
+      "price_unit": "per person",
+      "duration": "13 days",
+      "type": "Wildlife Safari",
+      "rating": 5,
+      "reviews_count": 0,
+      "pricing_tiers": [
+        {
+          "label": "1 to 2 people",
+          "price": "3002",
+          "min_pax": "1",
+          "max_pax": null
+        },
+        {
+          "label": "Group of 3 people",
+          "price": "2365",
+          "min_pax": "1",
+          "max_pax": null
+        },
+        {
+          "label": "Group of 4 to 5 people",
+          "price": "2051",
+          "min_pax": "1",
+          "max_pax": null
+        }
+      ],
+      "technical_level": "Suitable for everyone",
+      "is_all_inclusive": 0,
+      "is_active": 1,
+      "sort_order": 0,
+      "created_at": "2026-03-24 19:35:02",
+      "updated_at": "2026-03-24 19:35:02",
+      "long_description": "Less popular than those in the North, the parks of Southern Tanzania nevertheless have nothing\n\nto envy them. these parks, like that of Selous and Mikumi allow you to venture into a safari\n\napart, off the beaten track where you will discover heavenly places. we will marvel at the\n\nrainbow that Tanzanian nature offers between the yellow of the savannah, the green of the palm\n\ntrees and the blue of the Indian Ocean. in this enchanting environment, we will go in search of\n\nthe most beautiful wild animals that make Tanzania famous, including the famous Big Five. We\n\nend our stay with a stopover in Zanzibar, the famous island with heavenly beaches. go on an\n\nadventure with this safari that will mark your life forever!\n\n\n\nGody Multi-activity mountain agency-portrait you communicate with Gody team throughout\n\nyour reservation.\n\nBased in Arusha, our agency is the leading French-speaking receptionist in Tanzania. our great\n\nexperience allows us to offer you the most beautiful safaris or trekking stays by perfectly\n\nmeeting your expectations and your desires\n\n\n\nInclude Supervision by a French-speaking guide, a local guide, Local ranger for the 2 hikes in\n\nthe Selous, Accommodation in hotels (3 nights), campsites (7) and bungalows (2), full board\n\nfrom dinner on day 1 to breakfast on day 11, Transportation to/from Dar es Salaam International\n\nAirport, Transportation by 4x4 vehicle during safari, Camping equipment (2-person dome\n\ntents+foam mattress+meals), Day 10 boat tour, boat Dar es Salaam/Zanzibar, minibus on the\n\nisland, Mineral water in the vehicle.",
+      "highlights": [
+        "Explore Selous Parks, Mikumi & Saadani Game Reserve\\nWild safari on a little traveled path & far from mass tourism\\nEnd of the stay in the idyllic setting of the Spice Island\\nSwimming in the hot springs of the Parc du Selous\\nLocal team always at your service\\nChance to approach the coast of Zanzibar & its dream beaches"
+      ],
+      "included_items": [
+        "Supervision by a French-speaking guide\\nLocal guide\\nLocal ranger for Selous hikes\\nAccommodation in hotels, campsites and bungalows\\nFull board from dinner on Day 1 to breakfast on Day 11\\nTransportation to and from Dar es Salaam International Airport\\nTransportation by 4x4 safari vehicle\\nCamping equipment (2-person tents, foam mattress, meals)\\nDay 10 boat tour\\nBoat transfer Dar es Salaam to Zanzibar\\nMinibus transport on Zanzibar Island\\nMineral water in the vehicle"
+      ],
+      "excluded_items": [
+        "All lunches and dinners in Zanzibar\\nInternational flights\\nVisa fees (€40)\\nReserve entry fees (€395)\\nIndividual tent supplement (€210)\\nExit tax for international flight (€40)\\nExit tax for domestic flight (€10)\\nAll activities in Zanzibar not included in the program\\nTips for guides, drivers, cooks and hotel staff\\nInternational travel insuranc"
+      ],
+      "program": null,
+      "season": null,
+      "meeting_point": null,
+      "practical_info": null
+    }
+  ]
+}
