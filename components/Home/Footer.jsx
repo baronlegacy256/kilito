@@ -139,14 +139,58 @@ function Footer() {
             </span>
           </div>
 
-          <div className="site-opinion-badge-zone">
-            <div id="7fa284bf-9f0d-4c51-a13f-5bef0cc527ed"></div>
-            <Script
-              defer
-              charSet="utf-8"
-              src="https://widgets.rr.skeepers.io/generated/6a849786-b424-9634-c55e-5a59001faa54/7fa284bf-9f0d-4c51-a13f-5bef0cc527ed.js"
-              strategy="lazyOnload"
-            />
+          <div
+            className="site-opinion-badge-zone"
+            style={{ marginTop: "20px" }}
+          >
+            <a
+              href="https://www.tripadvisor.com/Attraction_Review-g297913-d23881978-Reviews-Kili_to_Savanna_Safari_Club-Arusha_Arusha_Region.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                backgroundColor: "#fff",
+                padding: "10px 15px",
+                borderRadius: "8px",
+                border: "1px solid #e0e0e0",
+                textDecoration: "none",
+              }}
+            >
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "10px" }}
+              >
+                <img
+                  src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary_registered.svg"
+                  alt="TripAdvisor"
+                  style={{ height: "30px" }}
+                />
+              </div>
+              <div
+                style={{
+                  marginTop: "8px",
+                  display: "flex",
+                  gap: "2px",
+                  color: "#00aa6c",
+                  fontSize: "18px",
+                }}
+              >
+                <i className="fa fa-circle"></i>
+                <i className="fa fa-circle"></i>
+                <i className="fa fa-circle"></i>
+                <i className="fa fa-circle"></i>
+                <i className="fa fa-circle"></i>
+              </div>
+              <div
+                style={{
+                  fontSize: "12px",
+                  color: "#000",
+                  marginTop: "4px",
+                  fontWeight: "bold",
+                }}
+              >
+                Excellent on TripAdvisor
+              </div>
+            </a>
           </div>
         </div>
 
