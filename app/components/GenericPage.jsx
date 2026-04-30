@@ -31,8 +31,7 @@ export default function GenericPage({ title, children }) {
           id="top-inline-zone"
           className="top-inline-zone background-zone-image"
           style={{
-            backgroundImage:
-              'url("https://media.kazaden.com/imgth/1518x450/img/appendix_page/1/team_2019.jpg")',
+            backgroundImage: 'url("/assets/images/generic.jpg")',
           }}
         >
           <div className="img-filter"></div>

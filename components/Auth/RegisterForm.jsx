@@ -341,7 +341,7 @@ export default function RegisterForm() {
                     >
                       I have read and agree to the{" "}
                       <Link
-                        href="/annexes/conditions-generales-utilisation"
+                        href="/terms-of-use"
                         className="convention-show-link"
                       >
                         General Terms and Conditions of Use.

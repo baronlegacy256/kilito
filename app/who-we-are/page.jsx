@@ -1,4 +1,5 @@
 import GenericPage from "../components/GenericPage";
+import Link from "next/link";
 
 export default function WhoWeAre() {
   return (
@@ -10,28 +11,28 @@ export default function WhoWeAre() {
           <div id="main-zone-menu-content">
             <ul id="main-zone-menu-list">
               <li className="active">
-                <a href="/annexes/qui-sommes-nous">Who are we?</a>
+                <Link href="/who-we-are">Who are we?</Link>
               </li>
               <li className="">
-                <a href="/annexes/avis">Customer reviews</a>
+                <Link href="/customer-reviews">Customer reviews</Link>
               </li>
               <li className="">
-                <a href="/annexes/faq">FAQ</a>
+                <Link href="/faq">FAQ</Link>
               </li>
               <li className="">
-                <a href="/presse">Press</a>
+                <Link href="/press">Press</Link>
               </li>
               <li className="">
-                <a href="/annexes/jobs">Jobs</a>
+                <Link href="/jobs">Jobs</Link>
               </li>
               <li className="">
-                <a href="/annexes/contact">Contact</a>
+                <Link href="/contact">Contact</Link>
               </li>
               <li className="">
-                <a href="/annexes/garanties">Guarantees</a>
+                <Link href="/guarantees">Guarantees</Link>
               </li>
               <li className="">
-                <a href="/annexes/newsletters">Newsletters</a>
+                <Link href="/newsletters">Newsletters</Link>
               </li>
             </ul>
           </div>

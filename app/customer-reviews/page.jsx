@@ -1,5 +1,6 @@
 "use client";
 import GenericPage from "../components/GenericPage";
+import Link from "next/link";
 
 const renderMoreOpinions = () => {
   console.log("Load more opinions clicked");
@@ -15,29 +16,29 @@ export default function CustomerReviews() {
         <div className="col-sm-2 hidden-xs" id="main-zone-menu">
           <div id="main-zone-menu-content">
             <ul id="main-zone-menu-list">
+              <li className="">
+                <Link href="/who-we-are">Who are we?</Link>
+              </li>
               <li className="active">
-                <a href="/annexes/qui-sommes-nous">Who are we?</a>
+                <Link href="/customer-reviews">Customer reviews</Link>
               </li>
               <li className="">
-                <a href="/annexes/avis">Customer reviews</a>
+                <Link href="/faq">FAQ</Link>
               </li>
               <li className="">
-                <a href="/annexes/faq">FAQ</a>
+                <Link href="/press">Press</Link>
               </li>
               <li className="">
-                <a href="/presse">Press</a>
+                <Link href="/jobs">Jobs</Link>
               </li>
               <li className="">
-                <a href="/annexes/jobs">Jobs</a>
+                <Link href="/contact">Contact</Link>
               </li>
               <li className="">
-                <a href="/annexes/contact">Contact</a>
+                <Link href="/guarantees">Guarantees</Link>
               </li>
               <li className="">
-                <a href="/annexes/garanties">Guarantees</a>
-              </li>
-              <li className="">
-                <a href="/annexes/newsletters">Newsletters</a>
+                <Link href="/newsletters">Newsletters</Link>
               </li>
             </ul>
           </div>
@@ -73,7 +74,7 @@ export default function CustomerReviews() {
                   href="https://www.avis-verifies.com/avis-clients/kazaden.com"
                   target="_blank"
                 >
-                  2,700 Traveler Reviews
+                  Traveler Reviews
                 </a>
               </h2>
               <a href="javascript:void(0)" id="views-modal-toggle">
@@ -124,15 +125,17 @@ export default function CustomerReviews() {
             </div>
 
             <div id="opinions-list" className="opinions-zone">
-              {/* Review: Séverine - March 2026 */}
+              {/* Review: Anonymous - May 2023 */}
               <div className="opinion-container">
                 <div className="row">
                   <div className="opinion col-xs-12 col-sm-10">
                     <div className="opinion-info">
                       <div className="opinion-name-date-and-rate">
-                        <div className="opinion-client-name">Séverine</div>
+                        <div className="opinion-client-name">
+                          TripAdvisor Traveler
+                        </div>
                         <div className="opinion-date-and-rate">
-                          <div className="opinion-date">March 2026</div>
+                          <div className="opinion-date">May 2023</div>
                           <div className="opinion-rate">
                             <i
                               className="rating-icon fa fa-star active"
@@ -158,23 +161,28 @@ export default function CustomerReviews() {
                         </div>
                       </div>
                     </div>
+                    <div className="opinion-title">
+                      <strong>Amazing Safari!</strong>
+                    </div>
                     <div className="opinion-review">
-                      The site is clear, well-organized, and provides a wealth
-                      of information. It's easy to find what you're looking for.
+                      I did the safari in May with Godi to Ngorongoro — it was
+                      an amazing experience!! Godi is really nice, professional,
+                      patient, and really friendly. The park was amazing, we saw
+                      lots of animals there. I recommend at 100%!!!
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Review: Gulay - March 2026 */}
+              {/* Review: Audrey O'Neal - Jun 2022 */}
               <div className="opinion-container">
                 <div className="row">
                   <div className="opinion col-xs-12 col-sm-10">
                     <div className="opinion-info">
                       <div className="opinion-name-date-and-rate">
-                        <div className="opinion-client-name">Gulay</div>
+                        <div className="opinion-client-name">Audrey O'Neal</div>
                         <div className="opinion-date-and-rate">
-                          <div className="opinion-date">March 2026</div>
+                          <div className="opinion-date">Jun 2022</div>
                           <div className="opinion-rate">
                             <i
                               className="rating-icon fa fa-star active"
@@ -200,24 +208,32 @@ export default function CustomerReviews() {
                         </div>
                       </div>
                     </div>
+                    <div className="opinion-title">
+                      <strong>Awesome trip!</strong>
+                    </div>
                     <div className="opinion-review">
-                      The team is very responsive, available, and attentive to
-                      customer requests. Excellent value for money on paper.
-                      We're looking forward to the trip.
+                      I was a little hesitant about visiting Africa with just my
+                      daughter and myself, but our guide Gordy spent the next
+                      three weeks with us answering every question and catering
+                      to our every need on the safaris. I would trust this young
+                      man and his business with my life! Don't go for second
+                      best — get the best person to help you with your trip to
+                      Africa. The most honest and knowledgeable person you'll
+                      ever meet.
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Review: Sylvie - March 2026 */}
+              {/* Review: Christian W - Sep 2022 */}
               <div className="opinion-container">
                 <div className="row">
                   <div className="opinion col-xs-12 col-sm-10">
                     <div className="opinion-info">
                       <div className="opinion-name-date-and-rate">
-                        <div className="opinion-client-name">Sylvie</div>
+                        <div className="opinion-client-name">Christian W</div>
                         <div className="opinion-date-and-rate">
-                          <div className="opinion-date">March 2026</div>
+                          <div className="opinion-date">Sep 2022</div>
                           <div className="opinion-rate">
                             <i
                               className="rating-icon fa fa-star active"
@@ -243,23 +259,29 @@ export default function CustomerReviews() {
                         </div>
                       </div>
                     </div>
+                    <div className="opinion-title">
+                      <strong>Best safari experience in Africa</strong>
+                    </div>
                     <div className="opinion-review">
-                      The booking went very well...with great professionalism
-                      and kindness...hoping for the best for the future...
+                      Absolutely perfect safari experience with the best guide
+                      ever. Highly recommendable! The staff was attentive and
+                      had great knowledge of the sights we were visiting, as
+                      well as in-depth knowledge about the cultural experiences
+                      we had.
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Review: Séverine - March 2026 */}
+              {/* Review: Mister GK - Dec 2021 */}
               <div className="opinion-container">
                 <div className="row">
                   <div className="opinion col-xs-12 col-sm-10">
                     <div className="opinion-info">
                       <div className="opinion-name-date-and-rate">
-                        <div className="opinion-client-name">Séverine</div>
+                        <div className="opinion-client-name">Mister GK</div>
                         <div className="opinion-date-and-rate">
-                          <div className="opinion-date">March 2026</div>
+                          <div className="opinion-date">Dec 2021</div>
                           <div className="opinion-rate">
                             <i
                               className="rating-icon fa fa-star active"
@@ -285,24 +307,33 @@ export default function CustomerReviews() {
                         </div>
                       </div>
                     </div>
+                    <div className="opinion-title">
+                      <strong>Great safari and trekking trip</strong>
+                    </div>
                     <div className="opinion-review">
-                      Booking was easy. The website is user-friendly and the
-                      offers are well-detailed. Quick and efficient contact for
-                      this first experience on Kazaden.com.
+                      We had the most enjoyable and adventurous ending to our
+                      Christmas Tanzania couples trip with our friendly guide.
+                      Day one we went to Ngorongoro Crater for an exciting
+                      safari watching Africa's wildlife, and day two to the foot
+                      of Kilimanjaro with beautiful local fauna and tall, cold
+                      waterfalls. Not only was everything perfect, but we felt
+                      in every instance that our guide truly cared about us,
+                      kept us safe, and did his best to make this trip
+                      memorable. We will definitely be back!
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Review: Speedwell - March 2026 */}
+              {/* Review: Holylight W - Jun 2021 */}
               <div className="opinion-container">
                 <div className="row">
                   <div className="opinion col-xs-12 col-sm-10">
                     <div className="opinion-info">
                       <div className="opinion-name-date-and-rate">
-                        <div className="opinion-client-name">Speedwell</div>
+                        <div className="opinion-client-name">Holylight W</div>
                         <div className="opinion-date-and-rate">
-                          <div className="opinion-date">March 2026</div>
+                          <div className="opinion-date">Jun 2021</div>
                           <div className="opinion-rate">
                             <i
                               className="rating-icon fa fa-star active"
@@ -328,232 +359,13 @@ export default function CustomerReviews() {
                         </div>
                       </div>
                     </div>
-                    <div className="opinion-review">
-                      The initial contact was quick and efficient. There were no
-                      surprises in the price of the planned stay.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Review: Annie - March 2026 */}
-              <div className="opinion-container">
-                <div className="row">
-                  <div className="opinion col-xs-12 col-sm-10">
-                    <div className="opinion-info">
-                      <div className="opinion-name-date-and-rate">
-                        <div className="opinion-client-name">Annie</div>
-                        <div className="opinion-date-and-rate">
-                          <div className="opinion-date">March 2026</div>
-                          <div className="opinion-rate">
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                          </div>
-                        </div>
-                      </div>
+                    <div className="opinion-title">
+                      <strong>Amazing trip</strong>
                     </div>
                     <div className="opinion-review">
-                      Laure was a wonderful, friendly, attentive, and efficient
-                      listener. She's a lovely person who inspired me to choose
-                      Kazaden for this family trip.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Review: Pauline - Feb. 2026 */}
-              <div className="opinion-container">
-                <div className="row">
-                  <div className="opinion col-xs-12 col-sm-10">
-                    <div className="opinion-info">
-                      <div className="opinion-name-date-and-rate">
-                        <div className="opinion-client-name">Pauline</div>
-                        <div className="opinion-date-and-rate">
-                          <div className="opinion-date">Feb. 2026</div>
-                          <div className="opinion-rate">
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="opinion-review">
-                      The welcome was very professional, our questions were
-                      answered, our wishes were taken into account, and we were
-                      assigned a dedicated contact person for our file, making
-                      it easy to follow up. Any questions or changes were
-                      resolved immediately. The services included in our chosen
-                      trip perfectly suited our needs. The advisor was warm and
-                      attentive.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Review: Vivien - Feb. 2026 */}
-              <div className="opinion-container">
-                <div className="row">
-                  <div className="opinion col-xs-12 col-sm-10">
-                    <div className="opinion-info">
-                      <div className="opinion-name-date-and-rate">
-                        <div className="opinion-client-name">Vivien</div>
-                        <div className="opinion-date-and-rate">
-                          <div className="opinion-date">Feb. 2026</div>
-                          <div className="opinion-rate">
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="opinion-review">
-                      The website is very well structured. Excellent support:
-                      the staff is very responsive and available. I highly
-                      recommend it!
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Review: Thierry - Feb. 2026 */}
-              <div className="opinion-container">
-                <div className="row">
-                  <div className="opinion col-xs-12 col-sm-10">
-                    <div className="opinion-info">
-                      <div className="opinion-name-date-and-rate">
-                        <div className="opinion-client-name">Thierry</div>
-                        <div className="opinion-date-and-rate">
-                          <div className="opinion-date">Feb. 2026</div>
-                          <div className="opinion-rate">
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="opinion-review">
-                      Quick and efficient in connecting you with the service
-                      provider. Simplicity. Clarity. Easy communication via
-                      email.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Review: Laure - Feb. 2026 */}
-              <div className="opinion-container">
-                <div className="row">
-                  <div className="opinion col-xs-12 col-sm-10">
-                    <div className="opinion-info">
-                      <div className="opinion-name-date-and-rate">
-                        <div className="opinion-client-name">Laure</div>
-                        <div className="opinion-date-and-rate">
-                          <div className="opinion-date">Feb. 2026</div>
-                          <div className="opinion-rate">
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                            <i
-                              className="rating-icon fa fa-star active"
-                              aria-hidden="true"
-                            ></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="opinion-review">
-                      Personalized contact and special attention to our needs.
-                      The discount we received because we mentioned it was our
-                      wedding anniversary made things much easier. The photos
-                      and the option to call each other with personalized
-                      messages were helpful. It was quite simple. Good
-                      follow-up. A variety of options with clear pricing
-                      outlining what is included and what isn't.
+                      I will always recommend Kili to Savanna to family and
+                      friends. One of the most amazing experiences I've ever
+                      had. Thank you!
                     </div>
                   </div>
                 </div>
