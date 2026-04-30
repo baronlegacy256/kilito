@@ -128,18 +128,7 @@ function TopZone({ packageData }) {
                   className=""
                 >
                   <Link href="/" itemProp="item">
-                    <img
-                      src="/assets/picto_logo_white-cb2aff7b5b54faf3c9eeb095ee529509.svg"
-                      alt="Kili to Savanna logo"
-                      title="Adventure weekends and stays, organized by local experts"
-                      width="38"
-                      height="32"
-                    />
-
-                    <span itemProp="name" className="home-label">
-                      {" "}
-                      Welcome{" "}
-                    </span>
+                    <span itemProp="name">Kili To Savanna Adventures</span>
                   </Link>
 
                   <meta itemProp="position" content="1" />

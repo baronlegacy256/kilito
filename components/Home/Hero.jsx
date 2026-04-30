@@ -61,15 +61,8 @@ function Hero() {
                 >
                   <span className="glyphicon glyphicon-home"></span>
                   <span>
-                    <img
-                      src="/assets/picto_logo_white-cb2aff7b5b54faf3c9eeb095ee529509.svg"
-                      alt="Kili to Savanna logo"
-                      title="Africa Safari: Tailor-made Trips and Stays - Kili to Savanna"
-                      width="38"
-                      height="32"
-                    />
                     <Link href="/" itemProp="item">
-                      <span itemProp="name">Welcome</span>
+                      <span itemProp="name">kili to savanna adventures</span>
                     </Link>
                     <i className="material-icons">arrow_forward_ios</i>
                   </span>
