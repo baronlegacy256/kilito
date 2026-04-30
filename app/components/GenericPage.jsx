@@ -51,16 +51,9 @@ export default function GenericPage({ title, children }) {
                   >
                     <span className="glyphicon glyphicon-home"></span>
                     <span>
-                      <img
-                        src="/assets/picto_logo_white-cb2aff7b5b54faf3c9eeb095ee529509.svg"
-                        alt="Kazaden logo"
-                        title="Adventure weekends and trips, organized by local experts"
-                        width="38"
-                        height="32"
-                      />
-                      <a href="/" itemProp="item">
-                        <span itemProp="name">Welcome</span>
-                      </a>
+                      <Link href="/" itemProp="item">
+                        <span itemProp="name">Kili to Savanna</span>
+                      </Link>
                       <i className="material-icons">arrow_forward_ios</i>
                     </span>
                     <meta itemProp="position" content="1" />
