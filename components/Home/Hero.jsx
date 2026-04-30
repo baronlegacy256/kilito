@@ -75,7 +75,7 @@ function Hero() {
                   itemType="http://schema.org/ListItem"
                 >
                   <strong>
-                    <span itemProp="name">Home Page</span>
+                    <span itemProp="name">Welcome</span>
                   </strong>
                   <meta itemProp="position" content="2" />
                 </li>

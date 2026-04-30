@@ -3,7 +3,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { DatePicker, Select } from "antd";
+import { DatePicker, Select, Drawer } from "antd";
 import BookingModal from "../Packages/BookingModal";
 
 // Helper to format currency
@@ -238,7 +238,6 @@ function PackageCard({ pkg }) {
   );
 }
 
-// Placeholder card for lazy-loaded items
 // Placeholder card for skeleton loading
 function PlaceholderCard() {
   return (
@@ -399,50 +398,404 @@ function PackagesContent() {
     setIsModalOpen(true);
   };
 
+  const renderFilterForm = () => (
+    <form
+      method="post"
+      action="#"
+      id="search-form"
+      onSubmit={(e) => e.preventDefault()}
+    >
+      {/* Destinations dropdown */}
+      <div id="top-filtering-column-zone">
+        <div className="column-filter-elem">
+          <div className="filter-title">Destinations</div>
+          <div className="region-filters filter-values">
+            <div className="dropdown filter">
+              <button
+                type="button"
+                onClick={() => setDestDropdownOpen(!destDropdownOpen)}
+                className="btn custom-button separated white stretch-width dropdown-toggle last"
+                aria-expanded={destDropdownOpen}
+              >
+                <div className="inner">
+                  <span className="label-text">
+                    {filters.category === "All"
+                      ? "All Destinations"
+                      : filters.category}
+                  </span>
+                  <i className="material-icons">expand_more</i>
+                </div>
+              </button>
+              <ul
+                className={`dropdown-menu ${destDropdownOpen ? "show" : ""}`}
+                role="menu"
+                style={{ display: destDropdownOpen ? "block" : "none" }}
+              >
+                {[
+                  { value: "Tanzania", label: "Tanzania" },
+                  { value: "All", label: "All Destinations" },
+                ].map((dest) => (
+                  <li
+                    key={dest.value}
+                    onClick={() => {
+                      handleFilterChange("category", dest.value);
+                      setDestDropdownOpen(false);
+                    }}
+                  >
+                    <span
+                      style={{
+                        cursor: "pointer",
+                        display: "block",
+                        padding: "3px 20px",
+                      }}
+                    >
+                      {dest.label}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Package Type dropdown */}
+        <div className="column-filter-elem">
+          <div className="filter-title">Package Type</div>
+          <div className="region-filters filter-values">
+            <div className="dropdown filter">
+              <button
+                type="button"
+                onClick={() => setPkgTypeDropdownOpen(!pkgTypeDropdownOpen)}
+                className="btn custom-button separated white stretch-width dropdown-toggle last"
+                aria-expanded={pkgTypeDropdownOpen}
+              >
+                <div className="inner">
+                  <span className="label-text">
+                    {filters.packageType === "All"
+                      ? "All packages"
+                      : filters.packageType}
+                  </span>
+                  <i className="material-icons">expand_more</i>
+                </div>
+              </button>
+              <ul
+                className={`dropdown-menu ${pkgTypeDropdownOpen ? "show" : ""}`}
+                role="menu"
+                style={{
+                  display: pkgTypeDropdownOpen ? "block" : "none",
+                }}
+              >
+                {[
+                  { value: "Safari tour", label: "Safari tour" },
+                  {
+                    value: "Climbing and Trekking",
+                    label: "Climbing and Trekking",
+                  },
+                  { value: "Cultural tour", label: "Cultural tour" },
+                  { value: "All", label: "All packages" },
+                ].map((pkg) => (
+                  <li
+                    key={pkg.value}
+                    onClick={() => {
+                      handleFilterChange("packageType", pkg.value);
+                      setPkgTypeDropdownOpen(false);
+                    }}
+                  >
+                    <span
+                      style={{
+                        cursor: "pointer",
+                        display: "block",
+                        padding: "3px 20px",
+                      }}
+                    >
+                      {pkg.label}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Column filters */}
+      <div id="research-filters" className="research-filtering-zone">
+        {/* Physical level filter */}
+        <div className="column-filter-elem">
+          <button
+            type="button"
+            className="filter-title btn custom-button white stretch-width"
+            data-toggle="collapse"
+            data-target="#physicalConditionLevels-filter"
+          >
+            Physical level
+            <i className="material-icons uncollapsed-icon">expand_less</i>
+            <i className="material-icons collapsed-icon">expand_more</i>
+          </button>
+
+          <div
+            id="physicalConditionLevels-filter"
+            className="filter-values collapse in"
+          >
+            {[
+              {
+                id: "physicalConditionRequiredList[1]",
+                value: "SUITABLE",
+                label: "Suitable for all",
+              },
+              {
+                id: "physicalConditionRequiredList[2]",
+                value: "ALL LEVELS",
+                label: "All Levels",
+              },
+            ].map((item) => (
+              <div key={item.id} className="custom-form-field separated white">
+                <div className="custom-checkbox-zone">
+                  <input
+                    type="checkbox"
+                    name={`physicalConditionRequiredList[${item.value}]`}
+                    value={item.value}
+                    className="auto-submit"
+                    id={item.id}
+                    checked={filters.physicalLevel.includes(item.value)}
+                    onChange={(e) => {
+                      const next = e.target.checked
+                        ? [...filters.physicalLevel, item.value]
+                        : filters.physicalLevel.filter((x) => x !== item.value);
+                      handleFilterChange("physicalLevel", next);
+                    }}
+                  />
+                  <label htmlFor={item.id} className="filter-label">
+                    {item.label}
+                  </label>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Duration filter */}
+        <div className="column-filter-elem">
+          <button
+            type="button"
+            className="filter-title btn custom-button white stretch-width"
+            data-toggle="collapse"
+            data-target="#durations-filter"
+          >
+            Duration
+            <i className="material-icons uncollapsed-icon">expand_less</i>
+            <i className="material-icons collapsed-icon">expand_more</i>
+          </button>
+
+          <div id="durations-filter" className="filter-values collapse in">
+            {[
+              { id: "duration[TRIP]", value: "TRIP", label: "4 to 8 days" },
+              { id: "duration[LONG]", value: "LONG", label: "9 days or more" },
+            ].map((item) => (
+              <div key={item.id} className="custom-form-field separated white">
+                <div className="custom-checkbox-zone">
+                  <input
+                    type="checkbox"
+                    name={item.id}
+                    value={item.value}
+                    className="auto-submit"
+                    id={item.id}
+                    checked={filters.durations.includes(item.value)}
+                    onChange={(e) => {
+                      const next = e.target.checked
+                        ? [...filters.durations, item.value]
+                        : filters.durations.filter((x) => x !== item.value);
+                      handleFilterChange("durations", next);
+                    }}
+                  />
+                  <label htmlFor={item.id} className="filter-label">
+                    {item.label}
+                  </label>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Budget filter */}
+        <div className="column-filter-elem">
+          <button
+            type="button"
+            className="filter-title btn custom-button white stretch-width"
+            data-toggle="collapse"
+            data-target="#budget-filter"
+          >
+            Budget
+            <i className="material-icons uncollapsed-icon">expand_less</i>
+            <i className="material-icons collapsed-icon">expand_more</i>
+          </button>
+
+          <div id="budget-filter" className="filter-values collapse in">
+            <div className="custom-form-field separated white slider">
+              <div className="price-slider-info" style={{ marginBottom: "10px" }}>
+                <span className="price-slider-title">Your budget</span>
+                <span className="price-slider-amount" style={{ color: "#333", fontWeight: "bold", float: "right" }}>
+                  ${filters.minPrice || 0} - ${filters.maxPrice || 5000}
+                </span>
+              </div>
+
+              <div
+                className="price-slider-inputs"
+                style={{ 
+                  position: "relative", 
+                  height: "30px",
+                  marginTop: "10px",
+                  marginBottom: "20px"
+                }}
+              >
+                {/* Visual track */}
+                <div
+                  className="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
+                  style={{
+                    height: "6px",
+                    background: "#e9ecef",
+                    borderRadius: "3px",
+                    position: "absolute",
+                    width: "100%",
+                    top: "12px"
+                  }}
+                >
+                  <div
+                    className="ui-slider-range ui-widget-header ui-corner-all"
+                    style={{
+                      position: "absolute",
+                      height: "100%",
+                      background: "#333",
+                      left: `${((filters.minPrice || 0) / 5000) * 100}%`,
+                      width: `${(((filters.maxPrice || 5000) - (filters.minPrice || 0)) / 5000) * 100}%`,
+                    }}
+                  ></div>
+                </div>
+
+                {/* Range inputs */}
+                <input
+                  type="range"
+                  min="0"
+                  max="5000"
+                  step="50"
+                  value={filters.minPrice || 0}
+                  onChange={(e) => {
+                    const val = Math.min(
+                      Number(e.target.value),
+                      (filters.maxPrice || 5000) - 100
+                    );
+                    handleFilterChange("minPrice", val);
+                  }}
+                  className="dual-range-input min-input"
+                  style={{
+                    position: "absolute",
+                    width: "100%",
+                    top: "5px",
+                    height: "20px",
+                    margin: 0,
+                    appearance: "none",
+                    background: "none",
+                    zIndex: (filters.minPrice > 2500) ? 5 : 4
+                  }}
+                />
+                <input
+                  type="range"
+                  min="0"
+                  max="5000"
+                  step="50"
+                  value={filters.maxPrice || 5000}
+                  onChange={(e) => {
+                    const val = Math.max(
+                      Number(e.target.value),
+                      (filters.minPrice || 0) + 100
+                    );
+                    handleFilterChange("maxPrice", val);
+                  }}
+                  className="dual-range-input max-input"
+                  style={{
+                    position: "absolute",
+                    width: "100%",
+                    top: "5px",
+                    height: "20px",
+                    margin: 0,
+                    appearance: "none",
+                    background: "none",
+                    zIndex: 4
+                  }}
+                />
+              </div>
+              <div className="price-slider-limits" style={{ display: "flex", justifyContent: "space-between", fontSize: "12px", color: "#666" }}>
+                <span>$0</span>
+                <span>$5000+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Keywords filter */}
+        <div className="column-filter-elem">
+          <div className="filter-title">Keywords</div>
+          <div className="filter-values">
+            <div className="custom-form-field separated white filter">
+              <input
+                type="text"
+                name="keywords"
+                value={filters.keywords}
+                onChange={(e) => handleFilterChange("keywords", e.target.value)}
+                className="auto-submit"
+                placeholder="Search keywords..."
+              />
+              <span className="icon-container">
+                <i className="material-icons">search</i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  );
+
   return (
     <div id="activities-research-zone" className="listing-inline">
+      <Drawer
+        title="Filters"
+        placement="left"
+        onClose={() => setShowFilters(false)}
+        open={showFilters}
+        style={{ width: 320 }}
+        styles={{ body: { padding: "20px", background: "#fff" } }}
+      >
+        <div id="mobile-filters-container" className="show">
+          {renderFilterForm()}
+        </div>
+      </Drawer>
+
       <div className="row">
         {/* ── Sidebar filters ── */}
-        <div className="col-md-3 custom-col">
+        <div className="col-md-3 custom-col hidden-xs hidden-sm">
           <div id="filters-container">
-            {/* Mobile toggle button */}
-            <div className="visible-xs visible-sm button-container">
-              <button
-                id="minimize-filters-button"
-                type="button"
-                className="btn custom-button solid-pastel-blue squared uppercase stretch-width"
-                onClick={() => setShowFilters(!showFilters)}
-                aria-expanded={showFilters}
-                aria-controls="filters-container"
-              >
-                {showFilters ? "Hide filters" : "Show filters"}
-                <i className="material-icons">
-                  {showFilters ? "expand_less" : "expand_more"}
-                </i>
-              </button>
-            </div>
-
             {/* Reset filters */}
             <div
               className={
                 filters.category !== "All" ||
+                filters.packageType !== "All" ||
                 filters.keywords ||
                 filters.physicalLevel.length > 0 ||
                 filters.minPrice ||
                 filters.maxPrice ||
-                filters.departureDate ||
-                filters.durations.length > 0 ||
-                filters.stayTypes.length > 0
-                  ? ""
-                  : "hidden"
+                filters.durations.length > 0
+                  ? "button-container"
+                  : "button-container hidden"
               }
+              style={{ marginBottom: "20px" }}
             >
               <div
                 className="reset-all-button btn white no-border custom-button stretch-width"
-                style={{ cursor: "pointer", marginBottom: "15px" }}
+                style={{ cursor: "pointer" }}
                 onClick={() =>
                   setFilters({
                     category: "All",
+                    packageType: "All",
                     keywords: "",
                     physicalLevel: [],
                     minPrice: "",
@@ -458,451 +811,7 @@ function PackagesContent() {
               </div>
             </div>
 
-            {/* Mobile sort (visible on xs/sm only) */}
-            <div
-              id="activity-sorting-filters"
-              className="list-filter visible-xs visible-sm"
-            >
-              <form
-                onSubmit={(e) => e.preventDefault()}
-                id="activity-sort-form"
-              >
-                <div className="custom-form-field with-icon separated white">
-                  <select
-                    name="sortType"
-                    className="auto-submit"
-                    id="sortType"
-                    value={sortType}
-                    onChange={(e) => setSortType(e.target.value)}
-                  >
-                    <option value="RELEVANCE">Relevance</option>
-                    <option value="DURATION_ASC">Increasing duration</option>
-                    <option value="DURATION_DESC">Decreasing duration</option>
-                    <option value="NEXT_DEPARTURE">Next departure</option>
-                  </select>
-                  <span className="icon-container">
-                    <i className="material-icons">expand_more</i>
-                  </span>
-                </div>
-              </form>
-            </div>
-
-            {/* Main filter form */}
-            <form
-              method="post"
-              action="#"
-              id="search-form"
-              className={showFilters ? "show" : "hidden-xs hidden-sm"}
-              onSubmit={(e) => e.preventDefault()}
-            >
-              {/* Destinations dropdown */}
-              <div id="top-filtering-column-zone">
-                <div className="column-filter-elem">
-                  <div className="filter-title">Destinations</div>
-                  <div className="region-filters filter-values">
-                    <div className="dropdown filter">
-                      <button
-                        type="button"
-                        onClick={() => setDestDropdownOpen(!destDropdownOpen)}
-                        className="btn custom-button separated white stretch-width dropdown-toggle last"
-                        aria-expanded={destDropdownOpen}
-                      >
-                        <div className="inner">
-                          <span className="label-text">
-                            {filters.category === "All"
-                              ? "Tanzania"
-                              : filters.category}
-                          </span>
-                          <i className="material-icons">expand_more</i>
-                        </div>
-                      </button>
-                      <ul
-                        className={`dropdown-menu ${destDropdownOpen ? "show" : ""}`}
-                        role="menu"
-                        style={{ display: destDropdownOpen ? "block" : "none" }}
-                      >
-                        {[
-                          { value: "Tanzania", label: "Tanzania" },
-                          { value: "All", label: "All Destinations" },
-                        ].map((dest) => (
-                          <li
-                            key={dest.value}
-                            onClick={() => {
-                              handleFilterChange("category", dest.value);
-                              setDestDropdownOpen(false);
-                            }}
-                          >
-                            <span
-                              style={{
-                                cursor: "pointer",
-                                display: "block",
-                                padding: "3px 20px",
-                              }}
-                            >
-                              {dest.label}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Package Type dropdown */}
-                <div className="column-filter-elem">
-                  <div className="filter-title">Package Type</div>
-                  <div className="region-filters filter-values">
-                    <div className="dropdown filter">
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setPkgTypeDropdownOpen(!pkgTypeDropdownOpen)
-                        }
-                        className="btn custom-button separated white stretch-width dropdown-toggle last"
-                        aria-expanded={pkgTypeDropdownOpen}
-                      >
-                        <div className="inner">
-                          <span className="label-text">
-                            {filters.packageType === "All"
-                              ? "All packages"
-                              : filters.packageType}
-                          </span>
-                          <i className="material-icons">expand_more</i>
-                        </div>
-                      </button>
-                      <ul
-                        className={`dropdown-menu ${pkgTypeDropdownOpen ? "show" : ""}`}
-                        role="menu"
-                        style={{
-                          display: pkgTypeDropdownOpen ? "block" : "none",
-                        }}
-                      >
-                        {[
-                          { value: "Safari tour", label: "Safari tour" },
-                          {
-                            value: "Climbing and Trekking",
-                            label: "Climbing and Trekking",
-                          },
-                          { value: "Cultural tour", label: "Cultural tour" },
-                          { value: "All", label: "All packages" },
-                        ].map((pkg) => (
-                          <li
-                            key={pkg.value}
-                            onClick={() => {
-                              handleFilterChange("packageType", pkg.value);
-                              setPkgTypeDropdownOpen(false);
-                            }}
-                          >
-                            <span
-                              style={{
-                                cursor: "pointer",
-                                display: "block",
-                                padding: "3px 20px",
-                              }}
-                            >
-                              {pkg.label}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Column filters */}
-              <div id="research-filters" className="research-filtering-zone">
-                <input
-                  type="hidden"
-                  name="sortType"
-                  value="RELEVANCE"
-                  id="sortType"
-                  readOnly
-                />
-
-                {/* Physical level filter */}
-                <div className="column-filter-elem">
-                  <button
-                    type="button"
-                    className="filter-title btn custom-button white stretch-width"
-                    data-toggle="collapse"
-                    data-target="#physicalConditionLevels-filter"
-                  >
-                    Physical level
-                    <i className="material-icons uncollapsed-icon">
-                      expand_less
-                    </i>
-                    <i className="material-icons collapsed-icon">expand_more</i>
-                  </button>
-
-                  <div
-                    id="physicalConditionLevels-filter"
-                    className="filter-values collapse in"
-                  >
-                    {[
-                      {
-                        id: "physicalConditionRequiredList[1]",
-                        value: "SUITABLE",
-                        label: "Suitable for all",
-                      },
-                      {
-                        id: "physicalConditionRequiredList[2]",
-                        value: "ALL LEVELS",
-                        label: "All Levels",
-                      },
-                    ].map((item) => (
-                      <div
-                        key={item.id}
-                        className="custom-form-field separated white"
-                      >
-                        <div className="custom-checkbox-zone">
-                          <input
-                            type="checkbox"
-                            name={`physicalConditionRequiredList[${item.value}]`}
-                            value={item.value}
-                            className="auto-submit"
-                            id={item.id}
-                            checked={filters.physicalLevel.includes(item.value)}
-                            onChange={(e) => {
-                              const next = e.target.checked
-                                ? [...filters.physicalLevel, item.value]
-                                : filters.physicalLevel.filter(
-                                    (x) => x !== item.value,
-                                  );
-                              handleFilterChange("physicalLevel", next);
-                            }}
-                          />
-                          <label htmlFor={item.id} className="filter-label">
-                            {item.label}
-                          </label>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Duration filter */}
-                <div className="column-filter-elem">
-                  <button
-                    type="button"
-                    className="filter-title btn custom-button white stretch-width"
-                    data-toggle="collapse"
-                    data-target="#durations-filter"
-                  >
-                    Duration
-                    <i className="material-icons uncollapsed-icon">
-                      expand_less
-                    </i>
-                    <i className="material-icons collapsed-icon">expand_more</i>
-                  </button>
-
-                  <div
-                    id="durations-filter"
-                    className="filter-values collapse in"
-                  >
-                    {[
-                      {
-                        id: "duration[TRIP]",
-                        value: "TRIP",
-                        label: "4 to 8 days",
-                      },
-                      {
-                        id: "duration[LONG]",
-                        value: "LONG",
-                        label: "9 days or more",
-                      },
-                    ].map((item) => (
-                      <div
-                        key={item.id}
-                        className="custom-form-field separated white"
-                      >
-                        <div className="custom-checkbox-zone">
-                          <input
-                            type="checkbox"
-                            name={item.id}
-                            value={item.value}
-                            className="auto-submit"
-                            id={item.id}
-                            checked={filters.durations.includes(item.value)}
-                            onChange={(e) => {
-                              const next = e.target.checked
-                                ? [...filters.durations, item.value]
-                                : filters.durations.filter(
-                                    (x) => x !== item.value,
-                                  );
-                              handleFilterChange("durations", next);
-                            }}
-                          />
-                          <label htmlFor={item.id} className="filter-label">
-                            {item.label}
-                          </label>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Budget filter */}
-                <div className="column-filter-elem">
-                  <button
-                    type="button"
-                    className="filter-title btn custom-button white stretch-width"
-                    data-toggle="collapse"
-                    data-target="#price-filter"
-                  >
-                    Your budget
-                    <i className="material-icons uncollapsed-icon">
-                      expand_less
-                    </i>
-                    <i className="material-icons collapsed-icon">expand_more</i>
-                  </button>
-
-                  <div id="price-filter" className="filter-values collapse in">
-                    <div
-                      className="price-slider-container"
-                      style={{ position: "relative", paddingBottom: "20px" }}
-                    >
-                      <input
-                        type="hidden"
-                        name="minPrice"
-                        className="auto-submit minPrice"
-                        value={filters.minPrice}
-                      />
-                      <input
-                        type="hidden"
-                        name="maxPrice"
-                        className="auto-submit maxPrice"
-                        value={filters.maxPrice}
-                      />
-
-                      {/* Native range inputs acting as dual handles */}
-                      <input
-                        type="range"
-                        min="0"
-                        max="5000"
-                        step="50"
-                        value={filters.minPrice || 0}
-                        onChange={(e) => {
-                          const val = Math.min(
-                            Number(e.target.value),
-                            (filters.maxPrice || 5000) - 50,
-                          );
-                          handleFilterChange("minPrice", val);
-                        }}
-                        style={{
-                          position: "absolute",
-                          width: "100%",
-                          zIndex: 3,
-                          opacity: 0,
-                          cursor: "pointer",
-                          height: "20px",
-                          top: "-5px",
-                        }}
-                      />
-                      <input
-                        type="range"
-                        min="0"
-                        max="5000"
-                        step="50"
-                        value={filters.maxPrice || 5000}
-                        onChange={(e) => {
-                          const val = Math.max(
-                            Number(e.target.value),
-                            (filters.minPrice || 0) + 50,
-                          );
-                          handleFilterChange("maxPrice", val);
-                        }}
-                        style={{
-                          position: "absolute",
-                          width: "100%",
-                          zIndex: 4,
-                          opacity: 0,
-                          cursor: "pointer",
-                          height: "20px",
-                          top: "-5px",
-                        }}
-                      />
-
-                      <div
-                        className="price-slider-range ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
-                        aria-disabled="false"
-                      >
-                        <div
-                          className="ui-slider-range ui-widget-header ui-corner-all"
-                          style={{
-                            left: `${((filters.minPrice || 0) / 5000) * 100}%`,
-                            width: `${(((filters.maxPrice || 5000) - (filters.minPrice || 0)) / 5000) * 100}%`,
-                          }}
-                        ></div>
-                        <a
-                          className="ui-slider-handle ui-state-default ui-corner-all"
-                          href="#"
-                          style={{
-                            left: `${((filters.minPrice || 0) / 5000) * 100}%`,
-                          }}
-                          onClick={(e) => e.preventDefault()}
-                        ></a>
-                        <a
-                          className="ui-slider-handle ui-state-default ui-corner-all"
-                          href="#"
-                          style={{
-                            left: `${((filters.maxPrice || 5000) / 5000) * 100}%`,
-                          }}
-                          onClick={(e) => e.preventDefault()}
-                        ></a>
-                      </div>
-
-                      <div className="price-range">
-                        <div className="price-range-min">
-                          €{filters.minPrice || 0}
-                        </div>
-                        <div className="price-range-max">
-                          €{filters.maxPrice || 5000}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Keywords filter */}
-                <div className="column-filter-elem">
-                  <button
-                    type="button"
-                    className="filter-title btn custom-button white stretch-width collapsed"
-                    data-toggle="collapse"
-                    data-target="#keywords-filter"
-                  >
-                    Keywords
-                    <i className="material-icons uncollapsed-icon">
-                      expand_less
-                    </i>
-                    <i className="material-icons collapsed-icon">expand_more</i>
-                  </button>
-
-                  <div
-                    id="keywords-filter"
-                    className="filter-values collapse in"
-                  >
-                    <div className="custom-form-field separated white filter">
-                      <input
-                        type="text"
-                        name="keywords"
-                        value={filters.keywords}
-                        onChange={(e) =>
-                          handleFilterChange("keywords", e.target.value)
-                        }
-                        className="auto-submit"
-                        id="keywords"
-                        placeholder="Search..."
-                      />
-                      <span className="icon-container">
-                        <i className="material-icons">search</i>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </form>
+            {renderFilterForm()}
           </div>
         </div>
 
@@ -925,6 +834,8 @@ function PackagesContent() {
                   </span>
                 </h2>
               </div>
+
+              {/* Desktop sort */}
               <div
                 id="activity-sorting-filters"
                 className="list-filter hidden-xs hidden-sm"
@@ -948,23 +859,33 @@ function PackagesContent() {
                   </div>
                 </form>
               </div>
+
+              {/* Mobile sort toggle */}
+              <div className="visible-xs visible-sm" style={{ display: "flex", gap: "10px" }}>
+                <div className="custom-form-field with-icon separated white">
+                  <select
+                    value={sortType}
+                    onChange={(e) => setSortType(e.target.value)}
+                    style={{ border: "none", background: "transparent" }}
+                  >
+                    <option value="RELEVANCE">Relevance</option>
+                    <option value="DURATION_ASC">Duration ↑</option>
+                    <option value="DURATION_DESC">Duration ↓</option>
+                  </select>
+                </div>
+                <button
+                  className="btn custom-button white"
+                  onClick={() => setShowFilters(true)}
+                >
+                  <i className="material-icons">filter_list</i>
+                </button>
+              </div>
             </div>
 
             {/* List zone */}
             <div id="list-zone">
-              <div className="load-more-zone previous" />
-
               <div id="sections-container">
-                <div
-                  id="products-section-1"
-                  className="products-section"
-                  data-section-index="1"
-                  data-url="/sp-safari"
-                  data-title="Safari Africa: Custom Trips and Stays - Kili to Savanna"
-                  data-canonical="https://kilitosavannaadventures.com/sp-safari"
-                  data-prev-link=""
-                  data-next-link="https://kilitosavannaadventures.com/sp-safari?page=2"
-                >
+                <div className="products-section">
                   {loading ? (
                     <div className="loading-zone">
                       {[1, 2, 3].map((i) => (
@@ -979,14 +900,22 @@ function PackagesContent() {
                       style={{ padding: "40px", textAlign: "center" }}
                     >
                       <h3>No packages found matching your filters.</h3>
-                      <p>
-                        Try clearing some filters or searching for something
-                        else.
-                      </p>
+                      <p>Try clearing some filters.</p>
                       <button
                         className="btn btn-link"
-                        onClick={() => handleFilterChange("category", "All")}
-                        style={{ textDecoration: "underline" }}
+                        onClick={() =>
+                          setFilters({
+                            category: "All",
+                            packageType: "All",
+                            keywords: "",
+                            physicalLevel: [],
+                            minPrice: "",
+                            maxPrice: "",
+                            departureDate: "",
+                            durations: [],
+                            stayTypes: [],
+                          })
+                        }
                       >
                         Reset all filters
                       </button>
@@ -994,12 +923,6 @@ function PackagesContent() {
                   )}
                 </div>
               </div>
-
-              {/* Load more hidden to avoid static count mismatch
-              <div className="load-more-zone next">
-                ... 
-              </div> 
-              */}
             </div>
 
             {/* Mobile bottom bar */}
@@ -1008,6 +931,7 @@ function PackagesContent() {
                 <button
                   type="button"
                   className="btn custom-button white stretch-width wrap"
+                  onClick={() => setShowFilters(true)}
                 >
                   <i className="fa fa-sliders" />
                   See filters
@@ -1018,11 +942,8 @@ function PackagesContent() {
                   id="custom-lead-button"
                   className="btn custom-button solid-yellow stretch-width wrap"
                   onClick={handleRenderModal}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => e.key === "Enter" && handleRenderModal()}
                 >
-                  <span id="booking-link">
+                  <span>
                     <i className="fa fa-file-text-o" aria-hidden="true" />
                     Custom quote
                   </span>
@@ -1032,16 +953,49 @@ function PackagesContent() {
           </div>
         </div>
       </div>
+
       <BookingModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         packageData={{ title: "Custom Safari Quote" }}
         type="Quote"
       />
+
       <style jsx global>{`
-        .strength-elem::before,
-        .strength-elem:before {
+        .strength-elem::before {
           content: none !important;
+        }
+        .mobile-form-custom {
+          padding: 10px;
+        }
+        /* Custom Dual Range Slider Styling */
+        .dual-range-input {
+          pointer-events: none;
+        }
+        .dual-range-input::-webkit-slider-thumb {
+          pointer-events: auto;
+          appearance: none;
+          height: 18px;
+          width: 18px;
+          background-color: #fff;
+          border: 1px solid #d3d3d3;
+          border-radius: 4px;
+          cursor: pointer;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .dual-range-input::-moz-range-thumb {
+          pointer-events: auto;
+          height: 18px;
+          width: 18px;
+          background-color: #fff;
+          border: 1px solid #d3d3d3;
+          border-radius: 4px;
+          cursor: pointer;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .dual-range-input:active::-webkit-slider-thumb {
+          background-color: #f6f6f6;
+          border-color: #999;
         }
       `}</style>
     </div>

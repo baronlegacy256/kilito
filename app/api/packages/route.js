@@ -4,12 +4,13 @@ import { getSupabaseServiceRoleClient } from "@/lib/supabase/service";
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
   
-  const category = searchParams.get("category");
+  const category = searchParams.get("category"); // UI 'category' (Destination)
+  const packageType = searchParams.get("packageType"); // UI 'packageType' (Safari tour, etc.)
   const minPrice = searchParams.get("minPrice");
   const maxPrice = searchParams.get("maxPrice");
-  const durations = searchParams.get("durations"); // e.g. "TRIP,LONG"
-  const stayTypes = searchParams.get("stayTypes"); // comma-separated tags
-  const physicalLevel = searchParams.get("physicalLevel"); // e.g. "OCCASIONNAL", "REGULAR"
+  const durations = searchParams.get("durations");
+  const stayTypes = searchParams.get("stayTypes");
+  const physicalLevel = searchParams.get("physicalLevel");
   const keywords = searchParams.get("keywords");
   const departureDate = searchParams.get("departureDate");
   const sortType = searchParams.get("sortType") || "RELEVANCE";
@@ -30,7 +31,14 @@ export async function GET(request) {
     `)
     .eq("is_active", true);
 
-  if (category && category !== "All") {
+  // If destination is specific but not 'Tanzania' (all are in Tanzania), we would filter here.
+  // For now, we skip filtering by location since it's not a column and everything is Tanzania.
+  
+  // UI 'packageType' (Safari tour, etc.) maps to the database 'category' column.
+  if (packageType && packageType !== "All") {
+    query = query.ilike("category", `%${packageType}%`);
+  } else if (category && category !== "All" && category !== "Tanzania") {
+    // Fallback: if category param is used for a package type (legacy links)
     query = query.ilike("category", `%${category}%`);
   }
 
@@ -91,6 +99,7 @@ export async function GET(request) {
       }
     );
   } catch (e) {
+    console.error('[API Error] Packages route failed:', e);
     return NextResponse.json({ error: e.message }, { status: 500 });
   }
 }

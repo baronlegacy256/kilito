@@ -29,7 +29,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html>
+    <html suppressHydrationWarning>
       <head>
         <meta charSet="UTF-8" />
       </head>
