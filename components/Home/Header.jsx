@@ -122,14 +122,12 @@ function Header() {
             <ul id="mobile-login-zone" className="menu-list">
               <li className="menu-header">
                 <Link href="/" className="logo-container no-decoration">
-                  <div className="photo-container">
+                  <div className="photo-container" style={{ display: 'flex', alignItems: 'center' }}>
                     <img
-                      className="photo ratio-8421"
-                      src="/assets/images/home/logo.jpg"
+                      src="/assets/images/home/logo.png"
                       alt="Kili to Savanna logo"
                       title="Africa Safari: Tailor-made Trips and Stays - Kili to Savanna"
-                      width="38"
-                      height="32"
+                      style={{ maxHeight: '32px', width: 'auto', objectFit: 'contain' }}
                     />
                   </div>
                 </Link>
@@ -249,26 +247,20 @@ function Header() {
               >
                 Back
               </li>
-              <li
-                className="link-to-sub-sub-menu"
-                onClick={() => setActiveSubSubMenu("sub-sub-menu-3")}
-              >
-                <span style={{ color: "black" }}>Safari Tour</span>{" "}
-                <i className="fa fa-angle-right icon" aria-hidden="true"></i>
+              <li className="link-to-sub-sub-menu" style={{ padding: 0 }}>
+                <Link href="/packages?category=Safari+tour" onClick={toggleMobileMenu} style={{ color: "black", display: "block", padding: "10px 15px", textDecoration: "none" }}>
+                  Safari Tour <i className="fa fa-angle-right icon" aria-hidden="true" style={{ float: "right" }}></i>
+                </Link>
               </li>
-              <li
-                className="link-to-sub-sub-menu"
-                onClick={() => setActiveSubSubMenu("sub-sub-menu-6")}
-              >
-                <span style={{ color: "black" }}>Cultural Tour</span>{" "}
-                <i className="fa fa-angle-right icon" aria-hidden="true"></i>
+              <li className="link-to-sub-sub-menu" style={{ padding: 0 }}>
+                <Link href="/packages?category=Cultural+tour" onClick={toggleMobileMenu} style={{ color: "black", display: "block", padding: "10px 15px", textDecoration: "none" }}>
+                  Cultural Tour <i className="fa fa-angle-right icon" aria-hidden="true" style={{ float: "right" }}></i>
+                </Link>
               </li>
-              <li
-                className="link-to-sub-sub-menu"
-                onClick={() => setActiveSubSubMenu("sub-sub-menu-7")}
-              >
-                <span style={{ color: "black" }}>Climbing and Trekking</span>{" "}
-                <i className="fa fa-angle-right icon" aria-hidden="true"></i>
+              <li className="link-to-sub-sub-menu" style={{ padding: 0 }}>
+                <Link href="/packages?category=Climbing+and+Trekking" onClick={toggleMobileMenu} style={{ color: "black", display: "block", padding: "10px 15px", textDecoration: "none" }}>
+                  Climbing and Trekking <i className="fa fa-angle-right icon" aria-hidden="true" style={{ float: "right" }}></i>
+                </Link>
               </li>
             </ul>
 
@@ -338,87 +330,6 @@ function Header() {
                 >
                   Contact
                 </Link>
-              </li>
-            </ul>
-          </li>
-
-          <li
-            className="sub-sub-menu-container"
-            style={{ display: activeSubSubMenu ? "block" : "none" }}
-          >
-            <ul
-              id="sub-sub-menu-3"
-              className={`menu-list submenu ${activeSubSubMenu === "sub-sub-menu-3" ? "active" : ""}`}
-              style={{
-                display:
-                  activeSubSubMenu === "sub-sub-menu-3" ? "block" : "none",
-              }}
-            >
-              <li
-                className="sub-submenu-backlink"
-                onClick={() => setActiveSubSubMenu(null)}
-              >
-                Back
-              </li>
-              <li className="submenu-item with-link">
-                <span className="no-decoration" style={{ color: "black" }}>
-                  Morocco
-                </span>
-              </li>
-              <li className="submenu-item with-link">
-                <span className="no-decoration" style={{ color: "black" }}>
-                  Tanzania
-                </span>
-              </li>
-            </ul>
-            <ul
-              id="sub-sub-menu-6"
-              className={`menu-list submenu ${activeSubSubMenu === "sub-sub-menu-6" ? "active" : ""}`}
-              style={{
-                display:
-                  activeSubSubMenu === "sub-sub-menu-6" ? "block" : "none",
-              }}
-            >
-              <li
-                className="sub-submenu-backlink"
-                onClick={() => setActiveSubSubMenu(null)}
-              >
-                Back
-              </li>
-              <li className="submenu-item with-link">
-                <span className="no-decoration" style={{ color: "black" }}>
-                  Italy
-                </span>
-              </li>
-              <li className="submenu-item with-link">
-                <span className="no-decoration" style={{ color: "black" }}>
-                  Greece
-                </span>
-              </li>
-            </ul>
-            <ul
-              id="sub-sub-menu-7"
-              className={`menu-list submenu ${activeSubSubMenu === "sub-sub-menu-7" ? "active" : ""}`}
-              style={{
-                display:
-                  activeSubSubMenu === "sub-sub-menu-7" ? "block" : "none",
-              }}
-            >
-              <li
-                className="sub-submenu-backlink"
-                onClick={() => setActiveSubSubMenu(null)}
-              >
-                Back
-              </li>
-              <li className="submenu-item with-link">
-                <span className="no-decoration" style={{ color: "black" }}>
-                  Alps
-                </span>
-              </li>
-              <li className="submenu-item with-link">
-                <span className="no-decoration" style={{ color: "black" }}>
-                  Corsica
-                </span>
               </li>
             </ul>
           </li>
@@ -591,21 +502,25 @@ function Header() {
                         className="submenu-item with-link"
                         style={{ padding: "10px 20px" }}
                       >
-                        <span style={{ color: "black" }}>Safari Tour</span>
+                        <Link href="/packages?category=Safari+tour" style={{ color: "black", textDecoration: "none", display: "block" }}>
+                          Safari Tour
+                        </Link>
                       </li>
                       <li
                         className="submenu-item with-link"
                         style={{ padding: "10px 20px" }}
                       >
-                        <span style={{ color: "black" }}>Cultural Tour</span>
+                        <Link href="/packages?category=Cultural+tour" style={{ color: "black", textDecoration: "none", display: "block" }}>
+                          Cultural Tour
+                        </Link>
                       </li>
                       <li
                         className="submenu-item with-link"
                         style={{ padding: "10px 20px" }}
                       >
-                        <span style={{ color: "black" }}>
+                        <Link href="/packages?category=Climbing+and+Trekking" style={{ color: "black", textDecoration: "none", display: "block" }}>
                           Climbing and Trekking
-                        </span>
+                        </Link>
                       </li>
                     </ul>
                   )}
