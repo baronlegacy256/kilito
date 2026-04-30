@@ -34,6 +34,9 @@ export default function WhoWeAre() {
               <li className="">
                 <Link href="/newsletters">Newsletters</Link>
               </li>
+              <li className="">
+                <Link href="/blog">Blog</Link>
+              </li>
             </ul>
           </div>
         </div>

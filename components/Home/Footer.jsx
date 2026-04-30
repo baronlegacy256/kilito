@@ -53,9 +53,9 @@ function Footer() {
             </div>
 
             <div className="">
-              <a href="https://blog.kilitosavanna.com/" target="_blank">
+              <Link href="/blog" className="no-decoration">
                 The blog
-              </a>
+              </Link>
             </div>
 
             <div className=""></div>

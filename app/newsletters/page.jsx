@@ -34,6 +34,9 @@ export default function Newsletters() {
               <li className="active">
                 <Link href="/newsletters">Newsletters</Link>
               </li>
+              <li className="">
+                <Link href="/blog">Blog</Link>
+              </li>
             </ul>
           </div>
         </div>

@@ -331,6 +331,15 @@ function Header() {
                   Contact
                 </Link>
               </li>
+              <li className="submenu-item with-link">
+                <Link
+                  href="/blog"
+                  className="no-decoration"
+                  style={{ color: "black" }}
+                >
+                  Blog
+                </Link>
+              </li>
             </ul>
           </li>
         </ul>
@@ -464,6 +473,17 @@ function Header() {
                           style={{ color: "black", textDecoration: "none" }}
                         >
                           Contact
+                        </Link>
+                      </li>
+                      <li
+                        className="submenu-item with-link"
+                        style={{ padding: "10px 20px" }}
+                      >
+                        <Link
+                          href="/blog"
+                          style={{ color: "black", textDecoration: "none" }}
+                        >
+                          Blog
                         </Link>
                       </li>
                     </ul>
