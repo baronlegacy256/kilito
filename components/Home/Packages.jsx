@@ -325,7 +325,7 @@ function PlaceholderCard() {
   );
 }
 
-function Packages() {
+function PackagesContent() {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get("category");
 
@@ -983,4 +983,10 @@ function Packages() {
   );
 }
 
-export default Packages;
+export default function Packages() {
+  return (
+    <React.Suspense fallback={<div className="loading-container">Loading packages...</div>}>
+      <PackagesContent />
+    </React.Suspense>
+  );
+}
