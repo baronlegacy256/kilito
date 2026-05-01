@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 
 export default async function sitemap() {
-  const baseUrl = "https://kilitosavannaadventures.com/";
+  const baseUrl = "https://kilitosavannaadventures.com";
 
   // Static routes
   const staticRoutes = [
