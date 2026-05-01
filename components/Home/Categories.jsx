@@ -1,5 +1,5 @@
-import React from 'react'
-import Link from 'next/link'
+import React from "react";
+import Link from "next/link";
 
 function Categories() {
   return (
@@ -151,24 +151,21 @@ function Categories() {
           </div>
 
           <div className="outer-vignette">
-            <Link
-              href="/packages"
-              className="vignette-surrounding-link"
-            >
+            <Link href="/packages" className="vignette-surrounding-link">
               <div className="card vignette vignette-landing">
                 <div className="vignette-image">
                   <div className="photo-container">
                     <picture>
                       <source
                         media="(max-width: 767px)"
-                        srcSet="/assets/images/home/safari.jpg"
+                        srcSet="/assets/images/home/allpackages.jpg"
                         width="509"
                         height="287"
                       />
 
                       <img
                         className="photo"
-                        src="/assets/images/home/safari.jpg"
+                        src="/assets/images/home/allpackages.jpg"
                         alt="photos-134"
                         title="photos-134"
                         width="400"
@@ -180,7 +177,7 @@ function Categories() {
                 <div className="vignette-image-filter"></div>
                 <div className="vignette-label">
                   <div className="vignette-label-inner">
-                    <div className="subtitle">Other Activities</div>
+                    <div className="subtitle">All Packages</div>
                   </div>
                 </div>
               </div>
@@ -216,7 +213,7 @@ function Categories() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Categories
+export default Categories;

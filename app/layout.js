@@ -1,5 +1,6 @@
 import NextTopLoader from "nextjs-toploader";
 import LoginModal from "@/components/Home/LoginModal";
+import Chatbot from "@/components/Chatbot";
 import "./globals.css";
 import Script from "next/script";
 
@@ -52,6 +53,7 @@ export default function RootLayout({ children }) {
         </div>
 
         <LoginModal />
+        <Chatbot />
 
 
         <Script type="text/javascript" id="validation-messages-1">
