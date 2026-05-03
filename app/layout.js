@@ -5,7 +5,10 @@ import "./globals.css";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Kili to Savanna: Tanzania Safari: Tailor-made Trips and Stays",
+  title: {
+    default: "Kili to Savanna: Tanzania Safari",
+    template: "%s | Kili to Savanna"
+  },
   description:
     "Kili to Savanna is a Tanzanian safari company which provides high quality travel and tour services from the heights of Mt Kilimanjaro, to plains of Serengeti, Seeing the wildlife of mesmerizing beauty highest and small mountains, parks as well as beautiful beaches. Enjoy beautiful wildlife parks and amazing nature. Generosity and love is our vision. Proudly united by Swahili language.",
 
