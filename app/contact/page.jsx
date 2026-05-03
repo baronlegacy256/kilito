@@ -1,6 +1,17 @@
 import GenericPage from "../components/GenericPage";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Contact Us",
+  description: "Get in touch with Kili to Savanna. We're here to help you plan your perfect Tanzania safari or climbing adventure.",
+  openGraph: {
+    title: "Contact Us",
+    description: "Get in touch with Kili to Savanna. We're here to help you plan your perfect Tanzania safari or climbing adventure.",
+    url: "https://kilitosavannaadventures.com/contact",
+    images: ["/assets/images/generic.jpg"],
+  }
+};
+
 export default function Contact() {
   return (
     <GenericPage title={"Contact"}>

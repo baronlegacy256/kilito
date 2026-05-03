@@ -1,6 +1,17 @@
 import GenericPage from "../components/GenericPage";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Our Guarantees",
+  description: "Learn about the guarantees Kili to Savanna offers to ensure your trip to Tanzania is safe, secure, and unforgettable.",
+  openGraph: {
+    title: "Our Guarantees",
+    description: "Learn about the guarantees Kili to Savanna offers to ensure your trip to Tanzania is safe, secure, and unforgettable.",
+    url: "https://kilitosavannaadventures.com/guarantees",
+    images: ["/assets/images/generic.jpg"],
+  }
+};
+
 export default function Guarantees() {
   return (
     <GenericPage title={"Guarantees"}>

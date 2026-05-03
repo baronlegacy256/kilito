@@ -652,27 +652,7 @@ const blogPosts = {
   },
 };
 
-export async function generateMetadata({ params }) {
-  const { slug } = await params;
-  const post = blogPosts[slug];
 
-  if (!post) {
-    return {
-      title: "Blog Post Not Found",
-      description: "The requested blog post could not be found.",
-    };
-  }
-
-  return {
-    title: post.title,
-    description: `Read about ${post.title} on the Kili to Savanna Adventures blog.`,
-    openGraph: {
-      title: post.title,
-      description: `Read about ${post.title} on the Kili to Savanna Adventures blog.`,
-      images: post.image ? [post.image] : undefined,
-    },
-  };
-}
 
 export default function BlogPostPage({ params }) {
   const { slug } = use(params);

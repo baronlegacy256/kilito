@@ -4,6 +4,8 @@ import GenericPage from "../components/GenericPage";
 import Link from "next/link";
 import React from "react";
 
+
+
 const blogPosts = [
   {
     slug: "tanzania-safari-ultimate-guide-2026",

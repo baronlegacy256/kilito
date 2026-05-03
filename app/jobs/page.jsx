@@ -1,6 +1,17 @@
 import GenericPage from "../components/GenericPage";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Jobs",
+  description: "Join the Kili to Savanna team. Check out our current job openings and career opportunities in Tanzania.",
+  openGraph: {
+    title: "Jobs",
+    description: "Join the Kili to Savanna team. Check out our current job openings and career opportunities in Tanzania.",
+    url: "https://kilitosavannaadventures.com/jobs",
+    images: ["/assets/images/generic.jpg"],
+  }
+};
+
 export default function Press() {
   return (
     <GenericPage title={"Jobs"}>

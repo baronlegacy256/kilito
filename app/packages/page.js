@@ -5,8 +5,14 @@ import Packages from "@/components/Home/Packages";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Our Packages - Kili to Savanna",
+  title: "Our Packages",
   description: "Browse all our Tanzania safari packages, climbing and trekking adventures, and cultural tours.",
+  openGraph: {
+    title: "Our Packages",
+    description: "Browse all our Tanzania safari packages, climbing and trekking adventures, and cultural tours.",
+    url: "https://kilitosavannaadventures.com/packages",
+    images: ["/assets/images/home/allPackages.jpg"],
+  }
 };
 
 export default async function PackagesPage(props) {

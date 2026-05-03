@@ -10,6 +10,16 @@ import About from "@/components/Home/About";
 import Packages from "@/components/Home/Packages";
 import Information from "@/components/Home/Information";
 
+export const metadata = {
+  title: "Tanzania Safari: Tailor-made Trips and Stays",
+  description: "Kili to Savanna is a Tanzanian safari company providing high quality travel and tour services from Mt Kilimanjaro to the Serengeti and beautiful beaches.",
+  openGraph: {
+    title: "Tanzania Safari: Tailor-made Trips and Stays",
+    description: "Kili to Savanna is a Tanzanian safari company providing high quality travel and tour services from Mt Kilimanjaro to the Serengeti and beautiful beaches.",
+    url: "https://kilitosavannaadventures.com/",
+    images: ["/assets/images/home/slider.jpg"],
+  }
+};
 
 export default function Home() {
   return (

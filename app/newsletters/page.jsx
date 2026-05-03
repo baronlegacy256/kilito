@@ -1,6 +1,17 @@
 import GenericPage from "../components/GenericPage";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Newsletters",
+  description: "Subscribe to the Kili to Savanna newsletter for the latest updates on Tanzania safaris, travel tips, and exclusive offers.",
+  openGraph: {
+    title: "Newsletters",
+    description: "Subscribe to the Kili to Savanna newsletter for the latest updates on Tanzania safaris, travel tips, and exclusive offers.",
+    url: "https://kilitosavannaadventures.com/newsletters",
+    images: ["/assets/images/home/slider1.png"],
+  }
+};
+
 export default function Newsletters() {
   return (
     <GenericPage title={"Newsletters"}>

@@ -1,6 +1,17 @@
 import GenericPage from "../components/GenericPage";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Who We Are",
+  description: "Learn more about Kili to Savanna, a local Tanzanian safari company providing high-quality travel and tour services.",
+  openGraph: {
+    title: "Who We Are",
+    description: "Learn more about Kili to Savanna, a local Tanzanian safari company providing high-quality travel and tour services.",
+    url: "https://kilitosavannaadventures.com/who-we-are",
+    images: ["/assets/images/home/about.png"],
+  }
+};
+
 export default function WhoWeAre() {
   return (
     <GenericPage title={"Who We Are"}>

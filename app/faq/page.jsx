@@ -1,6 +1,17 @@
 import GenericPage from "../components/GenericPage";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Frequently Asked Questions",
+  description: "Got questions about your Tanzania safari or Kilimanjaro climb? Read our FAQs to find answers.",
+  openGraph: {
+    title: "Frequently Asked Questions",
+    description: "Got questions about your Tanzania safari or Kilimanjaro climb? Read our FAQs to find answers.",
+    url: "https://kilitosavannaadventures.com/faq",
+    images: ["/assets/images/home/slider.jpg"],
+  }
+};
+
 export default function FAQ() {
   return (
     <GenericPage title={"FAQs"}>

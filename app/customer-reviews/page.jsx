@@ -2,6 +2,8 @@
 import GenericPage from "../components/GenericPage";
 import Link from "next/link";
 
+
+
 const renderMoreOpinions = () => {
   console.log("Load more opinions clicked");
   // Implement logic if needed or leave as placeholder

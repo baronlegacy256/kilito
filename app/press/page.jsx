@@ -1,6 +1,17 @@
 import GenericPage from "../components/GenericPage";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Press",
+  description: "Read the latest press releases and media coverage for Kili to Savanna.",
+  openGraph: {
+    title: "Press",
+    description: "Read the latest press releases and media coverage for Kili to Savanna.",
+    url: "https://kilitosavannaadventures.com/press",
+    images: ["/assets/images/generic.jpg"],
+  }
+};
+
 export default function Press() {
   return (
     <GenericPage title={"Press"}>

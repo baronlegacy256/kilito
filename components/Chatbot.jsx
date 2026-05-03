@@ -23,6 +23,11 @@ export default function Chatbot() {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
@@ -122,6 +127,8 @@ export default function Chatbot() {
       setIsLoading(false);
     }
   };
+
+  if (!mounted) return null;
 
   return (
     <>
