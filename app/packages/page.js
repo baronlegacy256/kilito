@@ -20,7 +20,7 @@ export default async function PackagesPage(props) {
   const category = searchParams?.category || "All";
 
   // Map category to a specific image and title
-  let bannerImage = "/assets/images/home/allpackages.jpg";
+  let bannerImage = "/assets/images/home/allPackages.jpg";
   let titlePart2 = "All our Packages";
   let pageLabel = "All packages";
 
