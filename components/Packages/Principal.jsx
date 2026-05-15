@@ -352,7 +352,7 @@ function Principal({ packageData }) {
                         href={`${pathname}#accommodation-zone`}
                         className="scroll-smoothly"
                       >
-                        Accommodation
+                        Description
                       </Link>
                     </li>
 
