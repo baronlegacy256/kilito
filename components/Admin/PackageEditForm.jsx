@@ -75,6 +75,7 @@ export default function PackageEditForm({ packageId }) {
   const [itineraryDays, setItineraryDays] = useState([]);
   const [practicalInformation, setPracticalInformation] = useState([]);
   const [stays, setStays] = useState([]);
+  const [featureSections, setFeatureSections] = useState([]);
 
   const [modalState, setModalState] = useState({
     type: null,
@@ -91,6 +92,7 @@ export default function PackageEditForm({ packageId }) {
       setItineraryDays([]);
       setPracticalInformation([]);
       setStays([]);
+      setFeatureSections([]);
       return;
     }
 
@@ -112,6 +114,7 @@ export default function PackageEditForm({ packageId }) {
       setItineraryDays(data.itineraryDays || []);
       setPracticalInformation(data.practicalInformation || []);
       setStays(data.stays || []);
+      setFeatureSections(data.featureSections || []);
     } catch (e) {
       setError(parseError(e, "Failed to load package details"));
     } finally {
@@ -151,6 +154,8 @@ export default function PackageEditForm({ packageId }) {
         ? itineraryDays
         : type === "practical"
         ? practicalInformation
+        : type === "features"
+        ? featureSections
         : stays;
 
     setModalState({
@@ -185,6 +190,7 @@ export default function PackageEditForm({ packageId }) {
     if (type === "pricing") apply(pricingTiers, setPricingTiers);
     if (type === "itinerary") apply(itineraryDays, setItineraryDays);
     if (type === "practical") apply(practicalInformation, setPracticalInformation);
+    if (type === "features") apply(featureSections, setFeatureSections);
     if (type === "stays") apply(stays, setStays);
 
     closeItemModal();
@@ -200,6 +206,7 @@ export default function PackageEditForm({ packageId }) {
     if (type === "pricing") apply(pricingTiers, setPricingTiers);
     if (type === "itinerary") apply(itineraryDays, setItineraryDays);
     if (type === "practical") apply(practicalInformation, setPracticalInformation);
+    if (type === "features") apply(featureSections, setFeatureSections);
     if (type === "stays") apply(stays, setStays);
   };
 
@@ -215,6 +222,7 @@ export default function PackageEditForm({ packageId }) {
         itineraryDays,
         practicalInformation,
         stays,
+        featureSections,
       };
 
       const url = packageId === "new" ? "/api/admin/packages" : `/api/admin/packages/${packageId}`;
@@ -444,6 +452,25 @@ export default function PackageEditForm({ packageId }) {
                 </div>
               ),
             },
+            {
+              key: "features",
+              label: "7. Features",
+              children: (
+                <div style={{ paddingTop: 16 }}>
+                  <EditableListCard title="Feature Sections (Included, To Bring, etc.)" onAdd={() => openItemModal("features")} data={featureSections} renderItem={(item, index) => (
+                    <List.Item actions={[
+                      <Button key="edit" type="link" onClick={() => openItemModal("features", "edit", index)}>Edit</Button>,
+                      <Popconfirm key="delete" title="Remove section?" onConfirm={() => removeItem("features", index)}><Button type="link" danger>Delete</Button></Popconfirm>,
+                    ]}>
+                      <List.Item.Meta
+                        title={<Text strong>{item.title}</Text>}
+                        description={`Items: ${(item.items || []).length} | Icon: ${item.icon_type || 'check'}`}
+                      />
+                    </List.Item>
+                  )} />
+                </div>
+              ),
+            },
           ]}
         />
       </Card>
@@ -476,11 +503,26 @@ function ItemModal({ modalState, onCancel, onSubmit, uploadImage }) {
     else form.resetFields();
   }, [visible, modalState.values, form]);
 
-  const titleMap = { carousel: "Carousel Image", pricing: "Pricing Tier", itinerary: "Itinerary Day", practical: "Practical Information", stays: "Departure Stay" };
+  const titleMap = { carousel: "Carousel Image", pricing: "Pricing Tier", itinerary: "Itinerary Day", practical: "Practical Information", stays: "Departure Stay", features: "Feature Section" };
   const submit = async () => {
     const values = await form.validateFields();
+    if (modalState.type === "features") {
+      // Split the text area by newlines to form an array
+      values.items = values.items_text ? values.items_text.split('\n').filter(i => i.trim() !== '') : [];
+      delete values.items_text;
+    }
     onSubmit(values);
   };
+
+  // When opening features modal, convert array to text area
+  useEffect(() => {
+    if (visible && modalState.type === "features" && modalState.values) {
+      form.setFieldsValue({
+        ...modalState.values,
+        items_text: (modalState.values.items || []).join('\n')
+      });
+    }
+  }, [visible, modalState.values, modalState.type, form]);
 
   return (
     <Modal open={visible} title={`${modalState.mode === "edit" ? "Edit" : "Add"} ${titleMap[modalState.type] || ""}`} onCancel={onCancel} onOk={submit} destroyOnClose>
@@ -557,6 +599,21 @@ function ItemModal({ modalState, onCancel, onSubmit, uploadImage }) {
               <Col span={12}><Form.Item name="max_participants" label="Max Participants"><InputNumber min={1} style={{ width: "100%" }} /></Form.Item></Col>
             </Row>
             <Form.Item name="price_override" label="Price Override (Optional)"><InputNumber min={0} style={{ width: "100%" }} placeholder="Leave empty to use pricing tiers" /></Form.Item>
+          </>
+        )}
+        {modalState.type === "features" && (
+          <>
+            <Form.Item name="title" label="Section Title (e.g. Included, To bring)" rules={[{ required: true }]}><Input /></Form.Item>
+            <Form.Item name="icon_type" label="Icon Type" initialValue="check">
+              <Select options={[
+                { value: "check", label: "Checkmark" },
+                { value: "circle", label: "Circle (Dot)" },
+                { value: "cross", label: "Cross (X)" },
+              ]} />
+            </Form.Item>
+            <Form.Item name="items_text" label="Items (One per line)" rules={[{ required: true }]}>
+              <TextArea rows={6} placeholder="Professional skipper supervision&#10;Nights on board the sailboat" />
+            </Form.Item>
           </>
         )}
       </Form>

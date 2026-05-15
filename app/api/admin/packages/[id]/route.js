@@ -28,7 +28,7 @@ export async function GET(_request, context) {
 
     if (pkgError) throw pkgError;
 
-    const [imagesRes, pricingRes, itineraryRes, practicalRes, staysRes] = await Promise.all([
+    const [imagesRes, pricingRes, itineraryRes, practicalRes, staysRes, featuresRes] = await Promise.all([
       supabase
         .from("package_carousel_images")
         .select("*")
@@ -54,6 +54,11 @@ export async function GET(_request, context) {
         .select("*")
         .eq("package_id", packageId)
         .order("start_date", { ascending: true }),
+      supabase
+        .from("package_feature_sections")
+        .select("*")
+        .eq("package_id", packageId)
+        .order("sort_order", { ascending: true }),
     ]);
 
     if (imagesRes.error) throw imagesRes.error;
@@ -61,6 +66,7 @@ export async function GET(_request, context) {
     if (itineraryRes.error) throw itineraryRes.error;
     if (practicalRes.error) throw practicalRes.error;
     if (staysRes.error) throw staysRes.error;
+    if (featuresRes.error) throw featuresRes.error;
 
     return NextResponse.json({
       package: pkg,
@@ -69,6 +75,7 @@ export async function GET(_request, context) {
       itineraryDays: itineraryRes.data ?? [],
       practicalInformation: practicalRes.data ?? [],
       stays: staysRes.data ?? [],
+      featureSections: featuresRes.data ?? [],
     });
   } catch (e) {
     return NextResponse.json(
@@ -107,6 +114,7 @@ export async function PUT(request, context) {
   const itineraryDays = body?.itineraryDays ?? [];
   const practicalInformation = body?.practicalInformation ?? [];
   const stays = body?.stays ?? [];
+  const featureSections = body?.featureSections ?? [];
 
   const { id: _dropId, ...restPkg } = pkg;
   const packagePayload = {
@@ -128,6 +136,7 @@ export async function PUT(request, context) {
       itineraryDays,
       practicalInformation,
       stays,
+      featureSections,
     });
 
     return NextResponse.json({ id: packageId });
