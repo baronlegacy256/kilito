@@ -8,6 +8,7 @@ import {
   UserOutlined,
   RobotOutlined,
   CloseCircleOutlined,
+  WhatsAppOutlined,
 } from "@ant-design/icons";
 
 export default function Chatbot() {
@@ -373,6 +374,9 @@ export default function Chatbot() {
             padding: "16px",
             borderTop: "1px solid #f0f0f0",
             backgroundColor: "#ffffff",
+            display: "flex",
+            flexDirection: "column",
+            gap: "12px",
           }}
         >
           <Input
@@ -394,6 +398,28 @@ export default function Chatbot() {
             }
             style={{ borderRadius: "20px" }}
           />
+
+          <Button
+            href="https://wa.me/255734970891"
+            target="_blank"
+            block
+            icon={<WhatsAppOutlined style={{ fontSize: "20px" }} />}
+            className="whatsapp-chat-btn"
+            style={{
+              backgroundColor: "#25D366",
+              color: "white",
+              border: "none",
+              borderRadius: "20px",
+              minHeight: "44px",
+              fontWeight: "600",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "15px",
+            }}
+          >
+            Chat directly on WhatsApp
+          </Button>
         </div>
       </Drawer>
 
@@ -406,6 +432,10 @@ export default function Chatbot() {
           50% {
             transform: translateY(-8px);
           }
+        }
+        .whatsapp-chat-btn:hover {
+          background-color: #20BA56 !important;
+          color: white !important;
         }
       `}</style>
     </>
