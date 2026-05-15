@@ -158,14 +158,14 @@ function Categories() {
                     <picture>
                       <source
                         media="(max-width: 767px)"
-                        srcSet="/assets/images/home/allpackages.jpg"
+                        srcSet="/assets/images/home/allPackages.jpg"
                         width="509"
                         height="287"
                       />
 
                       <img
                         className="photo"
-                        src="/assets/images/home/allpackages.jpg"
+                        src="/assets/images/home/allPackages.jpg"
                         alt="photos-134"
                         title="photos-134"
                         width="400"
