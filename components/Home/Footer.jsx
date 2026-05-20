@@ -94,6 +94,14 @@ function Footer() {
                 734 970 891
               </strong>
             </div>
+            <div itemProp="email" style={{ marginTop: '5px', marginBottom: '5px' }}>
+              <strong>
+                <i className="fa fa-envelope" aria-hidden="true"></i>&nbsp; 
+                <a href="mailto:info@kilitosavannasafariclub.com" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  info@kilitosavannasafariclub.com
+                </a>
+              </strong>
+            </div>
             <div>
               <strong>Available 24 hours, Monday to Sunday</strong>
             </div>
