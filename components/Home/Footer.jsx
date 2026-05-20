@@ -95,7 +95,7 @@ function Footer() {
               </strong>
             </div>
             <div>
-              <strong>10am - 6:30pm, Monday to Saturday</strong>
+              <strong>Available 24 hours</strong>
             </div>
           </div>
         </div>
