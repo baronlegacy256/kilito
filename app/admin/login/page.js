@@ -142,7 +142,7 @@ export default function AdminLoginPage() {
             <Input
               size="large"
               prefix={<MailOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
-              placeholder="admin@kilitosavannaadventures.com"
+              placeholder="info@kilitosavannasafariclub.com"
             />
           </Form.Item>
 

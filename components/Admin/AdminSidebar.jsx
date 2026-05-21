@@ -9,6 +9,7 @@ import {
   LogoutOutlined,
   DashboardOutlined,
   TeamOutlined,
+  MailOutlined,
 } from "@ant-design/icons";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
@@ -62,6 +63,11 @@ export default function AdminSidebar() {
       key: "/admin/users",
       icon: <UserOutlined />,
       label: <Link href="/admin/users">Users</Link>,
+    },
+    {
+      key: "/admin/newsletter",
+      icon: <MailOutlined />,
+      label: <Link href="/admin/newsletter">Newsletter</Link>,
     },
     {
       type: "divider",

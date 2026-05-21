@@ -1,7 +1,43 @@
-import React, { Fragment } from "react";
+"use client";
+
+import React, { Fragment, useState } from "react";
 import Script from "next/script";
+import { message } from "antd";
 
 function Prefooter() {
+  const [email, setEmail] = useState("");
+
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!email) {
+      message.error("Please enter your email address.");
+      return;
+    }
+    setLoading(true);
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        message.success(data.message || "Successfully subscribed!");
+        setEmail("");
+
+      } else {
+        message.error(data.error || "Failed to subscribe. Please try again.");
+      }
+    } catch (err) {
+      message.error("An unexpected error occurred.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <Fragment>
       <Script id="accept-newsletter-error" strategy="afterInteractive">
@@ -101,6 +137,7 @@ function Prefooter() {
                 role="form"
                 id="newsletterSubscribeNewsletter"
                 className="newsletterSubscribe"
+                onSubmit={handleSubmit}
               >
                 <div className="row subscription-zone">
                   <div className="col-xs-12 custom-col">
@@ -109,16 +146,19 @@ function Prefooter() {
                         htmlFor="input-email-newsletter"
                         className="error"
                       ></label>
-                      <input
-                        type="text"
-                        name="email"
-                        id="input-email-newsletter"
-                        maxLength="128"
-                        placeholder="My email"
-                        title="Please enter your email address."
-                        defaultValue=""
-                        required="required"
-                      />
+                        <input
+                          type="text"
+                          name="email"
+                          id="input-email-newsletter"
+                          maxLength="128"
+                          placeholder="My email"
+                          title="Please enter your email address."
+                          className="error"
+                          required="required"
+                          disabled={loading}
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                        />
                     </div>
                   </div>
 
@@ -127,38 +167,15 @@ function Prefooter() {
                       type="submit"
                       className="btn custom-button stretch-width rounded solid-yellow hover-grow"
                       id="button-email-newsletter"
+                      disabled={loading}
                     >
-                      I subscribe
+                      {loading ? "Subscribing..." : "I subscribe"}
                     </button>
                   </div>
                 </div>
 
-                <div className="row acceptance-zone">
-                  <div className="col-xs-12 custom-col">
-                    <div className="custom-form-field">
-                      <div className="custom-checkbox-zone">
-                        <input type="hidden" name="_isNewsletterSubscribed" />
-                        <input
-                          type="checkbox"
-                          name="isNewsletterSubscribed"
-                          id="isNewsletterSubscribedNewsletter"
-                        />
-                        <label
-                          htmlFor="isNewsletterSubscribedNewsletter"
-                          className="form-field-label custom-style"
-                        >
-                          I wish to receive Kili to Savanna news (new dates,
-                          stays...)
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <div
-                  id="newsletterSubscribeNewsletterMessage"
-                  className="message-zone"
-                ></div>
+
               </form>
             </div>
           </div>

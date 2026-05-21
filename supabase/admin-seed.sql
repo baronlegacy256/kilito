@@ -5,7 +5,7 @@
 insert into public.admin_profiles (user_id, full_name, is_active)
 select u.id, 'Main Admin', true
 from auth.users u
-where u.email = 'admin@kilitosavannaadventures.com'
+where u.email = 'info@kilitosavannasafariclub.com'
 on conflict (user_id) do update set
   is_active = excluded.is_active,
   full_name = excluded.full_name;

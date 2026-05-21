@@ -119,46 +119,92 @@ function Header() {
             className="menu-container"
             style={{ display: activeSubMenu ? "none" : "block" }}
           >
-            <ul id="mobile-login-zone" className="menu-list">
-              <li className="menu-header">
+            <ul
+              id="mobile-login-zone"
+              className="menu-list"
+              style={{ padding: 0, margin: 0 }}
+            >
+              <li
+                className="menu-header"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  width: "100%",
+                  padding: "15px 20px",
+                  borderBottom: "1px solid #f0f0f0",
+                }}
+              >
                 <Link href="/" className="logo-container no-decoration">
-                  <div className="photo-container" style={{ display: 'flex', alignItems: 'center' }}>
+                  <div
+                    className="photo-container"
+                    style={{ display: "flex", alignItems: "center" }}
+                  >
                     <img
                       src="/assets/images/home/logo.png"
                       alt="Kili to Savanna logo"
                       title="Africa Safari: Tailor-made Trips and Stays - Kili to Savanna"
-                      style={{ maxHeight: '32px', width: 'auto', objectFit: 'contain' }}
+                      style={{
+                        maxHeight: "32px",
+                        width: "auto",
+                        objectFit: "contain",
+                      }}
                     />
                   </div>
                 </Link>
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  {!isAuthenticated ? (
-                    <button
-                      type="button"
-                      className="btn custom-button white no-border login-button"
-                      onClick={showLoginModal}
-                      style={{ width: "auto", padding: "0 10px" }}
-                    >
-                      Log in
-                    </button>
-                  ) : null}
+                <button
+                  type="button"
+                  onClick={toggleMobileMenu}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    padding: "5px",
+                    color: "#333",
+                    fontSize: "20px",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                  aria-label="Close menu"
+                >
+                  <i className="fa fa-times" aria-hidden="true"></i>
+                </button>
+              </li>
+
+              {!isAuthenticated ? (
+                <li style={{ padding: "15px 20px" }}>
                   <button
                     type="button"
-                    onClick={toggleMobileMenu}
-                    style={{
-                      background: "none",
-                      border: "none",
-                      padding: "0 10px",
-                      color: "black",
-                      fontSize: "20px",
-                      cursor: "pointer",
+                    className="btn custom-button rounded solid-yellow hover-grow"
+                    onClick={() => {
+                      showLoginModal();
+                      toggleMobileMenu();
                     }}
-                    aria-label="Close menu"
+                    style={{
+                      width: "100%",
+                      height: "44px",
+                      fontWeight: "bold",
+                      fontSize: "14px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      backgroundColor: "#ffae3b",
+                      border: "none",
+                      color: "white",
+                      borderRadius: "8px",
+                      boxShadow: "0 2px 8px rgba(255, 174, 59, 0.25)",
+                    }}
                   >
-                    <i className="fa fa-times" aria-hidden="true"></i>
+                    <i
+                      className="fa fa-sign-in"
+                      aria-hidden="true"
+                      style={{ marginRight: "8px" }}
+                    ></i>{" "}
+                    Log in
                   </button>
-                </div>
-              </li>
+                </li>
+              ) : null}
             </ul>
 
             {isAuthenticated && (
@@ -248,18 +294,60 @@ function Header() {
                 Back
               </li>
               <li className="link-to-sub-sub-menu" style={{ padding: 0 }}>
-                <Link href="/packages?category=Safari+tour" onClick={toggleMobileMenu} style={{ color: "black", display: "block", padding: "10px 15px", textDecoration: "none" }}>
-                  Safari Tour <i className="fa fa-angle-right icon" aria-hidden="true" style={{ float: "right" }}></i>
+                <Link
+                  href="/packages?category=Safari+tour"
+                  onClick={toggleMobileMenu}
+                  style={{
+                    color: "black",
+                    display: "block",
+                    padding: "10px 15px",
+                    textDecoration: "none",
+                  }}
+                >
+                  Safari Tour{" "}
+                  <i
+                    className="fa fa-angle-right icon"
+                    aria-hidden="true"
+                    style={{ float: "right" }}
+                  ></i>
                 </Link>
               </li>
               <li className="link-to-sub-sub-menu" style={{ padding: 0 }}>
-                <Link href="/packages?category=Cultural+tour" onClick={toggleMobileMenu} style={{ color: "black", display: "block", padding: "10px 15px", textDecoration: "none" }}>
-                  Cultural Tour <i className="fa fa-angle-right icon" aria-hidden="true" style={{ float: "right" }}></i>
+                <Link
+                  href="/packages?category=Cultural+tour"
+                  onClick={toggleMobileMenu}
+                  style={{
+                    color: "black",
+                    display: "block",
+                    padding: "10px 15px",
+                    textDecoration: "none",
+                  }}
+                >
+                  Cultural Tour{" "}
+                  <i
+                    className="fa fa-angle-right icon"
+                    aria-hidden="true"
+                    style={{ float: "right" }}
+                  ></i>
                 </Link>
               </li>
               <li className="link-to-sub-sub-menu" style={{ padding: 0 }}>
-                <Link href="/packages?category=Climbing+and+Trekking" onClick={toggleMobileMenu} style={{ color: "black", display: "block", padding: "10px 15px", textDecoration: "none" }}>
-                  Climbing and Trekking <i className="fa fa-angle-right icon" aria-hidden="true" style={{ float: "right" }}></i>
+                <Link
+                  href="/packages?category=Climbing+and+Trekking"
+                  onClick={toggleMobileMenu}
+                  style={{
+                    color: "black",
+                    display: "block",
+                    padding: "10px 15px",
+                    textDecoration: "none",
+                  }}
+                >
+                  Climbing and Trekking{" "}
+                  <i
+                    className="fa fa-angle-right icon"
+                    aria-hidden="true"
+                    style={{ float: "right" }}
+                  ></i>
                 </Link>
               </li>
             </ul>
@@ -522,7 +610,14 @@ function Header() {
                         className="submenu-item with-link"
                         style={{ padding: "10px 20px" }}
                       >
-                        <Link href="/packages?category=Safari+tour" style={{ color: "black", textDecoration: "none", display: "block" }}>
+                        <Link
+                          href="/packages?category=Safari+tour"
+                          style={{
+                            color: "black",
+                            textDecoration: "none",
+                            display: "block",
+                          }}
+                        >
                           Safari Tour
                         </Link>
                       </li>
@@ -530,7 +625,14 @@ function Header() {
                         className="submenu-item with-link"
                         style={{ padding: "10px 20px" }}
                       >
-                        <Link href="/packages?category=Cultural+tour" style={{ color: "black", textDecoration: "none", display: "block" }}>
+                        <Link
+                          href="/packages?category=Cultural+tour"
+                          style={{
+                            color: "black",
+                            textDecoration: "none",
+                            display: "block",
+                          }}
+                        >
                           Cultural Tour
                         </Link>
                       </li>
@@ -538,7 +640,14 @@ function Header() {
                         className="submenu-item with-link"
                         style={{ padding: "10px 20px" }}
                       >
-                        <Link href="/packages?category=Climbing+and+Trekking" style={{ color: "black", textDecoration: "none", display: "block" }}>
+                        <Link
+                          href="/packages?category=Climbing+and+Trekking"
+                          style={{
+                            color: "black",
+                            textDecoration: "none",
+                            display: "block",
+                          }}
+                        >
                           Climbing and Trekking
                         </Link>
                       </li>

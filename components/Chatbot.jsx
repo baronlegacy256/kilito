@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Drawer, Button, Input, Spin } from "antd";
 import {
   MessageOutlined,
@@ -12,6 +13,7 @@ import {
 } from "@ant-design/icons";
 
 export default function Chatbot() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [showPopup, setShowPopup] = useState(true);
   const [messages, setMessages] = useState([
@@ -130,6 +132,7 @@ export default function Chatbot() {
   };
 
   if (!mounted) return null;
+  if (pathname && pathname.startsWith("/admin")) return null;
 
   return (
     <>
