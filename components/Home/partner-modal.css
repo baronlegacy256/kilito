@@ -1,0 +1,147 @@
+/* Partner application modal — fixed 16px base, isolated from site rem scaling */
+.partner-modal-wrap {
+  --partner-accent: #ffae3b;
+  --partner-accent-hover: #e89a28;
+  --partner-text: #2e2d2b;
+  --partner-muted: #6b6560;
+}
+
+.partner-modal-wrap .ant-modal {
+  max-width: calc(100vw - 32px);
+}
+
+.partner-modal-wrap .ant-modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--partner-text);
+}
+
+.partner-modal-wrap .ant-modal-header {
+  padding: 20px 24px 12px;
+  margin-bottom: 0;
+  border-bottom: 1px solid #f0f0f0;
+  background: linear-gradient(180deg, #fff8eb 0%, #fff 100%);
+}
+
+.partner-modal-wrap .ant-modal-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  color: var(--partner-text) !important;
+}
+
+.partner-modal-wrap .ant-modal-body {
+  padding: 20px 24px 8px;
+  max-height: min(70vh, 640px);
+  overflow-y: auto;
+}
+
+.partner-modal-wrap .ant-modal-footer {
+  padding: 12px 24px 20px;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 0;
+}
+
+.partner-modal-wrap .ant-form-item-label > label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--partner-text);
+  height: auto;
+}
+
+.partner-modal-wrap .ant-input,
+.partner-modal-wrap .ant-input-affix-wrapper,
+.partner-modal-wrap .ant-select-selector,
+.partner-modal-wrap .ant-input-textarea textarea {
+  font-size: 15px !important;
+  border-radius: 8px !important;
+}
+
+.partner-modal-wrap .ant-select-selection-item,
+.partner-modal-wrap .ant-select-selection-placeholder {
+  font-size: 15px !important;
+}
+
+.partner-modal-wrap .partner-modal-intro {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  background: #fff8eb;
+  border: 1px solid rgba(255, 174, 59, 0.35);
+  border-radius: 8px;
+  font-size: 14px;
+  color: #7a5c20;
+  line-height: 1.45;
+}
+
+.partner-modal-wrap .partner-modal-section-title {
+  margin: 8px 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--partner-muted);
+}
+
+.partner-modal-wrap .partner-modal-phone-row {
+  display: grid;
+  grid-template-columns: minmax(140px, 42%) 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.partner-modal-wrap .partner-modal-phone-row .ant-form-item {
+  margin-bottom: 0;
+}
+
+.partner-modal-wrap .partner-modal-char-count {
+  text-align: right;
+  font-size: 12px;
+  color: var(--partner-muted);
+  margin-top: 4px;
+}
+
+.partner-modal-wrap .partner-modal-success {
+  padding: 24px 8px 32px;
+  text-align: center;
+}
+
+.partner-modal-wrap .partner-modal-success .ant-result-title {
+  font-size: 1.25rem;
+}
+
+.partner-modal-wrap .partner-modal-success .ant-result-subtitle {
+  font-size: 15px;
+  color: var(--partner-muted);
+}
+
+.partner-modal-wrap .ant-btn-primary {
+  background: var(--partner-accent) !important;
+  border-color: var(--partner-accent) !important;
+  font-weight: 600;
+  min-height: 42px;
+  padding-inline: 24px;
+}
+
+.partner-modal-wrap .ant-btn-primary:hover:not(:disabled) {
+  background: var(--partner-accent-hover) !important;
+  border-color: var(--partner-accent-hover) !important;
+}
+
+@media (max-width: 576px) {
+  .partner-modal-wrap .ant-modal-body {
+    padding: 16px;
+    max-height: 75vh;
+  }
+
+  .partner-modal-wrap .ant-modal-header,
+  .partner-modal-wrap .ant-modal-footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .partner-modal-wrap .partner-modal-phone-row {
+    grid-template-columns: 1fr;
+  }
+}

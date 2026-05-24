@@ -136,6 +136,9 @@ function PackageCard({ pkg }) {
                           <div className="stamp activity-nature-stamp solid">
                             {pkg.technical_level_label || "PRIVATE TRIP"}
                           </div>
+                          <div className="stamp activity-nature-stamp solid">
+                            {pkg.physical_level_label || "SUITABLE FOR ALL"}
+                          </div>
                         </div>
                         <ul className="strengths-inner-zone">
                           {pkg.package_pricing_tiers?.map((tier, tidx) => (
@@ -149,7 +152,7 @@ function PackageCard({ pkg }) {
                               >
                                 &bull;
                               </span>
-                              {tier.label}:{" "}
+                             
                               <strong>
                                 {formatPrice(
                                   tier.price_amount,

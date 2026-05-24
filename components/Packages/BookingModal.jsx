@@ -1,32 +1,70 @@
 'use client'
-import React, { useState } from 'react'
+
+import React, { useState, useEffect } from 'react'
+import { Modal } from 'antd'
+import { PHONE_COUNTRY_CODES, getDialCode } from '@/lib/phone-country-codes'
+import './booking-modal.css'
+
+const INITIAL_FORM = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  mobilePhone: '',
+  mobilePhoneCountry: 'TZ',
+  nbParticipants: '',
+  startingDate: '',
+  endingDate: '',
+  comment: '',
+  isCguAccepted: false,
+  isNewsletterSubscribed: false,
+}
+
+const BENEFITS = [
+  'Personalized quote',
+  'Your case will be monitored by a specialist advisor',
+  'Confirmation and payment once the quote is validated',
+]
 
 function BookingModal({ isOpen, onClose, packageData, type = 'Booking' }) {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    mobilePhone: '',
-    mobilePhoneCode: '255',
-    nbParticipants: '',
-    startingDate: '',
-    endingDate: '',
-    comment: '',
-    isCguAccepted: false,
-    isNewsletterSubscribed: false
-  })
+  const [formData, setFormData] = useState(INITIAL_FORM)
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState('')
 
-  if (!isOpen) return null
+  const requestTitle =
+    type === 'Quote' ? 'Your quote request' : 'Your booking request'
+
+  const packageTitle =
+    packageData?.title || 'The essentials of Africa Safari'
+
+  useEffect(() => {
+    if (!isOpen) return
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+    }
+  }, [isOpen])
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target
-    setFormData((prev) => ({ 
-      ...prev, 
-      [name]: type === 'checkbox' ? checked : value 
+    const { name, value, type: inputType, checked } = e.target
+    setFormData((prev) => ({
+      ...prev,
+      [name]: inputType === 'checkbox' ? checked : value,
     }))
+  }
+
+  const resetForm = () => {
+    setFormData(INITIAL_FORM)
+    setSuccess(false)
+    setError('')
+  }
+
+  const handleClose = () => {
+    onClose()
+    resetForm()
   }
 
   const handleSubmit = async (e) => {
@@ -44,7 +82,7 @@ function BookingModal({ isOpen, onClose, packageData, type = 'Booking' }) {
         body: JSON.stringify({
           full_name: `${formData.firstName} ${formData.lastName}`,
           email: formData.email,
-          phone: `+${formData.mobilePhoneCode} ${formData.mobilePhone}`,
+          phone: `+${getDialCode(formData.mobilePhoneCountry)} ${formData.mobilePhone}`,
           num_travelers: parseInt(formData.nbParticipants) || 1,
           start_date: formData.startingDate,
           special_requests: formData.comment,
@@ -59,21 +97,7 @@ function BookingModal({ isOpen, onClose, packageData, type = 'Booking' }) {
 
       setSuccess(true)
       setTimeout(() => {
-        onClose()
-        setSuccess(false)
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          mobilePhone: '',
-          mobilePhoneCode: '255',
-          nbParticipants: '',
-          startingDate: '',
-          endingDate: '',
-          comment: '',
-          isCguAccepted: false,
-          isNewsletterSubscribed: false
-        })
+        handleClose()
       }, 3000)
     } catch (err) {
       setError(err.message)
@@ -83,388 +107,299 @@ function BookingModal({ isOpen, onClose, packageData, type = 'Booking' }) {
   }
 
   return (
-    <div 
-      className="modal fade booking-modal in" 
-      id="booking-demand-modal" 
-      tabIndex="-1" 
-      role="dialog" 
-      aria-labelledby="bookingModal" 
-      aria-hidden="false" 
-      data-backdrop="static" 
-      style={{ 
-        display: 'block', 
-        backgroundColor: 'rgba(0,0,0,0.6)', 
-        overflowY: 'auto',
-        zIndex: 10000,
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%'
-      }}
+    <Modal
+      open={isOpen}
+      onCancel={handleClose}
+      footer={null}
+      title={null}
+      closable={false}
+      centered
+      destroyOnClose
+      maskClosable
+      width={640}
+      wrapClassName="booking-demand-modal-wrap"
+      zIndex={10000}
+      styles={{ body: { padding: 0 } }}
     >
-      <div className="modal-dialog" style={{ marginTop: '50px', marginBottom: '50px' }}>
-        <div className="modal-content">
-          <div className="modal-header">
-            <button type="button" className="close" onClick={onClose} aria-hidden="true" style={{ fontSize: '24px', position: 'absolute', right: '20px', top: '20px', border: 'none', background: 'none' }}>
-              <i className="fa fa-times-circle"></i>
-            </button>
-            <div className="modal-title hidden-xs">
-              <h3>
-                {success ? "Merci ! Nous avons bien reçu votre demande" : "Your booking request"}
-              </h3>
+      <div id="booking-demand-modal" className="booking-modal">
+        <header className="booking-modal__header">
+          <button
+            type="button"
+            className="booking-modal__close"
+            onClick={handleClose}
+            aria-label="Close"
+          >
+            <i className="fa fa-times" aria-hidden="true" />
+          </button>
+          <h2 className="booking-modal__heading">
+            {success
+              ? 'Thank you — we received your request'
+              : requestTitle}
+          </h2>
+          {!success && (
+            <div className="booking-modal__package">
+              <p className="booking-modal__package-title">{packageTitle}</p>
+              <p className="booking-modal__package-org">
+                Organized by Kili to Savanna
+              </p>
             </div>
-            
-            {!success && (
-              <div id="booking-modal-title-before">
-                
-                <div className="modal-title visible-xs">
-                  <h3>Your booking request</h3>
-                </div>
-                <div className="modal-sub-title">
-                  <div className="subtitle">
-                    <div className="title" style={{ fontSize: '1.2rem', fontWeight: '700', color: '#f5a623' }}>
-                      {packageData?.title || "The essentials of Africa Safari"}
-                    </div>
-                    <div className="pro" style={{ fontSize: '1rem', color: '#777' }}>
-                      organized by Kili to Savanna
-                    </div>
-                  </div>
-                </div>
+          )}
+        </header>
+
+        <div className="booking-modal__body">
+          {success ? (
+            <div className="booking-modal__success">
+              <div className="booking-modal__success-icon">
+                <i className="fa fa-check" aria-hidden="true" />
               </div>
-            )}
-          </div>
-
-          <div className="modal-body">
-            {success ? (
-              <div style={{ padding: '40px', textAlign: 'center' }}>
-                <i className="fa fa-check-circle" style={{ fontSize: '64px', color: '#f5a623', marginBottom: '20px' }}></i>
-                <h4>Request Received!</h4>
-                <p>Following your request, a specialist advisor will contact you to provide a quote. Dates and prices are indicative only until the booking is confirmed.</p>
+              <h4>Request received</h4>
+              <p>
+                A specialist advisor will contact you shortly with a quote.
+                Dates and prices remain indicative until your booking is
+                confirmed.
+              </p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} id="booking-demand-form" autoComplete="off">
+              <div className="booking-modal__notice">
+                <i
+                  className="fa fa-info-circle booking-modal__notice-icon"
+                  aria-hidden="true"
+                />
+                <span>
+                  Following your request, a specialist advisor will contact you
+                  with a quote. Dates and prices are indicative until confirmed.
+                </span>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} id="booking-demand-form" autoComplete="off">
-                <input type="hidden" name="type" value="BOOK_NOW" id="type" />
 
-                <div id="booking-form-inner">
-                  <div className="process info" style={{ background: '#fdf5e6', padding: '15px', borderRadius: '4px', marginBottom: '20px', fontSize: '1rem', color: '#8a6d3b', border: '1px solid #faebcc' }}>
-                    Following your request, a specialist advisor will contact you to provide a quote. Dates and prices are indicative only until the booking is confirmed.
-                  </div>
-                  
-                  <div className="reinsurance" style={{ marginBottom: '25px' }}>
-                    <div className="reinsurance-line" style={{ marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.95rem', color: '#555' }}>
-                      <i className="fa fa-check icon" aria-hidden="true" style={{ color: '#4caf50' }}></i>
-                      <span className="text">Personalized quote</span>
-                    </div>
-                    <div className="reinsurance-line" style={{ marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.95rem', color: '#555' }}>
-                      <i className="fa fa-check icon" aria-hidden="true" style={{ color: '#4caf50' }}></i>
-                      <span className="text">Your case will be monitored by a specialist advisor.</span>
-                    </div>
-                    <div className="reinsurance-line" style={{ marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.95rem', color: '#555' }}>
-                      <i className="fa fa-check icon" aria-hidden="true" style={{ color: '#4caf50' }}></i>
-                      <span className="text">Confirmation and payment once the quote is validated</span>
-                    </div>
-                  </div>
+              <ul className="booking-modal__benefits">
+                {BENEFITS.map((text) => (
+                  <li key={text} className="booking-modal__benefit">
+                    <i className="fa fa-check" aria-hidden="true" />
+                    <span>{text}</span>
+                  </li>
+                ))}
+              </ul>
 
-                  <div className="modal-inner-container dates-container" style={{ padding: '20px 0', borderBottom: '1px solid #eee', paddingTop: 0 }}>
-                    <div className="row">
-                      <div className="col-sm-4">
-                        <label className="form-field-label" style={{ fontWeight: '600', fontSize: '1rem', color: '#444', marginBottom: '8px', display: 'block' }}>Preferred dates</label>
+              <section className="booking-modal__section" aria-labelledby="bm-trip">
+                <h3 id="bm-trip" className="booking-modal__section-title">
+                  Trip details
+                </h3>
+                <div className="booking-modal__fields">
+                  <div className="booking-modal__field">
+                    <span className="booking-modal__label">Preferred dates</span>
+                    <div className="booking-modal__field-row">
+                      <div className="booking-modal__field">
+                        <label className="booking-modal__label" htmlFor="startingDate">
+                          Start *
+                        </label>
+                        <input
+                          id="startingDate"
+                          type="date"
+                          className="booking-modal__input"
+                          name="startingDate"
+                          value={formData.startingDate}
+                          onChange={handleChange}
+                          required
+                        />
                       </div>
-
-                      <div className="col-sm-8">
-                        <div className="row date-clone date-range">
-                          <div className="col-sm-5">
-                            <label className="form-field-label visible-xs">Beginning *</label>
-                            <div className="custom-form-field stretch-width separated">
-                              <input 
-                                type="date" 
-                                className="starting-date" 
-                                name="startingDate" 
-                                value={formData.startingDate}
-                                onChange={handleChange}
-                                required
-                                style={{ width: '100%', padding: '8px 12px', border: '1px solid #ccc', borderRadius: '4px' }}
-                              />
-                            </div>
-                          </div>
-
-                          <div className="col-sm-5">
-                            <label className="form-field-label visible-xs">END</label>
-                            <div className="custom-form-field stretch-width separated">
-                              <input 
-                                type="date" 
-                                className="ending-date" 
-                                name="endingDate" 
-                                value={formData.endingDate}
-                                onChange={handleChange}
-                                style={{ width: '100%', padding: '8px 12px', border: '1px solid #ccc', borderRadius: '4px' }}
-                              />
-                            </div>
-                          </div>
-                        </div>
+                      <div className="booking-modal__field">
+                        <label className="booking-modal__label" htmlFor="endingDate">
+                          End
+                        </label>
+                        <input
+                          id="endingDate"
+                          type="date"
+                          className="booking-modal__input"
+                          name="endingDate"
+                          value={formData.endingDate}
+                          onChange={handleChange}
+                        />
                       </div>
                     </div>
                   </div>
+                  <div className="booking-modal__field">
+                    <label className="booking-modal__label" htmlFor="nbParticipants">
+                      Number of travelers *
+                    </label>
+                    <select
+                      id="nbParticipants"
+                      className="booking-modal__select"
+                      name="nbParticipants"
+                      value={formData.nbParticipants}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value="">Select</option>
+                      {[...Array(30)].map((_, i) => (
+                        <option key={i + 1} value={i + 1}>
+                          {i + 1} {i === 0 ? 'person' : 'people'}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+              </section>
 
-                  <div className="modal-inner-container" style={{ padding: '20px 0', borderBottom: '1px solid #eee' }}>
-                    <div className="row form-row">
-                      <div className="col-sm-4">
-                        <label className="form-field-label" style={{ fontWeight: '600', fontSize: '1rem', color: '#444', marginBottom: '8px', display: 'block' }}>How many of you are there?</label>
-                      </div>
-
-                      <div className="col-sm-7">
-                        <div className="custom-form-field stretch-width with-icon separated">
-                          <select 
-                            name="nbParticipants" 
-                            value={formData.nbParticipants}
-                            onChange={handleChange}
-                            required
-                            style={{ width: '100%', padding: '8px 12px', border: '1px solid #ccc', borderRadius: '4px' }}
-                          >
-                            <option value="">Select</option>
-                            {[...Array(30)].map((_, i) => (
-                              <option key={i+1} value={i+1}>{i+1} {i === 0 ? 'person' : 'people'}</option>
-                            ))}
-                          </select>
-                        </div>
-                      </div>
+              <section className="booking-modal__section" aria-labelledby="bm-contact">
+                <h3 id="bm-contact" className="booking-modal__section-title">
+                  Your contact details
+                </h3>
+                <p className="booking-modal__section-desc">
+                  We use this information only to follow up on your request.
+                </p>
+                <div className="booking-modal__fields">
+                  <div className="booking-modal__field">
+                    <label className="booking-modal__label" htmlFor="email">
+                      Email *
+                    </label>
+                    <input
+                      id="email"
+                      type="email"
+                      className="booking-modal__input"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      autoComplete="email"
+                    />
+                  </div>
+                  <div className="booking-modal__field">
+                    <span className="booking-modal__label">Phone *</span>
+                    <div className="booking-modal__field-row booking-modal__field-row--phone">
+                      <select
+                        className="booking-modal__select booking-modal__country-select"
+                        name="mobilePhoneCountry"
+                        value={formData.mobilePhoneCountry}
+                        onChange={handleChange}
+                        required
+                        aria-label="Country code"
+                      >
+                        {PHONE_COUNTRY_CODES.map(({ iso, name, dial }) => (
+                          <option key={iso} value={iso}>
+                            {name} (+{dial})
+                          </option>
+                        ))}
+                      </select>
+                      <input
+                        type="tel"
+                        className="booking-modal__input"
+                        name="mobilePhone"
+                        value={formData.mobilePhone}
+                        onChange={handleChange}
+                        placeholder="Phone number"
+                        required
+                        autoComplete="tel"
+                      />
                     </div>
                   </div>
-
-                  <div className="modal-inner-container" style={{ padding: '20px 0', borderBottom: '1px solid #eee' }}>
-                    <label className="form-field-label section-title" style={{ fontWeight: '600', fontSize: '1.25rem', color: '#333', marginBottom: '15px', display: 'block' }}>Your contact details</label>
-                    <div className="info" style={{ fontSize: '1rem', color: '#666', marginBottom: '15px' }}>
-                      This information is necessary for the Kili to Savanna teams to contact you and follow up on your booking. It is used for this purpose only.
+                  <div className="booking-modal__field-row">
+                    <div className="booking-modal__field">
+                      <label className="booking-modal__label" htmlFor="lastName">
+                        Last name *
+                      </label>
+                      <input
+                        id="lastName"
+                        type="text"
+                        className="booking-modal__input"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        required
+                        autoComplete="family-name"
+                      />
                     </div>
-
-                    <div className="row">
-                      <div className="col-sm-12">
-                        <div className="row form-row" style={{ marginBottom: '15px' }}>
-                          <div className="col-sm-4">
-                            <label className="form-field-label soft-label" style={{ fontWeight: '400', color: '#666' }}>Email *</label>
-                          </div>
-                          <div className="col-sm-8">
-                            <div className="custom-form-field stretch-width separated">
-                              <input 
-                                type="email" 
-                                name="email" 
-                                value={formData.email}
-                                onChange={handleChange}
-                                required
-                                style={{ width: '100%', padding: '8px 12px', border: '1px solid #ccc', borderRadius: '4px' }}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="row" style={{ marginBottom: '15px' }}>
-                      <div className="col-sm-12">
-                        <div className="row form-row">
-                          <div className="col-sm-4">
-                            <label className="form-field-label soft-label" style={{ fontWeight: '400', color: '#666' }}>Phone *</label>
-                          </div>
-                          <div className="col-xs-4 col-sm-3">
-                            <div className="custom-form-field stretch-width separated">
-                              <select 
-                                name="mobilePhoneCode" 
-                                value={formData.mobilePhoneCode}
-                                onChange={handleChange}
-                                required
-                                style={{ width: '100%', padding: '8px 12px', border: '1px solid #ccc', borderRadius: '4px' }}
-                              >
-                                <option value="255">TZA +255</option>
-                                <option value="254">KEN +254</option>
-                                <option value="27">ZAF +27</option>
-                                <option value="33">FRA +33</option>
-                                <option value="1">USA +1</option>
-                                <option value="44">GBR +44</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div className="col-xs-8 col-sm-5">
-                            <div className="custom-form-field stretch-width separated">
-                              <input 
-                                type="tel" 
-                                name="mobilePhone" 
-                                value={formData.mobilePhone}
-                                onChange={handleChange}
-                                placeholder="0XXXXXXXX" 
-                                required
-                                style={{ width: '100%', padding: '8px 12px', border: '1px solid #ccc', borderRadius: '4px' }}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="row" style={{ marginBottom: '15px' }}>
-                      <div className="col-sm-12">
-                        <div className="row form-row">
-                          <div className="col-sm-4">
-                            <label className="form-field-label soft-label" style={{ fontWeight: '400', color: '#666' }}>Name *</label>
-                          </div>
-                          <div className="col-sm-8">
-                            <div className="custom-form-field stretch-width separated">
-                              <input 
-                                type="text" 
-                                name="lastName" 
-                                value={formData.lastName}
-                                onChange={handleChange}
-                                required
-                                style={{ width: '100%', padding: '8px 12px', border: '1px solid #ccc', borderRadius: '4px' }}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="row">
-                      <div className="col-sm-12">
-                        <div className="row form-row">
-                          <div className="col-sm-4">
-                            <label className="form-field-label soft-label" style={{ fontWeight: '400', color: '#666' }}>First name *</label>
-                          </div>
-                          <div className="col-sm-8">
-                            <div className="custom-form-field stretch-width separated">
-                              <input 
-                                type="text" 
-                                name="firstName" 
-                                value={formData.firstName}
-                                onChange={handleChange}
-                                required
-                                style={{ width: '100%', padding: '8px 12px', border: '1px solid #ccc', borderRadius: '4px' }}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="modal-inner-container" style={{ padding: '20px 0', borderBottom: '1px solid #eee' }}>
-                    <label className="form-field-label section-title" style={{ fontWeight: '600', fontSize: '1.25rem', color: '#333', marginBottom: '15px', display: 'block' }}>Additional information</label>
-                    <div className="row form-row">
-                      <div className="col-sm-12 line-info" style={{ fontSize: '0.9rem', color: '#888', marginBottom: '15px' }}>
-                        • The time when you are most easily reachable to be contacted <br />
-                        • Any information you deem useful: your project, your experience...
-                      </div>
-                    </div>
-                    <div className="row form-row">
-                      <div className="col-sm-12">
-                        <div className="custom-form-field separated">
-                          <textarea 
-                            name="comment" 
-                            rows="4" 
-                            value={formData.comment}
-                            onChange={handleChange}
-                            placeholder="Tell us more about your request..."
-                            style={{ width: '100%', padding: '8px 12px', border: '1px solid #ccc', borderRadius: '4px' }}
-                          ></textarea>
-                          <div className="input-max-length-zone" style={{ textAlign: 'right', fontSize: '0.75rem', color: '#aaa', marginTop: '5px' }}>
-                            <span className="input-max-length-current-size">
-                              {formData.comment.length}/2000
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="modal-inner-container modal-inner-container-bottom" style={{ padding: '20px 0' }}>
-                    <div className="row">
-                      <div className="col-sm-12">
-                        <div className="custom-form-field">
-                          <div className="custom-checkbox-zone" style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '10px' }}>
-                            <input 
-                              type="checkbox" 
-                              name="isCguAccepted" 
-                              checked={formData.isCguAccepted}
-                              onChange={handleChange}
-                              id="isCguAccepted" 
-                              required 
-                              style={{ marginTop: '4px' }}
-                            />
-                            <label htmlFor="isCguAccepted" className="form-field-label custom-style" style={{ fontWeight: '400', fontSize: '1rem', color: '#666' }}>
-                              I have read and agree to the <a href="#" className="convention-show-link" style={{ color: '#f5a623' }}>General Terms and Conditions of Use.</a>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="row form-row">
-                      <div className="col-sm-12">
-                        <div className="custom-form-field">
-                          <div className="custom-checkbox-zone" style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '10px' }}>
-                            <input 
-                              type="checkbox" 
-                              name="isNewsletterSubscribed" 
-                              checked={formData.isNewsletterSubscribed}
-                              onChange={handleChange}
-                              id="isNewsletterSubscribed" 
-                              style={{ marginTop: '4px' }}
-                            />
-                            <label htmlFor="isNewsletterSubscribed" className="form-field-label custom-style" style={{ fontWeight: '400', fontSize: '1rem', color: '#666' }}>
-                              I would like to receive Kili to Savanna news (new dates, trips...)
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="row" style={{ marginTop: '20px' }}>
-                      <div className="col-sm-4 col-sm-offset-4">
-                        <div className="custom-form-field stretch-width">
-                          <button 
-                            type="submit" 
-                            className="btn custom-button rounded hover-grow solid-yellow stretch-width"
-                            disabled={loading}
-                            style={{ 
-                              background: '#f5a623', 
-                              color: 'white', 
-                              border: 'none', 
-                              padding: '12px', 
-                              fontWeight: '700', 
-                              textTransform: 'uppercase', 
-                              borderRadius: '4px', 
-                              cursor: 'pointer',
-                              width: '100%'
-                            }}
-                          >
-                            <div>
-                              {loading ? "Processing..." : "Make a request"}
-                            </div>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-
-                    {error && (
-                      <div className="row">
-                        <div className="col-sm-12">
-                          <p style={{ color: '#e57373', textAlign: 'center', marginTop: '10px' }}>{error}</p>
-                        </div>
-                      </div>
-                    )}
-
-                    <div className="row form-row">
-                      <div className="col-sm-12 line-info" style={{ textAlign: 'center', marginTop: '15px', fontSize: '0.9rem', color: '#888' }}>
-                        You will be contacted within 1 to 24 hours depending on the urgency of your project.
-                      </div>
+                    <div className="booking-modal__field">
+                      <label className="booking-modal__label" htmlFor="firstName">
+                        First name *
+                      </label>
+                      <input
+                        id="firstName"
+                        type="text"
+                        className="booking-modal__input"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        required
+                        autoComplete="given-name"
+                      />
                     </div>
                   </div>
                 </div>
-              </form>
-            )}
-          </div>
+              </section>
+
+              <section className="booking-modal__section" aria-labelledby="bm-extra">
+                <h3 id="bm-extra" className="booking-modal__section-title">
+                  Additional information
+                </h3>
+                <p className="booking-modal__hint">
+                  Best time to reach you, travel experience, or anything else that
+                  helps us prepare your quote.
+                </p>
+                <div className="booking-modal__field">
+                  <textarea
+                    className="booking-modal__textarea"
+                    name="comment"
+                    rows={4}
+                    value={formData.comment}
+                    onChange={handleChange}
+                    placeholder="Tell us more about your request…"
+                    maxLength={2000}
+                  />
+                  <div className="booking-modal__char-count">
+                    {formData.comment.length}/2000
+                  </div>
+                </div>
+              </section>
+
+              <section className="booking-modal__section booking-modal__section--submit">
+                <div className="booking-modal__checks">
+                  <label className="booking-modal__check">
+                    <input
+                      type="checkbox"
+                      name="isCguAccepted"
+                      checked={formData.isCguAccepted}
+                      onChange={handleChange}
+                      required
+                    />
+                    <span className="booking-modal__check-text">
+                      I have read and agree to the{' '}
+                      <a href="#">General Terms and Conditions of Use</a>.
+                    </span>
+                  </label>
+                  <label className="booking-modal__check">
+                    <input
+                      type="checkbox"
+                      name="isNewsletterSubscribed"
+                      checked={formData.isNewsletterSubscribed}
+                      onChange={handleChange}
+                    />
+                    <span className="booking-modal__check-text">
+                      I would like to receive Kili to Savanna news (new dates,
+                      trips…)
+                    </span>
+                  </label>
+                </div>
+
+                <button
+                  type="submit"
+                  className="booking-modal__submit"
+                  disabled={loading}
+                >
+                  {loading ? 'Sending…' : 'Make a request'}
+                </button>
+
+                {error && <p className="booking-modal__error">{error}</p>}
+
+                <p className="booking-modal__footer-note">
+                  You will be contacted within 1–24 hours depending on urgency.
+                </p>
+              </section>
+            </form>
+          )}
         </div>
       </div>
-    </div>
+    </Modal>
   )
 }
 

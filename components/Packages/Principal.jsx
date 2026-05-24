@@ -90,20 +90,32 @@ function Principal({ packageData }) {
   }, [packageData]);
 
   const [isAffixed, setIsAffixed] = useState(false);
+  const [affixTopOffset, setAffixTopOffset] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalType, setModalType] = useState("Quote");
   const affixParentRef = useRef(null);
   const [activeTab, setActiveTab] = useState("");
 
+  const SECTION_NAV_HEIGHT = 52;
+
   useEffect(() => {
     const handleScroll = () => {
+      const mainMenu = document.querySelector("header #main-menu");
+      let topOffset = 0;
+      if (mainMenu) {
+        const menuRect = mainMenu.getBoundingClientRect();
+        if (menuRect.bottom > 0) {
+          topOffset = Math.ceil(menuRect.bottom);
+        }
+      }
+      setAffixTopOffset(topOffset);
+
       if (affixParentRef.current) {
         const rect = affixParentRef.current.getBoundingClientRect();
-        // Show affix when we scroll past its initial position
-        setIsAffixed(rect.top <= 0);
+        setIsAffixed(rect.top <= topOffset);
       }
 
-      // Active tab detection
+      const stickyLine = topOffset + SECTION_NAV_HEIGHT + 16;
       const sections = [
         "accommodation-zone",
         "features-zone",
@@ -116,7 +128,7 @@ function Principal({ packageData }) {
         const element = document.getElementById(sectionId);
         if (element) {
           const rect = element.getBoundingClientRect();
-          if (rect.top <= 120 && rect.bottom >= 120) {
+          if (rect.top <= stickyLine && rect.bottom >= stickyLine) {
             setActiveTab(sectionId);
             break;
           }
@@ -124,11 +136,21 @@ function Principal({ packageData }) {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    // Trigger once on mount
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const sidebar = document.getElementById("top-right-col");
+    if (!sidebar) return;
+
+    if (isAffixed) {
+      sidebar.style.top = `${affixTopOffset + SECTION_NAV_HEIGHT + 8}px`;
+    } else {
+      sidebar.style.top = "";
+    }
+  }, [isAffixed, affixTopOffset]);
 
   return (
     <div id="principal">
@@ -318,7 +340,7 @@ function Principal({ packageData }) {
               className="affix-parent"
               ref={affixParentRef}
               style={{
-                height: isAffixed ? "51px" : "1px",
+                height: isAffixed ? `${SECTION_NAV_HEIGHT + 1}px` : "1px",
                 position: "relative",
               }}
             >
@@ -327,13 +349,13 @@ function Principal({ packageData }) {
                 className={`page-navbar affixable affixable-sm ${isAffixed ? "affix" : ""}`}
                 style={{
                   position: isAffixed ? "fixed" : "absolute",
-                  top: 0,
+                  top: isAffixed ? affixTopOffset : 0,
                   left: 0,
                   right: 0,
                   zIndex: 1000,
                   background: "#fff",
                   opacity: isAffixed ? 1 : 0,
-                  height: isAffixed ? "50px" : 0,
+                  height: isAffixed ? `${SECTION_NAV_HEIGHT}px` : 0,
                   visibility: isAffixed ? "visible" : "hidden",
                   transition: "opacity 0.2s ease-in-out",
                   pointerEvents: isAffixed ? "auto" : "none",
@@ -414,7 +436,7 @@ function Principal({ packageData }) {
             <div
               id="accommodation-zone"
               className="row sub-main-zone sub-zone-background-white"
-              style={{ scrollMarginTop: "60px" }}
+              style={{ scrollMarginTop: "120px" }}
             >
               <div className="col-sm-12 custom-col">
                 <div className="sub-zone-title">
@@ -432,7 +454,7 @@ function Principal({ packageData }) {
               </div>
             </div>
 
-            <div id="features-zone" style={{ scrollMarginTop: "60px" }}>
+            <div id="features-zone" style={{ scrollMarginTop: "120px" }}>
               <div className="row sub-main-zone sub-zone-background-white with-separator">
                 <div className="col-sm-12 custom-col">
                   <div className="sub-zone-title">
@@ -471,21 +493,14 @@ function Principal({ packageData }) {
                     </div>
                   </div>
                 ))}
-                <div
-                  className="row full-width-background"
-                  style={{
-                    position: "absolute",
-                    left: "-50vw",
-                    width: "200vw",
-                  }}
-                ></div>
+                <div className="row full-width-background" aria-hidden="true" />
               </div>
             </div>
 
             <div
               id="enriched-program-zone"
               className="sub-main-zone sub-zone-background-white row"
-              style={{ scrollMarginTop: "60px" }}
+              style={{ scrollMarginTop: "120px" }}
             >
               <div className="col-sm-12 custom-col">
                 <div className="sub-zone-title">
@@ -778,7 +793,7 @@ function Principal({ packageData }) {
             <div
               id="general-conditions-zone"
               className="row sub-main-zone sub-zone-full-width-background"
-              style={{ scrollMarginTop: "60px" }}
+              style={{ scrollMarginTop: "120px" }}
             >
               <div className="col-sm-12 custom-col full-width-content">
                 <div className="sub-zone-title">
@@ -836,15 +851,7 @@ function Principal({ packageData }) {
                 </div>
               </div>
 
-              <div
-                className="row full-width-background"
-                style={{
-                  position: "absolute",
-                  left: "-50vw",
-                  width: "200vw",
-                  background: "#f5f5f5",
-                }}
-              ></div>
+              <div className="row full-width-background" aria-hidden="true" />
             </div>
             <div
               id="related-activities-zone"

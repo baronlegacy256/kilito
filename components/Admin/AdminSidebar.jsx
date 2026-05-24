@@ -10,6 +10,7 @@ import {
   DashboardOutlined,
   TeamOutlined,
   MailOutlined,
+  ShopOutlined,
 } from "@ant-design/icons";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
@@ -58,6 +59,11 @@ export default function AdminSidebar() {
       key: "/admin/bookings",
       icon: <DashboardOutlined />,
       label: <Link href="/admin/bookings">Bookings</Link>,
+    },
+    {
+      key: "/admin/partners",
+      icon: <ShopOutlined />,
+      label: <Link href="/admin/partners">Partners</Link>,
     },
     {
       key: "/admin/users",

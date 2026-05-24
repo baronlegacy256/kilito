@@ -54,7 +54,20 @@ export default function Guarantees() {
 
         <div className="col-sm-10">
           <div className="content-text">
-            <div className="markdown-content"></div>
+            <div className="markdown-content">
+              <h2>Professional guides</h2>
+              <p>All the guides featured on our site are qualified and insured professionals, capable of ensuring your stay is as enjoyable as possible.</p>
+              <h2>Travel insurance</h2>
+              <p>For our stays, we offer you the option, when preparing your quote, to purchase 3 insurance policies:</p>
+              <ul>
+                <li>Cancelation</li>
+                <li>Assistance</li>
+                <li>Multi-risk insurance (+ epidemics option).</li>
+              </ul>
+              <p>Detailed information sheets are provided to you with your quote.</p>
+              <h2>Financial guarantee</h2>
+              <p>Kili To Savanna Safari Club is committed to ensuring that you continue your trip or be reimbursed in the event of a failure on our part regarding the stays we sell.</p>
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,95 @@
+/* Clip page overflow on the viewport only — not .package-page (breaks fixed nav). */
+body:has(.package-page) {
+  overflow-x: clip;
+  overflow-x: hidden;
+}
+
+.package-page {
+  overflow-x: visible;
+  max-width: none;
+}
+
+.package-page .main-zone .sub-zone-full-width-background {
+  overflow: visible;
+}
+
+.package-page .main-zone .sub-zone-full-width-background .full-width-background {
+  left: 50%;
+  right: auto;
+  width: 150vw;
+  max-width: none;
+  transform: translateX(-50%);
+  background: #f5f5f5;
+}
+
+.package-page #page-navbar-large.page-navbar.affix {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 1040 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  height: 52px !important;
+  pointer-events: auto !important;
+  border-bottom: 1px solid #e4e4e4;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.12);
+  display: flex !important;
+  align-items: center;
+}
+
+.package-page #page-navbar-large.page-navbar.affix .inner-zone {
+  width: 100%;
+}
+
+.package-page #principal:has(#page-navbar-large.affix) #top-right-col {
+  z-index: 1039;
+}
+
+.package-page .affix-parent {
+  overflow: visible;
+}
+
+#related-activities-zone .h-scrollable-vignettes-outer-zone {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+#related-activities-zone .h-scrollable-vignettes-outer-zone .h-scrollable-vignettes-zone {
+  min-width: 0;
+}
+
+/* Mobile: stack cards vertically instead of horizontal carousel */
+@media (max-width: 991px) {
+  #related-activities-zone .h-scrollable-vignettes-outer-zone {
+    overflow-x: visible;
+    overflow-y: visible;
+  }
+
+  #related-activities-zone .h-scrollable-vignettes-outer-zone .h-scrollable-vignettes-zone {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 20px;
+    left: 0 !important;
+  }
+
+  #related-activities-zone
+    .h-scrollable-vignettes-outer-zone
+    .h-scrollable-vignettes-zone
+    .outer-vignette {
+    min-width: 100% !important;
+    max-width: 100% !important;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
+
+  #related-activities-zone .h-scrollable-vignettes-outer-zone .left-trigger,
+  #related-activities-zone .h-scrollable-vignettes-outer-zone .right-trigger {
+    display: none !important;
+  }
+}

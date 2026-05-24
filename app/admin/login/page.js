@@ -101,9 +101,8 @@ export default function AdminLoginPage() {
           <Title level={2} style={{ margin: 0, fontWeight: 700 }}>
             Admin Console
           </Title>
-          <Text type="secondary" style={{ fontSize: 16 }}>
-            Secured separate administration access
-          </Text>
+          
+
         </div>
 
         {!checking && !isConfigured && (
