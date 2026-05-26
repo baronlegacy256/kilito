@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Alert, Button, Card, Form, Input, Layout, Typography, Space, theme } from "antd";
 import { LockOutlined, MailOutlined, SafetyCertificateOutlined, WarningOutlined } from "@ant-design/icons";
 import { useRouter } from "next/navigation";
+import { getAdminSupabaseBrowserClient } from "@/lib/supabase/browser";
 
 const { Title, Text, Link } = Typography;
 
@@ -35,27 +36,60 @@ export default function AdminLoginPage() {
     setError("");
 
     try {
+      const email = values.email.trim();
+      const password = values.password;
+
+      // 1. Sign in via client-side Admin Supabase client
+      const supabase = getAdminSupabaseBrowserClient();
+      if (!supabase) {
+        throw new Error("Supabase browser client is not configured.");
+      }
+
+      const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (authError || !authData?.user) {
+        setError(authError?.message || "Invalid email or password.");
+        setLoading(false);
+        return;
+      }
+
+      // 2. Verify if they have an active admin profile
+      const { data: profile, error: profileErr } = await supabase
+        .from("admin_profiles")
+        .select("is_active")
+        .eq("user_id", authData.user.id)
+        .single();
+
+      if (profileErr || !profile?.is_active) {
+        await supabase.auth.signOut();
+        setError("Access denied. You do not have an active administrator profile.");
+        setLoading(false);
+        return;
+      }
+
+      // 3. Establish the backend session cookie
       const res = await fetch("/api/admin/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({
-          email: values.email,
-          password: values.password,
-        }),
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await res.json().catch(() => ({}));
 
       if (!res.ok) {
-        setError(data.error || "Login failed.");
+        await supabase.auth.signOut();
+        setError(data.error || "Backend session establishment failed.");
         setLoading(false);
         return;
       }
 
       router.push("/admin/dashboard");
     } catch (e) {
-      setError(e.message || "Unexpected error");
+      setError(e.message || "Unexpected error during login.");
     } finally {
       setLoading(false);
     }
@@ -101,8 +135,6 @@ export default function AdminLoginPage() {
           <Title level={2} style={{ margin: 0, fontWeight: 700 }}>
             Admin Console
           </Title>
-          
-
         </div>
 
         {!checking && !isConfigured && (
@@ -111,7 +143,7 @@ export default function AdminLoginPage() {
             showIcon
             icon={<WarningOutlined />}
             message="Configuration Required"
-            description="Admin credentials are not yet configured in server environment variables. Please set ADMIN_EMAIL, ADMIN_PASSWORD_HASH, and ADMIN_SESSION_SECRET."
+            description="Admin credentials are not yet configured in server environment variables. Please check your Supabase credentials and ADMIN_SESSION_SECRET."
             style={{ marginBottom: 24, borderRadius: 8 }}
           />
         )}
@@ -120,8 +152,8 @@ export default function AdminLoginPage() {
           <div style={{ marginBottom: 24 }}>
             <Alert
               type="info"
-              message="Configured Correctly"
-              description="Server has detected admin credentials. Use the email and password you set in your .env.local file."
+              message="Secure Dashboard"
+              description="For a better experience, please use a desktop device instead of a mobile device to access the admin console."
               showIcon
               icon={<SafetyCertificateOutlined />}
               style={{ borderRadius: 8 }}
@@ -130,6 +162,7 @@ export default function AdminLoginPage() {
         )}
 
         <Form layout="vertical" onFinish={handleLogin} disabled={loading || checking}>
+
           <Form.Item
             label="Administrator Email"
             name="email"
@@ -186,7 +219,7 @@ export default function AdminLoginPage() {
 
         <div style={{ textAlign: "center", marginTop: 24 }}>
           <Text type="secondary" style={{ fontSize: 13 }}>
-            Managed by Kilito Savanna Adventures IT
+            Managed by Kilito Savanna Safari Club IT Department
           </Text>
         </div>
       </Card>

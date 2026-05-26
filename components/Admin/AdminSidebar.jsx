@@ -18,11 +18,20 @@ import Link from "next/link";
 const { Sider } = Layout;
 const { Title } = Typography;
 
-export default function AdminSidebar() {
+export default function AdminSidebar({ collapsed, setCollapsed }) {
   const pathname = usePathname();
   const router = useRouter();
 
   const logout = async () => {
+    try {
+      const { getAdminSupabaseBrowserClient } = await import("@/lib/supabase/browser");
+      const supabase = getAdminSupabaseBrowserClient();
+      if (supabase) {
+        await supabase.auth.signOut();
+      }
+    } catch (e) {
+      console.error("Supabase client signout error:", e);
+    }
     try {
       await fetch("/api/admin/auth/logout", {
         method: "POST",
@@ -38,42 +47,42 @@ export default function AdminSidebar() {
     {
       key: "/admin/dashboard",
       icon: <DashboardOutlined />,
-      label: <Link href="/admin/dashboard">Dashboard</Link>,
+      label: <Link href="/admin/dashboard" onClick={() => setCollapsed && setCollapsed(true)}>Dashboard</Link>,
     },
     {
       key: "/admin/packages",
       icon: <AppstoreOutlined />,
-      label: <Link href="/admin/packages">Packages</Link>,
+      label: <Link href="/admin/packages" onClick={() => setCollapsed && setCollapsed(true)}>Packages</Link>,
     },
     {
       key: "/admin/groups",
       icon: <TeamOutlined />,
-      label: <Link href="/admin/groups">Groups</Link>,
+      label: <Link href="/admin/groups" onClick={() => setCollapsed && setCollapsed(true)}>Groups</Link>,
     },
     {
       key: "/admin/stays",
       icon: <HomeOutlined />,
-      label: <Link href="/admin/stays">Stays</Link>,
+      label: <Link href="/admin/stays" onClick={() => setCollapsed && setCollapsed(true)}>Stays</Link>,
     },
     {
       key: "/admin/bookings",
       icon: <DashboardOutlined />,
-      label: <Link href="/admin/bookings">Bookings</Link>,
+      label: <Link href="/admin/bookings" onClick={() => setCollapsed && setCollapsed(true)}>Bookings</Link>,
     },
     {
       key: "/admin/partners",
       icon: <ShopOutlined />,
-      label: <Link href="/admin/partners">Partners</Link>,
+      label: <Link href="/admin/partners" onClick={() => setCollapsed && setCollapsed(true)}>Partners</Link>,
     },
     {
       key: "/admin/users",
       icon: <UserOutlined />,
-      label: <Link href="/admin/users">Users</Link>,
+      label: <Link href="/admin/users" onClick={() => setCollapsed && setCollapsed(true)}>Users</Link>,
     },
     {
       key: "/admin/newsletter",
       icon: <MailOutlined />,
-      label: <Link href="/admin/newsletter">Newsletter</Link>,
+      label: <Link href="/admin/newsletter" onClick={() => setCollapsed && setCollapsed(true)}>Newsletter</Link>,
     },
     {
       type: "divider",
@@ -81,7 +90,7 @@ export default function AdminSidebar() {
     {
       key: "/admin/settings",
       icon: <SettingOutlined />,
-      label: <Link href="/admin/dashboard">Settings</Link>,
+      label: <Link href="/admin/dashboard" onClick={() => setCollapsed && setCollapsed(true)}>Settings</Link>,
     },
     {
       key: "logout",
@@ -96,12 +105,21 @@ export default function AdminSidebar() {
     <Sider
       width={260}
       theme="dark"
+      collapsible
+      collapsed={collapsed}
+      trigger={null}
+      breakpoint="lg"
+      collapsedWidth="0"
+      onCollapse={(value) => {
+        if (setCollapsed) setCollapsed(value);
+      }}
       style={{
         height: "100vh",
         position: "sticky",
         top: 0,
         left: 0,
         background: "#001529",
+        zIndex: 1001,
       }}
     >
       <div style={{ padding: "24px 16px", textAlign: "center" }}>

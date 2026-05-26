@@ -42,6 +42,54 @@ export default function TripsPage() {
 
   return (
     <div className="principal-container no-navbar with-bottom-bar">
+      <style dangerouslySetInnerHTML={{__html: `
+        .stay-card-row {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+        }
+        .stay-card-image-col {
+          min-height: 150px;
+        }
+        .stay-card-image-col img {
+          width: 100%;
+          height: 150px;
+          object-fit: cover;
+        }
+        .stay-card-info-col {
+          padding: 15px 20px;
+        }
+        .stay-card-action-col {
+          padding: 15px 20px;
+          text-align: right;
+          border-left: 1px solid #f5f5f5;
+        }
+        @media (max-width: 767px) {
+          .stay-card-row {
+            flex-direction: column !important;
+            align-items: stretch !important;
+          }
+          .stay-card-image-col {
+            width: 100% !important;
+            height: 160px !important;
+            min-height: 160px !important;
+          }
+          .stay-card-image-col img {
+            height: 160px !important;
+          }
+          .stay-card-info-col {
+            width: 100% !important;
+            padding: 15px !important;
+          }
+          .stay-card-action-col {
+            width: 100% !important;
+            padding: 15px !important;
+            text-align: left !important;
+            border-left: none !important;
+            border-top: 1px solid #f5f5f5 !important;
+          }
+        }
+      `}} />
       <div className="userStd-details-zone form-infos-bloc">
         <div className="form-bloc-title">
           <h2>My Stays</h2>
@@ -56,15 +104,14 @@ export default function TripsPage() {
               <div className="col-xs-12" key={booking.id} style={{ marginBottom: '20px' }}>
                 <div className="panel panel-default" style={{ border: '1px solid #e4e4e4', borderRadius: '4px', overflow: 'hidden' }}>
                   <div className="panel-body" style={{ padding: '0' }}>
-                    <div className="row no-margin" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-                      <div className="col-sm-4 no-padding" style={{ minHeight: '150px' }}>
+                    <div className="row no-margin stay-card-row">
+                      <div className="col-sm-4 no-padding stay-card-image-col">
                         <img 
                           src={booking.packages?.images?.[0] || "/assets/images/home/safari.jpg"} 
                           alt={booking.packages?.title || "Stay"} 
-                          style={{ width: '100%', height: '150px', objectFit: 'cover' }}
                         />
                       </div>
-                      <div className="col-sm-5" style={{ padding: '15px 20px' }}>
+                      <div className="col-sm-5 stay-card-info-col">
                         <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', color: '#0a3552', fontWeight: 'bold' }}>
                           {booking.packages?.title || "Custom Adventure"}
                         </h3>
@@ -77,7 +124,7 @@ export default function TripsPage() {
                           {booking.num_travelers} {booking.num_travelers === 1 ? 'Traveler' : 'Travelers'}
                         </div>
                       </div>
-                      <div className="col-sm-3" style={{ padding: '15px 20px', textAlign: 'right', borderLeft: '1px solid #f5f5f5' }}>
+                      <div className="col-sm-3 stay-card-action-col">
                         <div style={{ marginBottom: '10px' }}>
                           <span className="label" style={{ 
                             padding: '4px 8px', 

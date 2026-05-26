@@ -11,14 +11,36 @@ import Packages from "@/components/Home/Packages";
 import Information from "@/components/Home/Information";
 
 export const metadata = {
-  title: "Tanzania Safari: Tailor-made Trips and Stays",
-  description: "Kili to Savanna is a Tanzanian safari company providing high quality travel and tour services from Mt Kilimanjaro to the Serengeti and beautiful beaches.",
+  title:
+    "Tanzania Safari Tours | Kilimanjaro & Serengeti Trips | Kili to Savanna Safari Club",
+
+  description:
+    "Kili to Savanna Safari Club offers tailor-made Tanzania safari tours, Serengeti wildlife safaris, Kilimanjaro trekking, Zanzibar beach holidays, and authentic African travel experiences.",
+
+  keywords: [
+    "Tanzania safari",
+    "Serengeti safari",
+    "Kilimanjaro trekking",
+    "Zanzibar beach holidays",
+    "African safari tours",
+    "wildlife safari Tanzania",
+    "luxury safari Tanzania",
+    "budget safari Tanzania",
+    "Ngorongoro crater tours",
+    "Kili to Savanna Safari Club"
+  ],
+
   openGraph: {
-    title: "Tanzania Safari: Tailor-made Trips and Stays",
-    description: "Kili to Savanna is a Tanzanian safari company providing high quality travel and tour services from Mt Kilimanjaro to the Serengeti and beautiful beaches.",
-    url: "https://kilitosavannaadventures.com/",
+    title:
+      "Tanzania Safari Tours | Kilimanjaro & Serengeti, and Zanzibar Trips | Kili to Savanna Safari Club",
+
+    description:
+      "Explore Tanzania with Kili to Savanna Safari Club through tailor-made safaris, Kilimanjaro trekking and climbs, Serengeti adventures, and Zanzibar beach escapes.",
+
+    url: "https://kilitosavannasafariclub.com/",
+
     images: ["/assets/images/home/slider.jpg"],
-  }
+  },
 };
 
 export default function Home() {

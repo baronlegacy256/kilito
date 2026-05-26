@@ -10,19 +10,29 @@ import {
   MenuFoldOutlined
 } from "@ant-design/icons";
 import { useRouter } from "next/navigation";
+import { getAdminSupabaseBrowserClient } from "@/lib/supabase/browser";
 
 const { Header } = Layout;
 const { Text } = Typography;
 
-export default function AdminHeader() {
+export default function AdminHeader({ collapsed, setCollapsed }) {
   const router = useRouter();
 
   const logout = async () => {
+    try {
+      const supabase = getAdminSupabaseBrowserClient();
+      if (supabase) {
+        await supabase.auth.signOut();
+      }
+    } catch (e) {
+      console.error("Supabase client signout error:", e);
+    }
     try {
       await fetch("/api/admin/auth/logout", { method: "POST" });
     } catch { /* ignore */ }
     router.push("/admin/login");
   };
+
 
   const menuItems = [
     {
@@ -50,17 +60,33 @@ export default function AdminHeader() {
   return (
     <Header
       style={{
-        padding: "0 24px",
+        padding: "0 24px 0 0",
         background: "#fff",
         display: "flex",
         alignItems: "center",
-        justifyContent: "flex-end", // Push items to the right
+        justifyContent: "space-between", // Left and right side spacing
         height: 64,
         boxShadow: "0 1px 4px rgba(0,21,41,0.08)",
-        zIndex: 1,
+        zIndex: 999,
       }}
     >
-      <Space size={24}>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Button
+          type="text"
+          icon={collapsed ? <MenuUnfoldOutlined style={{ fontSize: 18 }} /> : <MenuFoldOutlined style={{ fontSize: 18 }} />}
+          onClick={() => setCollapsed && setCollapsed(!collapsed)}
+          style={{
+            width: 64,
+            height: 64,
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderRadius: 0,
+          }}
+        />
+      </div>
+
+      <Space size={24} style={{ marginRight: 24 }}>
         <Badge count={0} dot offset={[-2, 2]}>
           <Button 
             type="text" 

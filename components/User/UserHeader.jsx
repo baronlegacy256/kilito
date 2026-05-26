@@ -66,14 +66,14 @@ const LoggedInMenu = ({ dropdownId, user, arrowVariant = "" }) => (
   </ul>
 );
 
-const NavLinks = ({ className = "", navLinks = NAV_LINKS }) => (
+const NavLinks = ({ className = "", navLinks = NAV_LINKS, onClick }) => (
   <ul className={`menu-list section ${className}`}>
     {navLinks.map(({ href, icon, label, active }) => (
       <li
         key={href}
         className={`submenu-item with-link with-pre-icon${active ? " active" : ""}`}
       >
-        <Link href={href} className="no-decoration">
+        <Link href={href} className="no-decoration" onClick={onClick}>
           <i className={`icon fa ${icon} pre-icon`} aria-hidden="true" />
           {label}
           <i className="fa fa-angle-right icon" aria-hidden="true" />
@@ -163,7 +163,7 @@ const MobileMenu = ({
         </ul>
 
         {/* Nav links */}
-        <NavLinks navLinks={navLinks} />
+        <NavLinks navLinks={navLinks} onClick={onClose} />
       </li>
     </ul>
 

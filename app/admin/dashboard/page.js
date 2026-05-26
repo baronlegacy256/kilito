@@ -55,7 +55,7 @@ export default function AdminDashboardPage() {
       </div>
       
       <Row gutter={[24, 24]}>
-        <Col xs={24} sm={6}>
+        <Col xs={24} sm={12} md={6}>
           <Card bordered={false} className="dashboard-stat-card" style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
             <Skeleton loading={loading} active>
               <Statistic
@@ -75,7 +75,7 @@ export default function AdminDashboardPage() {
           </Card>
         </Col>
 
-        <Col xs={24} sm={6}>
+        <Col xs={24} sm={12} md={6}>
           <Card bordered={false} className="dashboard-stat-card" style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
             <Skeleton loading={loading} active>
               <Statistic
@@ -95,7 +95,7 @@ export default function AdminDashboardPage() {
           </Card>
         </Col>
         
-        <Col xs={24} sm={6}>
+        <Col xs={24} sm={12} md={6}>
           <Card bordered={false} className="dashboard-stat-card" style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
             <Skeleton loading={loading} active>
               <Statistic
@@ -115,7 +115,7 @@ export default function AdminDashboardPage() {
           </Card>
         </Col>
         
-        <Col xs={24} sm={6}>
+        <Col xs={24} sm={12} md={6}>
           <Card bordered={false} className="dashboard-stat-card" style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
             <Skeleton loading={loading} active>
               <Statistic
