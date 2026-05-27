@@ -12,9 +12,6 @@ export const metadata = {
     url: "https://kilitosavannasafariclub.com/press",
     images: ["/assets/images/generic.jpg"],
   },
-  alternates: {
-    canonical: "https://kilitosavannasafariclub.com/press",
-  },
 };
 
 export default function Press() {

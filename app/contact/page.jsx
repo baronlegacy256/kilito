@@ -7,12 +7,9 @@ export const metadata = {
   openGraph: {
     title: "Contact Us",
     description: "Get in touch with Kili to Savanna. We're here to help you plan your perfect Tanzania safari or climbing adventure.",
-    url: "https://kilitosavannasafariclub.com/contact",
+    url: "https://kilitosavannaadventures.com/contact",
     images: ["/assets/images/generic.jpg"],
-  },
-  alternates: {
-    canonical: "https://kilitosavannasafariclub.com/contact",
-  },
+  }
 };
 
 export default function Contact() {

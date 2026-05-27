@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+export const dynamic = 'force-dynamic';
 import { notFound } from "next/navigation";
 import Header from "@/components/Packages/Header";
 import Footer from "@/components/Home/Footer";
@@ -10,7 +11,7 @@ import { getPackageDetailsBySlug } from "@/lib/packages/getPackageDetails";
 const BASE_URL = "https://kilitosavannasafariclub.com";
 
 export async function generateMetadata({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
 
   const packageData = await getPackageDetailsBySlug(slug);
 
@@ -72,7 +73,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function PackageDetailPage({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
 
   const packageData = await getPackageDetailsBySlug(slug);
 
