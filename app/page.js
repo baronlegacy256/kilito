@@ -9,11 +9,10 @@ import Experts from "@/components/Home/Experts";
 import About from "@/components/Home/About";
 import Packages from "@/components/Home/Packages";
 import Information from "@/components/Home/Information";
-import Reviews from "@/components/Home/Reviews";
+
 
 export const metadata = {
-  title:
-    "Tanzania Safari Tours | Kilimanjaro & Serengeti Trips | Kili to Savanna Safari Club",
+  title: "Tanzania Safari Tours | Kilimanjaro & Serengeti Trips | Kili to Savanna Safari Club",
 
   description:
     "Kili to Savanna Safari Club offers tailor-made Tanzania safari tours, Serengeti wildlife safaris, Kilimanjaro trekking, Zanzibar beach holidays, and authentic African travel experiences.",
@@ -39,8 +38,11 @@ export const metadata = {
       "Explore Tanzania with Kili to Savanna Safari Club through tailor-made safaris, Kilimanjaro trekking and climbs, Serengeti adventures, and Zanzibar beach escapes.",
 
     url: "https://kilitosavannasafariclub.com/",
-
     images: ["/assets/images/home/slider.jpg"],
+  },
+
+  alternates: {
+    canonical: "https://kilitosavannasafariclub.com/",
   },
 };
 

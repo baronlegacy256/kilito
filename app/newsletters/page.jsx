@@ -9,8 +9,19 @@ export const metadata = {
     title: "Newsletters",
     description:
       "Subscribe to the Kili to Savanna newsletter for the latest updates on Tanzania safaris, travel tips, and exclusive offers.",
-    url: "https://kilitosavannaadventures.com/newsletters",
+    url: "https://kilitosavannasafariclub.com/newsletters",
     images: ["/assets/images/home/slider1.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Newsletters",
+    description:
+      "Subscribe to the Kili to Savanna newsletter for the latest updates on Tanzania safaris, travel tips, and exclusive offers.",
+    url: "https://kilitosavannasafariclub.com/newsletters",
+    images: ["/assets/images/home/slider1.png"],
+  },
+  alternates: {
+    canonical: "https://kilitosavannasafariclub.com/newsletters",
   },
 };
 export default function Newsletters() {
@@ -57,17 +68,35 @@ export default function Newsletters() {
           <div className="content-text">
             <div className="markdown-content">
               <h2>Stay Updated with Our Adventures</h2>
-              <p>Subscribe to the Kili to Savanna newsletter and receive the latest updates on new safari itineraries, exclusive travel tips, special promotions, and inspiring stories from the heart of Tanzania.</p>
+              <p>
+                Subscribe to the Kili to Savanna newsletter and receive the
+                latest updates on new safari itineraries, exclusive travel tips,
+                special promotions, and inspiring stories from the heart of
+                Tanzania.
+              </p>
 
               <h3>What you’ll get</h3>
               <ul>
-                <li>Monthly highlights of the most breathtaking wildlife experiences.</li>
-                <li>Expert advice on preparing for a Kilimanjaro trek and safari travel.</li>
+                <li>
+                  Monthly highlights of the most breathtaking wildlife
+                  experiences.
+                </li>
+                <li>
+                  Expert advice on preparing for a Kilimanjaro trek and safari
+                  travel.
+                </li>
                 <li>Early‑bird offers and discounts on upcoming tours.</li>
-                <li>Behind‑the‑scenes stories from our guides and local partners.</li>
+                <li>
+                  Behind‑the‑scenes stories from our guides and local partners.
+                </li>
               </ul>
 
-              <p>We respect your privacy. Your email address will only be used for our newsletter communications and will never be shared with third parties. You can unsubscribe at any time using the link at the bottom of each email.</p>
+              <p>
+                We respect your privacy. Your email address will only be used
+                for our newsletter communications and will never be shared with
+                third parties. You can unsubscribe at any time using the link at
+                the bottom of each email.
+              </p>
             </div>
           </div>
         </div>

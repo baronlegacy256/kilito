@@ -3,13 +3,18 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Who We Are",
-  description: "Learn more about Kili to Savanna, a local Tanzanian safari company providing high-quality travel and tour services.",
+  description:
+    "Learn more about Kili to Savanna, a  local Tanzanian safari company providing high-quality travel and tour services.",
   openGraph: {
     title: "Who We Are",
-    description: "Learn more about Kili to Savanna, a local Tanzanian safari company providing high-quality travel and tour services.",
-    url: "https://kilitosavannaadventures.com/who-we-are",
+    description:
+      "Learn more about Kili to Savanna, a local Tanzanian safari company providing high-quality travel and tour services.",
+    url: "https://kilitosavannasafariclub.com/who-we-are",
     images: ["/assets/images/home/about.png"],
-  }
+  },
+  alternates: {
+    canonical: "https://kilitosavannasafariclub.com/who-we-are",
+  },
 };
 
 export default function WhoWeAre() {

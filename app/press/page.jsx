@@ -9,8 +9,11 @@ export const metadata = {
     title: "Press",
     description:
       "Read the latest press releases and media coverage for Kili to Savanna.",
-    url: "https://kilitosavannaadventures.com/press",
+    url: "https://kilitosavannasafariclub.com/press",
     images: ["/assets/images/generic.jpg"],
+  },
+  alternates: {
+    canonical: "https://kilitosavannasafariclub.com/press",
   },
 };
 

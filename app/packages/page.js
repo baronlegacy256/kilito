@@ -4,16 +4,44 @@ import Footer from "@/components/Home/Footer";
 import Packages from "@/components/Home/Packages";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Our Packages",
-  description: "Browse all our Tanzania safari packages, climbing and trekking adventures, and cultural tours.",
-  openGraph: {
-    title: "Our Packages",
-    description: "Browse all our Tanzania safari packages, climbing and trekking adventures, and cultural tours.",
-    url: "https://kilitosavannaadventures.com/packages",
-    images: ["/assets/images/home/allPackages.jpg"],
+const BASE_URL = "https://kilitosavannasafariclub.com";
+
+export async function generateMetadata({ searchParams }) {
+  const category = searchParams?.category || "All";
+
+  let title = "Tanzania Safari Packages | Kilimanjaro & Serengeti Tours";
+  let description =
+    "Browse our Tanzania safari packages including Serengeti wildlife safaris, Kilimanjaro trekking, Zanzibar holidays, and cultural tours.";
+
+  let image = "/assets/images/home/allPackages.jpg";
+
+  if (category === "Safari tour") {
+    title = "Safari Tours in Tanzania | Serengeti Wildlife Safaris";
+    image = "/assets/images/home/safari.jpg";
+  } else if (category === "Cultural tour") {
+    title = "Cultural Tours in Tanzania | Maasai & Local Experiences";
+    image = "/assets/images/home/cultural.jpeg";
+  } else if (category === "Climbing and Trekking") {
+    title = "Climbing and Trekking Packages | Mountain Climbing Tanzania";
+    image = "/assets/images/home/trekking.jpeg";
   }
-};
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `${BASE_URL}/packages`,
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${BASE_URL}/packages`,
+      images: [image],
+      siteName: "Kili to Savanna Safari Club",
+      type: "website",
+    },
+  };
+}
 
 export default async function PackagesPage(props) {
   const searchParams = await props.searchParams;

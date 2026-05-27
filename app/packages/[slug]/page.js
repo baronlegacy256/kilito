@@ -7,58 +7,76 @@ import TopZone from "@/components/Packages/TopZone";
 import Principal from "@/components/Packages/Principal";
 import { getPackageDetailsBySlug } from "@/lib/packages/getPackageDetails";
 
+const BASE_URL = "https://kilitosavannasafariclub.com";
+
 export async function generateMetadata({ params }) {
-  const { slug } = await params;
+  const { slug } = params;
+
   const packageData = await getPackageDetailsBySlug(slug);
 
   if (!packageData) {
     return {
       title: "Package Not Found",
-      description: "The requested package could not be found."
+      description: "The requested safari package could not be found.",
     };
   }
 
   const title = packageData.title || "Tanzania Safari Package";
-  // We can use subtitle or a plain text version of description. 
-  // We will strip HTML tags if hero_description_html is the only description, or use subtitle.
-  let description = packageData.subtitle || "Experience a beautiful safari with Kili to Savanna.";
-  if (packageData.hero_description_html && !packageData.subtitle) {
-    // Strip HTML tags for meta description
-    description = packageData.hero_description_html.replace(/<[^>]+>/g, '').substring(0, 160);
+
+  // Clean description safely
+  let description =
+    packageData.subtitle ||
+    "Experience unforgettable Tanzania safari adventures with Kili to Savanna Safari Club.";
+
+  if (packageData.hero_description_html) {
+    const cleanText = packageData.hero_description_html.replace(/<[^>]+>/g, "");
+    description = cleanText;
   }
 
-  const images = [];
-  const coverImage = packageData.top_background_image || (packageData.carousel_images && packageData.carousel_images[0]?.image_url);
-  if (coverImage) {
-    images.push(coverImage);
-  }
-
-  // Include price in description if available
-  const firstPrice = packageData.pricing_tiers && packageData.pricing_tiers[0];
+  // Add pricing context (optional SEO boost)
+  const firstPrice = packageData.pricing_tiers?.[0];
   if (firstPrice) {
     const symbol = firstPrice.currency_code === "EUR" ? "€" : "$";
-    const priceText = `Prices from ${Number(firstPrice.price_amount).toLocaleString()} ${symbol} ${firstPrice.per_label || "/ person"}.`;
-    description = `${priceText} ${description}`.substring(0, 160);
+    const priceText = `From ${Number(firstPrice.price_amount).toLocaleString()} ${symbol}${firstPrice.per_label || "/person"}.`;
+    description = `${priceText} ${description}`;
   }
+
+  description = description.substring(0, 160);
+
+  const coverImage =
+    packageData.top_background_image ||
+    packageData.carousel_images?.[0]?.image_url ||
+    "/assets/images/home/default-package.jpg";
 
   return {
     title,
     description,
+
+    alternates: {
+      canonical: `${BASE_URL}/packages/${slug}`,
+    },
+
     openGraph: {
       title,
       description,
-      images: images.length > 0 ? images : undefined,
-    }
+      url: `${BASE_URL}/packages/${slug}`,
+      siteName: "Kili to Savanna Safari Club",
+      type: "article",
+      images: [
+        {
+          url: coverImage,
+        },
+      ],
+    },
   };
 }
 
 export default async function PackageDetailPage({ params }) {
-  const { slug } = await params;
-  console.log('[DEBUG] Opening detail page for slug:', slug);
+  const { slug } = params;
+
   const packageData = await getPackageDetailsBySlug(slug);
 
   if (!packageData) {
-    console.error('[ERROR] Package not found for slug:', slug);
     notFound();
   }
 
