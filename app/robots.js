@@ -1,5 +1,5 @@
 export default function robots() {
-  const baseUrl = "https://kilitosavanna.com";
+  const baseUrl = "https://kilitosavannasafariclub.com";
 
   return {
     rules: {
