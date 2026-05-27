@@ -9,6 +9,7 @@ import Experts from "@/components/Home/Experts";
 import About from "@/components/Home/About";
 import Packages from "@/components/Home/Packages";
 import Information from "@/components/Home/Information";
+import Reviews from "@/components/Home/Reviews";
 
 export const metadata = {
   title:
@@ -51,6 +52,7 @@ export default function Home() {
       <Categories/>
       <About/>
       <Packages/>
+      <Information/>
       
       <Prefooter/>
       <Footer/>

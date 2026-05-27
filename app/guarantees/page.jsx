@@ -67,6 +67,10 @@ export default function Guarantees() {
               <p>Detailed information sheets are provided to you with your quote.</p>
               <h2>Financial guarantee</h2>
               <p>Kili To Savanna Safari Club is committed to ensuring that you continue your trip or be reimbursed in the event of a failure on our part regarding the stays we sell.</p>
+              <h2>Price match guarantee</h2>
+              <p>We guarantee to provide the best value for your Tanzanian experience. If you find an identical, high-quality itinerary offered by another registered local operator at a lower price, we will match it without compromising on service or safety standards.</p>
+              <h2>24/7 Local support</h2>
+              <p>From the moment you arrive in Tanzania until your departure, our dedicated local support team is available 24 hours a day, 7 days a week, to handle any unexpected changes, emergencies, or general inquiries.</p>
             </div>
           </div>
         </div>
