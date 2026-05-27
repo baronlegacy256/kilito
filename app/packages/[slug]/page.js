@@ -24,25 +24,10 @@ export async function generateMetadata({ params }) {
 
   const title = packageData.title || "Tanzania Safari Package";
 
-  // Clean description safely
-  let description =
+  const description = (
     packageData.subtitle ||
-    "Experience unforgettable Tanzania safari adventures with Kili to Savanna Safari Club.";
-
-  if (packageData.hero_description_html) {
-    const cleanText = packageData.hero_description_html.replace(/<[^>]+>/g, "");
-    description = cleanText;
-  }
-
-  // Add pricing context (optional SEO boost)
-  const firstPrice = packageData.pricing_tiers?.[0];
-  if (firstPrice) {
-    const symbol = firstPrice.currency_code === "EUR" ? "€" : "$";
-    const priceText = `From ${Number(firstPrice.price_amount).toLocaleString()} ${symbol}${firstPrice.per_label || "/person"}.`;
-    description = `${priceText} ${description}`;
-  }
-
-  description = description.substring(0, 160);
+    "Experience unforgettable Tanzania safari adventures with Kili to Savanna Safari Club."
+  ).substring(0, 160);
 
   const coverImage =
     packageData.top_background_image ||
@@ -62,12 +47,23 @@ export async function generateMetadata({ params }) {
       description,
       url: `${BASE_URL}/packages/${slug}`,
       siteName: "Kili to Savanna Safari Club",
+      locale: "en_US",
       type: "article",
       images: [
         {
           url: coverImage,
+          width: 1200,
+          height: 630,
+          alt: title,
         },
       ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [coverImage],
     },
   };
 }
