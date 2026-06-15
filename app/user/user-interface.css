@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -14568,31 +14570,12 @@ button.ui-button::-moz-focus-inner {
 #tab-content .vignette-activity .vignette-label {
   background: #ffffff;
 }
-@font-face {
-  font-family: "Surt";
-  src:
-    url("/assets/Surt/Surt-Light-aa0a1b761a13a3aaa73f8d1b9d4a1a4f.woff2")
-      format("woff2"),
-    url("/assets/Surt/Surt-Light-2fb89d850714393e1503315d1bd030ac.woff")
-      format("woff");
-  font-weight: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Surt";
-  src:
-    url("/assets/Surt/Surt-Bold-0996917dbe2e450862e5a3c7506c9c0d.woff2")
-      format("woff2"),
-    url("/assets/Surt/Surt-Bold-769a7a5a763949858a4bedbfa4e861b0.woff")
-      format("woff");
-  font-weight: bold;
-  font-display: swap;
-}
+
 .text-centered {
   text-align: center;
 }
 .main-font {
-  font-family: "Surt", "Open Sans", Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", "Open Sans", Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
 }
@@ -14680,7 +14663,7 @@ h2 {
   font-weight: 300;
 }
 body {
-  font-family: "Surt", "Open Sans", Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", "Open Sans", Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
   font-smooth: always;
@@ -31558,7 +31541,7 @@ html {
   display: inline-block;
   margin: 0;
   white-space: normal;
-  font-family: "Surt", "Open Sans", Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", "Open Sans", Arial, sans-serif;
   font-size: 13px;
   text-align: left;
   color: inherit;
@@ -37259,7 +37242,7 @@ footer #legal-links .legal-links-content #lemon-way-links img:not([data-src]) {
 .quill-editor-zone .quill-toolbar-zone .quill-toolbar-container .ql-toolbar {
   border: none;
   padding-left: 36px;
-  font-family: "Surt", "Open Sans", Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", "Open Sans", Arial, sans-serif;
 }
 .quill-editor-zone
   .quill-toolbar-zone

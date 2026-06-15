@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;display=swap");
 @import "../../cdn.quilljs.com/1.3.6/quill.snow.css";
 html {
@@ -15669,29 +15671,13 @@ button.ui-button::-moz-focus-inner {
 #tab-content .vignette-activity .vignette-label {
   background: #ffffff;
 }
-@font-face {
-  font-family: "Surt";
-  src: url("Surt/Surt-Light-aa0a1b761a13a3aaa73f8d1b9d4a1a4f.woff2")
-      format("woff2"),
-    url("Surt/Surt-Light-2fb89d850714393e1503315d1bd030ac.woff") format("woff"),
-    url("Surt/Surt-Light.ttf") format("opentype");
-  font-weight: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Surt";
-  src: url("Surt/Surt-Bold-0996917dbe2e450862e5a3c7506c9c0d.woff2")
-      format("woff2"),
-    url("Surt/Surt-Bold-769a7a5a763949858a4bedbfa4e861b0.woff") format("woff"),
-    url("Surt/Surt-Bold.ttf") format("opentype");
-  font-weight: bold;
-  font-display: swap;
-}
+
+
 .text-centered {
   text-align: center;
 }
 .main-font {
-  font-family: "Surt", "Open Sans", Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", "Open Sans", Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
 }
@@ -15783,7 +15769,7 @@ h2 {
   font-weight: 300;
 }
 body {
-  font-family: "Surt", "Open Sans", Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", "Open Sans", Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
   font-smooth: always;
@@ -30442,7 +30428,7 @@ html {
   display: inline-block;
   margin: 0;
   white-space: normal;
-  font-family: "Surt", "Open Sans", Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", "Open Sans", Arial, sans-serif;
   font-size: 13px;
   text-align: left;
   color: inherit;

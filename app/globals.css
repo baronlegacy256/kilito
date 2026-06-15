@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
 @font-face {
   font-family: "Glyphicons Halflings";
   src: url(/assets/glyphicons-halflings-regular/glyphicons-halflings-regular-7ad17c6085dee9a33787bac28fb23d46.eot);
@@ -341,28 +343,6 @@
     U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-@font-face {
-  font-family: "Surt";
-  src:
-    url(/assets/Surt/Surt-Light-aa0a1b761a13a3aaa73f8d1b9d4a1a4f.woff2)
-      format("woff2"),
-    url(/assets/Surt/Surt-Light-2fb89d850714393e1503315d1bd030ac.woff)
-      format("woff");
-  font-weight: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Surt";
-  src:
-    url(/assets/Surt/Surt-Bold-0996917dbe2e450862e5a3c7506c9c0d.woff2)
-      format("woff2"),
-    url(/assets/Surt/Surt-Bold-769a7a5a763949858a4bedbfa4e861b0.woff)
-      format("woff"),
-    url(/assets/Surt/Surt-Bold.ttf) format("opentype");
-  font-weight: bold;
-  font-display: swap;
-}
 
 .custom-form-field.separated {
   position: relative;
@@ -3915,7 +3895,7 @@ h2 {
 }
 
 body {
-  font-family: "Surt", "Open Sans", Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", "Open Sans", Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
   font-smooth: always;

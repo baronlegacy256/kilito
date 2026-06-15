@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
 .top-inline-zone {
   display: -webkit-box;
   display: -moz-box;
@@ -16188,7 +16190,7 @@ button.ui-button::-moz-focus-inner {
   text-align: center;
 }
 .main-font {
-  font-family: "Surt", "Open Sans", Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", "Open Sans", Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
 }
@@ -16276,7 +16278,7 @@ h2 {
   font-weight: 300;
 }
 body {
-  font-family: "Surt", "Open Sans", Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", "Open Sans", Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
   font-smooth: always;
@@ -33200,7 +33202,7 @@ html {
   display: inline-block;
   margin: 0;
   white-space: normal;
-  font-family: "Surt", "Open Sans", Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", "Open Sans", Arial, sans-serif;
   font-size: 13px;
   text-align: left;
   color: inherit;
