@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: "Who We Are",
     description: "Learn more about Kili to Savanna, a local Tanzanian safari company providing high-quality travel and tour services.",
-    url: "https://kilitosavannaadventures.com/who-we-are",
+    url: "https://kilitosavannasafariclub.com/who-we-are",
     images: ["/assets/images/home/about.png"],
   }
 };

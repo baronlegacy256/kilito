@@ -6,7 +6,7 @@ export const metadata = {
   openGraph: {
     title: "Site Map",
     description: "Navigate the Kili to Savanna website with our comprehensive site map.",
-    url: "https://kilitosavannaadventures.com/site-map",
+    url: "https://kilitosavannasafariclub.com/site-map",
     images: ["/assets/images/home/logo.png"],
   }
 };
